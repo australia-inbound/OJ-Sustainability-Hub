@@ -109,6 +109,40 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 
 .step-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
 .step-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
 
+/* ENVIRONMENTAL CHALLENGES */
+.env-section { margin-bottom: 64px; }
+.env-intro { font-size: 14px; color: var(--mid); line-height: 1.7; max-width: 720px; margin-bottom: 28px; font-weight: 300; }
+.env-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
+.env-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.env-card-header { padding: 24px; display: flex; align-items: center; gap: 16px; }
+.env-card-header.fire { background: linear-gradient(135deg, #2C1810 0%, #4A2010 100%); }
+.env-card-header.reef { background: linear-gradient(135deg, #0A2A3A 0%, #0C3D5A 100%); }
+.env-icon { font-size: 32px; line-height: 1; flex-shrink: 0; }
+.env-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.env-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: white; font-weight: 400; line-height: 1.2; }
+.env-card-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+.env-desc { font-size: 13px; color: var(--mid); line-height: 1.7; font-weight: 300; }
+.env-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.env-stat { background: var(--light); border-radius: 10px; padding: 12px 14px; }
+.env-stat-num { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--dark); line-height: 1; margin-bottom: 3px; }
+.env-stat-label { font-size: 11px; color: var(--mid); line-height: 1.3; }
+.env-destinations { display: flex; flex-direction: column; gap: 8px; }
+.env-dest-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); }
+.env-dest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.env-dest-tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; background: var(--light); border: 1px solid var(--border); color: var(--mid); }
+.env-impact-block { border-left: 2px solid var(--orange); padding-left: 14px; }
+.env-impact-title { font-size: 12px; font-weight: 600; color: var(--dark); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+.env-impact-text { font-size: 13px; color: var(--mid); line-height: 1.7; font-weight: 300; }
+.env-recovery { background: var(--light); border-radius: 10px; padding: 16px; }
+.env-recovery-title { font-size: 12px; font-weight: 600; color: var(--dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+.env-recovery-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.env-recovery-list li { font-size: 12px; color: var(--mid); line-height: 1.5; padding-left: 16px; position: relative; }
+.env-recovery-list li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; top: 1px; }
+.env-learn-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; background: var(--dark); color: white; text-decoration: none; font-size: 13px; font-weight: 500; padding: 11px 20px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.01em; align-self: flex-start; }
+.env-learn-btn:hover { background: var(--orange); }
+.env-learn-btn svg { flex-shrink: 0; opacity: 0.7; }
+@media (max-width: 700px) { .env-grid { grid-template-columns: 1fr; } .env-stats { grid-template-columns: repeat(2, 1fr); } }
+
 /* FOOTER */
 footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.8; }
 .footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
@@ -143,6 +177,7 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
   </a>
   <ul class="nav-links">
     <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#environmental-challenges">Environmental context</a></li>
     <li><a href="#how-to-use">How to use</a></li>
   </ul>
 </nav>
@@ -296,6 +331,107 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
     </div>
     <a href="Orange_Journeys_Destination_Files_2026.pdf" class="pack-download" download>↓ Download full pack</a>
   </div>
+
+  <!-- ENVIRONMENTAL CHALLENGES -->
+  <section id="environmental-challenges" class="env-section">
+    <div class="section-heading">
+      <h2>Environmental pressures &amp; climate context</h2>
+      <span class="count">Understanding Australia's critical challenges</span>
+    </div>
+    <p class="env-intro">Australia's most iconic tourism destinations are under increasing pressure from climate change. Understanding these challenges is essential for responsible tour operators — it shapes how we sell destinations, how we brief clients, and how we engage with local conservation efforts.</p>
+
+    <div class="env-grid">
+
+      <div class="env-card">
+        <div class="env-card-header fire">
+          <div class="env-icon">🔥</div>
+          <div class="env-header-text">
+            <div class="env-eyebrow">2019 — 2020</div>
+            <h3 class="env-title">Black Summer bushfires</h3>
+          </div>
+        </div>
+        <div class="env-card-body">
+          <p class="env-desc">The 2019–20 Black Summer was the most catastrophic bushfire season ever recorded in Australia. Fuelled by record-breaking drought, extreme heat and high winds — all intensified by climate change — fires burned from July 2019 to March 2020, consuming around 24 million hectares across New South Wales, Victoria, Queensland and South Australia.</p>
+          <div class="env-stats">
+            <div class="env-stat">
+              <div class="env-stat-num">24M</div>
+              <div class="env-stat-label">hectares burned</div>
+            </div>
+            <div class="env-stat">
+              <div class="env-stat-num">3B</div>
+              <div class="env-stat-label">animals displaced or killed</div>
+            </div>
+            <div class="env-stat">
+              <div class="env-stat-num">$2.8B</div>
+              <div class="env-stat-label">lost from tourism supply chains</div>
+            </div>
+            <div class="env-stat">
+              <div class="env-stat-num">7,300</div>
+              <div class="env-stat-label">tourism jobs lost nationwide</div>
+            </div>
+          </div>
+          <div class="env-destinations">
+            <div class="env-dest-label">Destinations affected</div>
+            <div class="env-dest-tags">
+              <span class="env-dest-tag">Blue Mountains — 79% of World Heritage Area burned</span>
+              <span class="env-dest-tag">NSW South Coast</span>
+              <span class="env-dest-tag">Kangaroo Island</span>
+              <span class="env-dest-tag">Victorian Alps</span>
+            </div>
+          </div>
+          <a href="bushfires.html" target="_blank" class="env-learn-btn">
+            Learn about the impact on tourism
+            <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13"><path d="M8.5 3h4.5v4.5h-1.5V5.56L6.03 11.03 5 10l5.44-5.44H8.5V3z"/><path d="M3 4.5h4V6H4.5v5.5H10v-2.5h1.5V13H3V4.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="env-card">
+        <div class="env-card-header reef">
+          <div class="env-icon">🪸</div>
+          <div class="env-header-text">
+            <div class="env-eyebrow">2024 — 2025</div>
+            <h3 class="env-title">Great Barrier Reef mass bleaching</h3>
+          </div>
+        </div>
+        <div class="env-card-body">
+          <p class="env-desc">The Great Barrier Reef experienced its fifth mass bleaching event in 2024, followed immediately by a sixth in 2025 — only the second time in history the reef has faced back-to-back bleaching years. The 2024–25 AIMS report recorded the largest annual coral cover decline in 39 years of monitoring, driven almost entirely by climate change-induced ocean heat stress.</p>
+          <div class="env-stats">
+            <div class="env-stat">
+              <div class="env-stat-num">74%</div>
+              <div class="env-stat-label">of surveyed reefs affected in 2024</div>
+            </div>
+            <div class="env-stat">
+              <div class="env-stat-num">48%</div>
+              <div class="env-stat-label">of reefs declined in coral cover</div>
+            </div>
+            <div class="env-stat">
+              <div class="env-stat-num">30%</div>
+              <div class="env-stat-label">coral cover drop in some regions</div>
+            </div>
+            <div class="env-stat">
+              <div class="env-stat-num">400yr</div>
+              <div class="env-stat-label">warmest ocean temps on record</div>
+            </div>
+          </div>
+          <div class="env-destinations">
+            <div class="env-dest-label">Destinations affected</div>
+            <div class="env-dest-tags">
+              <span class="env-dest-tag">Great Barrier Reef — all regions</span>
+              <span class="env-dest-tag">Cairns &amp; surrounds</span>
+              <span class="env-dest-tag">Whitsundays</span>
+              <span class="env-dest-tag">Coral Sea</span>
+            </div>
+          </div>
+          <a href="reef-bleaching.html" target="_blank" class="env-learn-btn">
+            Learn about the impact on tourism
+            <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13"><path d="M8.5 3h4.5v4.5h-1.5V5.56L6.03 11.03 5 10l5.44-5.44H8.5V3z"/><path d="M3 4.5h4V6H4.5v5.5H10v-2.5h1.5V13H3V4.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- HOW TO USE -->
   <section id="how-to-use" class="how-section">

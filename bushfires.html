@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Summer Bushfires — Orange Journeys</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #F7F3EE; color: #1A1510; font-size: 15px; line-height: 1.6; }
+nav { background: #1A1510; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { width: 28px; height: 28px; background: #E8631A; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 16px; color: white; }
+.nav-name { font-size: 14px; font-weight: 500; color: white; }
+.nav-back { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: white; }
+.hero { background: linear-gradient(135deg, #1A0A05 0%, #3A1508 100%); padding: 60px 40px; }
+.hero-inner { max-width: 760px; margin: 0 auto; }
+.hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: #F5874A; margin-bottom: 14px; }
+.hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 44px); color: white; line-height: 1.15; margin-bottom: 16px; font-weight: 400; }
+.hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300; max-width: 580px; }
+.stats-bar { background: #2C1810; padding: 28px 40px; }
+.stats-inner { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.stat { text-align: center; }
+.stat-num { font-family: 'DM Serif Display', serif; font-size: 26px; color: white; line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.3; }
+.main { max-width: 760px; margin: 0 auto; padding: 52px 40px; display: flex; flex-direction: column; gap: 36px; }
+.section-block { background: #FEFCFA; border: 1px solid rgba(26,21,16,0.1); border-radius: 14px; overflow: hidden; }
+.block-header { padding: 20px 28px; border-bottom: 1px solid rgba(26,21,16,0.08); background: #FAFAF8; }
+.block-title { font-size: 13px; font-weight: 600; color: #1A1510; text-transform: uppercase; letter-spacing: 0.07em; }
+.block-body { padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+.block-body p { font-size: 14px; color: #6B5E52; line-height: 1.75; font-weight: 300; }
+.block-body strong { color: #1A1510; font-weight: 500; }
+.highlight-row { background: #FDF0E8; border-radius: 8px; padding: 14px 18px; border-left: 3px solid #E8631A; font-size: 13px; color: #6B5E52; line-height: 1.6; }
+.action-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.action-list li { font-size: 14px; color: #6B5E52; line-height: 1.6; padding-left: 20px; position: relative; font-weight: 300; }
+.action-list li::before { content: '→'; position: absolute; left: 0; color: #E8631A; font-weight: 500; }
+.dest-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.dest-tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: #F7F3EE; border: 1px solid rgba(26,21,16,0.1); color: #6B5E52; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; background: #1A1510; color: white; text-decoration: none; font-size: 13px; font-weight: 500; padding: 12px 22px; border-radius: 8px; transition: background 0.2s; align-self: flex-start; }
+.back-link:hover { background: #E8631A; }
+footer { background: #1A1510; padding: 32px 40px; color: rgba(255,255,255,0.4); font-size: 12px; text-align: center; }
+@media (max-width: 600px) { nav { padding: 0 20px; } .hero { padding: 40px 20px; } .stats-bar { padding: 24px 20px; } .stats-inner { grid-template-columns: repeat(2, 1fr); } .main { padding: 32px 20px; } .block-body { padding: 18px 20px; } .block-header { padding: 16px 20px; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">OJ</div>
+    <span class="nav-name">Orange Journeys</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to Sustainability Hub</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Environmental pressures · 2019 — 2020</div>
+    <h1 class="hero-title">Black Summer bushfires — impact on Australian tourism</h1>
+    <p class="hero-sub">The most catastrophic bushfire season in Australia's recorded history, and a defining moment for the relationship between climate change and responsible tourism.</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">24M</div><div class="stat-label">hectares burned across Australia</div></div>
+    <div class="stat"><div class="stat-num">3B</div><div class="stat-label">animals displaced or killed</div></div>
+    <div class="stat"><div class="stat-num">$2.8B</div><div class="stat-label">wiped from tourism supply chains</div></div>
+    <div class="stat"><div class="stat-num">7,300</div><div class="stat-label">tourism jobs lost nationwide</div></div>
+  </div>
+</div>
+
+<main class="main">
+
+  <div class="section-block">
+    <div class="block-header"><div class="block-title">What happened</div></div>
+    <div class="block-body">
+      <p>The 2019–20 Australian bushfire season — known as Black Summer — began in July 2019 and continued until March 2020, with the most severe period concentrated between December 2019 and January 2020. Fires burned across New South Wales, Victoria, Queensland, South Australia, Western Australia and Tasmania, consuming approximately <strong>24 million hectares</strong> — an area larger than the United Kingdom.</p>
+      <p>The fires were driven by a combination of factors all intensified by climate change: a prolonged and severe drought, record-breaking temperatures exceeding 40°C across large parts of the country, extremely low humidity and strong winds. The season was the worst in recorded history — greater in scale than the Black Saturday 2009 and Ash Wednesday 1983 fires combined.</p>
+      <p><strong>33 people died directly</strong> in the fires, with a further estimated 417 deaths attributable to smoke inhalation. Over 3,000 homes were destroyed. An estimated <strong>3 billion animals</strong> were displaced or killed, making it the worst wildlife disaster in modern history. The fires emitted more than <strong>300 million tonnes of CO₂</strong> — roughly equivalent to Australia's total annual greenhouse gas emissions.</p>
+      <div class="highlight-row">Scientists have directly linked the Black Summer conditions to climate change. The probability of such an extreme fire season was made at least 30% more likely by human-caused climate change, and Australia's fire weather is projected to intensify further as global temperatures rise.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-header"><div class="block-title">Destinations affected</div></div>
+    <div class="block-body">
+      <div class="dest-tags">
+        <span class="dest-tag">Blue Mountains — 79% of World Heritage Area burned</span>
+        <span class="dest-tag">NSW South Coast</span>
+        <span class="dest-tag">Kangaroo Island</span>
+        <span class="dest-tag">Victorian Alps</span>
+        <span class="dest-tag">Snowy Mountains</span>
+        <span class="dest-tag">Hunter Valley</span>
+        <span class="dest-tag">ACT surrounds</span>
+        <span class="dest-tag">Adelaide Hills</span>
+      </div>
+      <p style="margin-top:8px;">The Blue Mountains were among the most severely affected destinations. <strong>79% of the Greater Blue Mountains World Heritage Area burned</strong> — more than three times the area affected in any of the previous 48 fire seasons. Around 143 million native animals were impacted in the region alone. Over 60,000 koalas were killed or harmed nationally. Rainforest gullies in the Blue Mountains that had historically served as fire refuges burned for the first time in recorded history.</p>
+      <p>Kangaroo Island in South Australia lost approximately 48% of its land area — including large parts of Flinders Chase National Park — and an estimated 90% of its koala population.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-header"><div class="block-title">Impact on Australian tourism</div></div>
+    <div class="block-body">
+      <p>The fires struck at the worst possible time for the tourism industry — the peak Christmas and New Year holiday season. A landmark 2024 study by the University of Sydney found the tourism industry suffered <strong>AUD $1.7 billion in direct losses</strong>, which triggered a broader <strong>AUD $2.8 billion hit</strong> across tourism supply chains. Almost <strong>7,300 jobs disappeared nationwide</strong>.</p>
+      <p>International visitor bookings to Australia dropped by an estimated <strong>10–20%</strong> in the immediate aftermath. Bushfire smoke blanketing Sydney was estimated to cost the city <strong>$12–50 million per day</strong> in lost economic activity, as air quality reached hazardous levels and outdoor events and tours were cancelled.</p>
+      <p>Many regional tourism operators — particularly in the Blue Mountains, South Coast and Kangaroo Island — faced complete shutdowns for weeks or months during what should have been their most profitable period. Some did not recover. The study's authors noted: <em>"These results are an illustration of what can be expected in the future not only in Australia, but in other nations that are vulnerable to climate-change driven disasters."</em></p>
+      <div class="highlight-row">Tourism is particularly vulnerable to bushfire events because the industry depends on the natural and cultural landscapes that fires damage — and on public perception of safety, which smoke and images of burning landscapes erodes rapidly regardless of actual visitor risk.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-header"><div class="block-title">Recovery — where things stand</div></div>
+    <div class="block-body">
+      <p>Australia's landscapes show remarkable natural resilience — regrowth was visible in many burned areas within weeks of the fires passing. However, the ecological recovery of heavily burned World Heritage areas such as the Blue Mountains is a long-term process measured in decades, not years — particularly for old-growth forests and species that depend on large hollow-bearing trees.</p>
+      <p>The Australian Government invested over <strong>$200 million</strong> in bushfire recovery for threatened species and habitats. The Greater Blue Mountains World Heritage Area received a specific $3 million allocation for species recovery, pest control and erosion management. Recovery programs for the Wollemi Pine, brush-tailed rock-wallaby, koala, gang-gang cockatoo and Blue Mountains water skink remain active.</p>
+      <p>Most visitor infrastructure in affected destinations has been restored. Walking tracks, lookouts and visitor facilities in the Blue Mountains are open. Tourism to affected regions is actively encouraged by conservation organisations — <strong>visitor spending directly funds local communities and conservation programs</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-header"><div class="block-title">What this means for Orange Journeys</div></div>
+    <div class="block-body">
+      <ul class="action-list">
+        <li>Include the Blue Mountains in itineraries — tourism revenue supports community and conservation recovery directly</li>
+        <li>Brief clients on the recovery story when visiting — it adds depth and genuine connection to the experience</li>
+        <li>Monitor NSW RFS (rfs.nsw.gov.au) fire danger ratings before every Blue Mountains departure November–March</li>
+        <li>Know that national parks close automatically on days of Catastrophic fire danger — include contingency clauses in client documentation</li>
+        <li>Direct per-booking contributions to WIRES, the Blue Mountains Conservation Society or Bush Heritage Australia</li>
+        <li>Ensure all guides hold current first aid certification and carry emergency contact numbers for bush departures</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Back to Sustainability Hub</a>
+
+</main>
+
+<footer>Orange Journeys Sustainability Hub · Sources: University of Sydney (2024), Climate Council, DCCEEW, Blue Mountains Conservation Society, WWF-Australia, EBSCO Research</footer>
+</body>
+</html>
