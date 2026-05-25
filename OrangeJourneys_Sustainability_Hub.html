@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orange Journeys — Sustainability Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #E8631A;
+  --orange-light: #FDF0E8;
+  --orange-mid: #F5874A;
+  --dark: #1A1510;
+  --dark-2: #2C2419;
+  --mid: #6B5E52;
+  --light: #F7F3EE;
+  --white: #FEFCFA;
+  --green: #2D6A4F;
+  --green-light: #EAF3EE;
+  --blue: #1A4A7A;
+  --blue-light: #E8F0F8;
+  --red-light: #F5E8E8;
+  --red: #8B2020;
+  --border: rgba(26,21,16,0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  width: 28px;
+  height: 28px;
+  background: var(--orange);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+
+.nav-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.nav-links a:hover { color: white; }
+
+.nav-badge {
+  font-size: 11px;
+  background: var(--orange);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  background: var(--dark);
+  padding: 80px 40px 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232,99,26,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(232,99,26,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--orange-mid);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--orange-mid);
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.hero-title em {
+  color: var(--orange-mid);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: white;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.stat-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+  align-self: stretch;
+}
+
+/* TRAVELIFE BANNER */
+.travelife-banner {
+  background: var(--orange-light);
+  border-top: 3px solid var(--orange);
+  padding: 20px 40px;
+}
+
+.travelife-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.travelife-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.travelife-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.travelife-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.travelife-text span {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.4;
+}
+
+.travelife-deadline {
+  background: var(--orange);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* MAIN CONTENT */
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.section-heading .count {
+  font-size: 12px;
+  color: var(--mid);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* DESTINATION CARDS */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+.dest-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(26,21,16,0.08);
+}
+
+.dest-card-header {
+  padding: 24px 24px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dest-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.dest-icon.gbr { background: #E6F1FB; }
+.dest-icon.uluru { background: #FAECE7; }
+.dest-icon.bm { background: #EAF3DE; }
+.dest-icon.syd { background: #F0EBF8; }
+
+.dest-state {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--light);
+  color: var(--mid);
+  letter-spacing: 0.03em;
+}
+
+.dest-card-body {
+  padding: 16px 24px 20px;
+}
+
+.dest-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.dest-location {
+  font-size: 12px;
+  color: var(--mid);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.dest-tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--mid);
+  background: var(--light);
+}
+
+.dest-tag.alert {
+  background: var(--red-light);
+  color: var(--red);
+  border-color: rgba(139,32,32,0.15);
+}
+
+.dest-tag.positive {
+  background: var(--green-light);
+  color: var(--green);
+  border-color: rgba(45,106,79,0.15);
+}
+
+.dest-tag.info {
+  background: var(--blue-light);
+  color: var(--blue);
+  border-color: rgba(26,74,122,0.15);
+}
+
+.dest-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 16px;
+}
+
+.dest-card-footer {
+  padding: 0 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dest-updated {
+  font-size: 11px;
+  color: var(--mid);
+}
+
+.dest-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--dark);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.dest-download:hover { background: var(--dark-2); }
+
+.dest-download svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0.7;
+}
+
+/* CRITERIA SECTION */
+.criteria-section {
+  margin-bottom: 64px;
+}
+
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.criteria-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.criteria-theme {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+.criteria-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.criteria-codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.criteria-code {
+  font-size: 10px;
+  font-family: monospace;
+  background: var(--light);
+  color: var(--mid);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* HOW TO USE */
+.how-section {
+  margin-bottom: 64px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background: var(--border);
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+}
+
+.step-num {
+  width: 38px;
+  height: 38px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: var(--orange);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-content { flex: 1; padding-top: 6px; }
+
+.step-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* FULL PACK */
+.pack-section {
+  background: var(--dark);
+  border-radius: 16px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+.pack-text { flex: 1; min-width: 240px; }
+
+.pack-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-mid);
+  margin-bottom: 8px;
+}
+
+.pack-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.pack-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.pack-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 10px;
+  transition: background 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.pack-download:hover { background: var(--orange-mid); }
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  padding: 40px;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.footer-note {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dest-card { animation: fadeUp 0.5s ease both; }
+.dest-card:nth-child(1) { animation-delay: 0.05s; }
+.dest-card:nth-child(2) { animation-delay: 0.1s; }
+.dest-card:nth-child(3) { animation-delay: 0.15s; }
+.dest-card:nth-child(4) { animation-delay: 0.2s; }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 0 20px; }
+  .hero { padding: 50px 20px 60px; }
+  .main { padding: 40px 20px; }
+  .destinations-grid { grid-template-columns: 1fr; }
+  .travelife-banner { padding: 16px 20px; }
+  .pack-section { padding: 24px 20px; }
+  footer { padding: 32px 20px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">OJ</div>
+    <span class="nav-name">Orange Journeys</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#criteria">Travelife Criteria</a></li>
+    <li><a href="#how-to-use">How to use</a></li>
+  </ul>
+  <span class="nav-badge">Travelife 2026</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Sustainability Hub</div>
+    <h1 class="hero-title">Our destinations,<br><em>responsibly documented.</em></h1>
+    <p class="hero-sub">Internal reference files for the Orange Journeys sales and operations teams. Each destination sheet covers sustainability challenges, cultural considerations, preferred operators and visitor codes of conduct.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Destinations</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">Travelife criteria covered</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">May 2026</span>
+        <span class="stat-label">Last updated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVELIFE BANNER -->
+<div class="travelife-banner">
+  <div class="travelife-inner">
+    <div class="travelife-icon">🌿</div>
+    <div class="travelife-text">
+      <strong>Travelife Certified — in progress</strong>
+      <span>Orange Journeys is working towards Travelife Certified status. These destination files directly support our evidence base for Sections 7, 8, 9 and 10 of the standard. First report submission deadline: 12 August 2026.</span>
+    </div>
+    <span class="travelife-deadline">Deadline: 12 Aug 2026</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- DESTINATIONS -->
+  <section id="destinations">
+    <div class="section-heading">
+      <h2>Destination files</h2>
+      <span class="count">4 destinations · Updated May 2026</span>
+    </div>
+
+    <div class="destinations-grid">
+
+      <!-- GBR -->
+      <div class="dest-card">
+        <div class="dest-card-header">
+          <div class="dest-icon gbr">🐠</div>
+          <span class="dest-state">Queensland</span>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-name">Great Barrier Reef</div>
+          <div class="dest-location">📍 Cairns &amp; surrounds, QLD</div>
+          <div class="dest-tags">
+            <span class="dest-tag info">UNESCO World Heritage</span>
+            <span class="dest-tag alert">Reef health: critical</span>
+            <span class="dest-tag positive">HSTO operators available</span>
+            <span class="dest-tag">Marine Park zoning active</span>
+          </div>
+        </div>
+        <hr class="dest-divider">
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_GBR_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- ULURU -->
+      <div class="dest-card">
+        <div class="dest-card-header">
+          <div class="dest-icon uluru">🪨</div>
+          <span class="dest-state">Northern Territory</span>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-name">Uluṟu–Kata Tjuṯa</div>
+          <div class="dest-location">📍 Red Centre, NT</div>
+          <div class="dest-tags">
+            <span class="dest-tag info">UNESCO Dual Heritage</span>
+            <span class="dest-tag alert">Climbing: permanently banned</span>
+            <span class="dest-tag positive">Anangu-led operators</span>
+            <span class="dest-tag">40th handback anniversary 2025</span>
+          </div>
+        </div>
+        <hr class="dest-divider">
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_Uluru_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- BLUE MOUNTAINS -->
+      <div class="dest-card">
+        <div class="dest-card-header">
+          <div class="dest-icon bm">🌿</div>
+          <span class="dest-state">New South Wales</span>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-name">Blue Mountains</div>
+          <div class="dest-location">📍 Greater Sydney Region, NSW</div>
+          <div class="dest-tags">
+            <span class="dest-tag info">UNESCO World Heritage</span>
+            <span class="dest-tag positive">ECO Destination certified</span>
+            <span class="dest-tag alert">Bushfire recovery ongoing</span>
+            <span class="dest-tag">GSTC recognised</span>
+          </div>
+        </div>
+        <hr class="dest-divider">
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_BlueMountains_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- SYDNEY -->
+      <div class="dest-card">
+        <div class="dest-card-header">
+          <div class="dest-icon syd">🌉</div>
+          <span class="dest-state">New South Wales</span>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-name">Sydney</div>
+          <div class="dest-location">📍 Gadigal Country, NSW</div>
+          <div class="dest-tags">
+            <span class="dest-tag positive">Excellent public transport</span>
+            <span class="dest-tag info">Harbour &amp; cycling focus</span>
+            <span class="dest-tag positive">Aboriginal-led experiences</span>
+            <span class="dest-tag">Net Zero by 2035 target</span>
+          </div>
+        </div>
+        <hr class="dest-divider">
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_Sydney_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULL PACK -->
+  <div class="pack-section">
+    <div class="pack-text">
+      <div class="pack-label">Complete collection</div>
+      <div class="pack-title">All destination files — single PDF</div>
+      <div class="pack-desc">All four destination sheets compiled into one 16-page document. Useful for sharing with management or including as an evidence attachment in the Travelife report submission.</div>
+    </div>
+    <a href="Orange_Journeys_Destination_Files_2026.pdf" class="pack-download" download>
+      ↓ Download full pack
+    </a>
+  </div>
+
+  <!-- TRAVELIFE CRITERIA -->
+  <section id="criteria" class="criteria-section">
+    <div class="section-heading">
+      <h2>Travelife criteria covered</h2>
+      <span class="count">20+ criteria across 6 sections</span>
+    </div>
+    <div class="criteria-grid">
+      <div class="criteria-card">
+        <div class="criteria-theme">Section 9 — Destinations</div>
+        <div class="criteria-title">Destination files, sustainable selection &amp; biodiversity support</div>
+        <div class="criteria-codes">
+          <span class="criteria-code">9.1</span>
+          <span class="criteria-code">9.2</span>
+          <span class="criteria-code">9.3</span>
+          <span class="criteria-code">9.7</span>
+          <span class="criteria-code">9.8</span>
+          <span class="criteria-code">9.9</span>
+          <span class="criteria-code">9.10</span>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-theme">Section 10 — Customer Communication</div>
+        <div class="criteria-title">Destination interpretation, dos &amp; don'ts, activity conduct</div>
+        <div class="criteria-codes">
+          <span class="criteria-code">10.16</span>
+          <span class="criteria-code">10.17</span>
+          <span class="criteria-code">10.21</span>
+          <span class="criteria-code">10.24</span>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-theme">Section 7 — Excursions</div>
+        <div class="criteria-title">Sensitive excursion guidelines, wildlife &amp; certified operators</div>
+        <div class="criteria-codes">
+          <span class="criteria-code">7.4</span>
+          <span class="criteria-code">7.6</span>
+          <span class="criteria-code">7.9</span>
+          <span class="criteria-code">7.11</span>
+          <span class="criteria-code">7.12</span>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-theme">Section 8 — Tour Leaders &amp; Guides</div>
+        <div class="criteria-title">Destination knowledge, local preference &amp; customer briefings</div>
+        <div class="criteria-codes">
+          <span class="criteria-code">8.1</span>
+          <span class="criteria-code">8.8</span>
+          <span class="criteria-code">8.9</span>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-theme">Section 1 — Sustainability Management</div>
+        <div class="criteria-title">Staff communication, records &amp; conservation donations</div>
+        <div class="criteria-codes">
+          <span class="criteria-code">1.10</span>
+          <span class="criteria-code">1.17</span>
+          <span class="criteria-code">1.20</span>
+          <span class="criteria-code">1.21</span>
+        </div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-theme">Section 5 — Transport</div>
+        <div class="criteria-title">Boating operator standards &amp; sustainable transport options</div>
+        <div class="criteria-codes">
+          <span class="criteria-code">5.4</span>
+          <span class="criteria-code">5.6</span>
+          <span class="criteria-code">10.9</span>
+          <span class="criteria-code">10.10</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section id="how-to-use" class="how-section">
+    <div class="section-heading">
+      <h2>How to use these files</h2>
+      <span class="count">For the sales &amp; operations team</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Before selling a destination</div>
+          <div class="step-desc">Read the relevant destination file before speaking with clients. Pay particular attention to the visitor code of conduct, cultural considerations and any active environmental alerts (e.g. reef bleaching, bushfire closures).</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">At time of booking confirmation</div>
+          <div class="step-desc">Share the visitor code of conduct section with clients in their booking confirmation documentation. For Uluru, the photography rules and climbing ban must be communicated without exception.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">When selecting operators</div>
+          <div class="step-desc">Use the preferred operators section as a starting point. Prioritise Indigenous-led and certified operators (HSTO for GBR, ECO-certified for Blue Mountains). Always verify certifications before contracting new suppliers.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Guide briefings</div>
+          <div class="step-desc">Tour leaders and local guides should be briefed from these files before each departure. The cultural protocols and dos &amp; don'ts sections are specifically designed to be communicated verbally to clients at destination arrival.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Annual review</div>
+          <div class="step-desc">Each file should be reviewed and updated at minimum every 12 months, or immediately following any significant destination event (reef bleaching, park closure, new Indigenous tourism development). Update the "Last updated" date on each sheet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Orange Journeys</div>
+      <div>Sustainability Hub · Internal use only</div>
+      <div class="footer-note" style="margin-top:6px;">Working towards Travelife Certified status · First report submission: 12 August 2026</div>
+    </div>
+    <div style="text-align:right;">
+      <div>Prepared by the Orange Journeys sustainability team</div>
+      <div class="footer-note">Files last updated: May 2026 · Review cycle: annual</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
