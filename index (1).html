@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orange Journeys — Sustainability Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #E8631A;
+  --orange-light: #FDF0E8;
+  --orange-mid: #F5874A;
+  --dark: #1A1510;
+  --dark-2: #2C2419;
+  --mid: #6B5E52;
+  --light: #F7F3EE;
+  --white: #FEFCFA;
+  --green: #2D6A4F;
+  --green-light: #EAF3EE;
+  --blue: #1A4A7A;
+  --blue-light: #E8F0F8;
+  --red-light: #F5E8E8;
+  --red: #8B2020;
+  --border: rgba(26,21,16,0.1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--light); color: var(--dark); font-size: 15px; line-height: 1.6; }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { width: 28px; height: 28px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 16px; color: white; }
+.nav-name { font-size: 14px; font-weight: 500; color: white; letter-spacing: 0.01em; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 400; transition: color 0.2s; letter-spacing: 0.02em; }
+.nav-links a:hover { color: white; }
+
+/* HERO */
+.hero { background: var(--dark); padding: 80px 40px 90px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,99,26,0.15) 0%, transparent 70%); pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -80px; left: 20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,99,26,0.08) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+.hero-eyebrow { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--orange-mid); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--orange-mid); }
+.hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 56px); color: white; line-height: 1.1; margin-bottom: 24px; font-weight: 400; }
+.hero-title em { color: var(--orange-mid); font-style: italic; }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
+.hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; gap: 4px; }
+.stat-num { font-family: 'DM Serif Display', serif; font-size: 28px; color: white; line-height: 1; }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 400; letter-spacing: 0.03em; }
+.stat-divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
+
+/* MAIN */
+.main { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
+.section-heading { display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px; }
+.section-heading h2 { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: var(--dark); }
+.section-heading .count { font-size: 12px; color: var(--mid); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* DESTINATION CARDS */
+.destinations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 64px; }
+
+.dest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+.dest-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(26,21,16,0.12); }
+
+.dest-card-image { position: relative; height: 200px; overflow: hidden; }
+.dest-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+.dest-card:hover .dest-card-image img { transform: scale(1.05); }
+
+.dest-image-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%); }
+
+.dest-image-badge { position: absolute; top: 14px; right: 14px; font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.92); color: var(--dark); letter-spacing: 0.02em; backdrop-filter: blur(4px); }
+
+.dest-image-title { position: absolute; bottom: 16px; left: 18px; right: 18px; }
+.dest-image-title h3 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: white; line-height: 1.15; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
+.dest-image-title p { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+.dest-card-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+.dest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.dest-tag { font-size: 11px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border); color: var(--mid); background: var(--light); }
+.dest-tag.alert { background: var(--red-light); color: var(--red); border-color: rgba(139,32,32,0.15); }
+.dest-tag.positive { background: var(--green-light); color: var(--green); border-color: rgba(45,106,79,0.15); }
+.dest-tag.info { background: var(--blue-light); color: var(--blue); border-color: rgba(26,74,122,0.15); }
+
+.dest-card-footer { padding: 0 20px 20px; display: flex; align-items: center; justify-content: space-between; }
+.dest-updated { font-size: 11px; color: var(--mid); }
+.dest-download { display: inline-flex; align-items: center; gap: 7px; background: var(--dark); color: white; text-decoration: none; font-size: 12px; font-weight: 500; padding: 9px 18px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.02em; }
+.dest-download:hover { background: var(--orange); }
+.dest-download svg { width: 13px; height: 13px; opacity: 0.8; }
+
+/* FULL PACK */
+.pack-section { background: var(--dark); border-radius: 16px; padding: 36px 40px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-bottom: 64px; }
+.pack-text { flex: 1; min-width: 240px; }
+.pack-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange-mid); margin-bottom: 8px; }
+.pack-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: white; font-weight: 400; margin-bottom: 8px; }
+.pack-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
+.pack-download { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: white; text-decoration: none; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 10px; transition: background 0.2s; white-space: nowrap; }
+.pack-download:hover { background: var(--orange-mid); }
+
+/* HOW TO USE */
+.how-section { margin-bottom: 64px; }
+.steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+.steps::before { content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px; background: var(--border); }
+.step { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; position: relative; }
+.step-num { width: 38px; height: 38px; background: var(--white); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--orange); flex-shrink: 0; position: relative; z-index: 1; }
+.step-content { flex: 1; padding-top: 6px; }
+.step-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+.step-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* FOOTER */
+footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.8; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+.footer-brand { font-family: 'DM Serif Display', serif; font-size: 18px; color: white; font-weight: 400; margin-bottom: 4px; }
+.footer-note { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.dest-card { animation: fadeUp 0.5s ease both; }
+.dest-card:nth-child(1) { animation-delay: 0.05s; }
+.dest-card:nth-child(2) { animation-delay: 0.1s; }
+.dest-card:nth-child(3) { animation-delay: 0.15s; }
+.dest-card:nth-child(4) { animation-delay: 0.2s; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  .hero { padding: 50px 20px 60px; }
+  .main { padding: 40px 20px; }
+  .destinations-grid { grid-template-columns: 1fr; }
+  .pack-section { padding: 24px 20px; }
+  footer { padding: 32px 20px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">OJ</div>
+    <span class="nav-name">Orange Journeys</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#how-to-use">How to use</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Sustainability Hub</div>
+    <h1 class="hero-title">Our destinations,<br><em>responsibly documented.</em></h1>
+    <p class="hero-sub">Reference files for the Orange Journeys team. Each destination sheet covers sustainability challenges, cultural considerations, preferred operators and visitor codes of conduct.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Destinations</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">May 2026</span>
+        <span class="stat-label">Last updated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <section id="destinations">
+    <div class="section-heading">
+      <h2>Destination files</h2>
+      <span class="count">4 destinations · Updated May 2026</span>
+    </div>
+
+    <div class="destinations-grid">
+
+      <!-- GBR -->
+      <div class="dest-card">
+        <div class="dest-card-image">
+          <img src="gbr.jpg" alt="Great Barrier Reef underwater coral" loading="lazy">
+          <div class="dest-image-overlay"></div>
+          <span class="dest-image-badge">Queensland</span>
+          <div class="dest-image-title">
+            <h3>Great Barrier Reef</h3>
+            <p>📍 Cairns &amp; surrounds, QLD</p>
+          </div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-tags">
+            <span class="dest-tag info">UNESCO World Heritage</span>
+            <span class="dest-tag alert">Reef health: critical</span>
+            <span class="dest-tag positive">HSTO operators available</span>
+          </div>
+        </div>
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_GBR_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- ULURU -->
+      <div class="dest-card">
+        <div class="dest-card-image">
+          <img src="uluru.jpg" alt="Uluru at sunset in the red centre of Australia" loading="lazy">
+          <div class="dest-image-overlay"></div>
+          <span class="dest-image-badge">Northern Territory</span>
+          <div class="dest-image-title">
+            <h3>Uluṟu–Kata Tjuṯa</h3>
+            <p>📍 Red Centre, NT</p>
+          </div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-tags">
+            <span class="dest-tag info">UNESCO Dual Heritage</span>
+            <span class="dest-tag alert">Climbing: permanently banned</span>
+            <span class="dest-tag positive">Anangu-led operators</span>
+          </div>
+        </div>
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_Uluru_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- BLUE MOUNTAINS -->
+      <div class="dest-card">
+        <div class="dest-card-image">
+          <img src="bluemountains.jpg" alt="Blue Mountains Three Sisters rock formation New South Wales" loading="lazy">
+          <div class="dest-image-overlay"></div>
+          <span class="dest-image-badge">New South Wales</span>
+          <div class="dest-image-title">
+            <h3>Blue Mountains</h3>
+            <p>📍 Greater Sydney Region, NSW</p>
+          </div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-tags">
+            <span class="dest-tag info">UNESCO World Heritage</span>
+            <span class="dest-tag positive">ECO Destination certified</span>
+            <span class="dest-tag alert">Bushfire recovery ongoing</span>
+          </div>
+        </div>
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_BlueMountains_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- SYDNEY -->
+      <div class="dest-card">
+        <div class="dest-card-image">
+          <img src="sydney.jpg" alt="Sydney Opera House and Harbour Bridge from above" loading="lazy">
+          <div class="dest-image-overlay"></div>
+          <span class="dest-image-badge">New South Wales</span>
+          <div class="dest-image-title">
+            <h3>Sydney</h3>
+            <p>📍 Gadigal Country, NSW</p>
+          </div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-tags">
+            <span class="dest-tag positive">Excellent public transport</span>
+            <span class="dest-tag info">Harbour &amp; cycling focus</span>
+            <span class="dest-tag positive">Aboriginal-led experiences</span>
+          </div>
+        </div>
+        <div class="dest-card-footer">
+          <span class="dest-updated">Updated May 2026</span>
+          <a href="Orange_Journeys_Destination_Sydney_2026.pdf" class="dest-download" download>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULL PACK -->
+  <div class="pack-section">
+    <div class="pack-text">
+      <div class="pack-label">Complete collection</div>
+      <div class="pack-title">All destination files — single PDF</div>
+      <div class="pack-desc">All four destination sheets compiled into one 16-page document. Useful for sharing with management or including as an evidence attachment in sustainability report submissions.</div>
+    </div>
+    <a href="Orange_Journeys_Destination_Files_2026.pdf" class="pack-download" download>↓ Download full pack</a>
+  </div>
+
+  <!-- HOW TO USE -->
+  <section id="how-to-use" class="how-section">
+    <div class="section-heading">
+      <h2>How to use these files</h2>
+      <span class="count">For the sales &amp; operations team</span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Before selling a destination</div>
+          <div class="step-desc">Read the relevant destination file before speaking with clients. Pay particular attention to the visitor code of conduct, cultural considerations and any active environmental alerts such as reef bleaching or bushfire closures.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">At time of booking confirmation</div>
+          <div class="step-desc">Share the visitor code of conduct section with clients in their booking confirmation documentation. For Uluru, the photography rules and climbing ban must be communicated without exception.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">When selecting operators</div>
+          <div class="step-desc">Use the preferred operators section as a starting point. Prioritise Indigenous-led and certified operators. Always verify certifications before contracting new suppliers.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Guide briefings</div>
+          <div class="step-desc">Tour leaders and local guides should be briefed from these files before each departure. The cultural protocols and dos &amp; don'ts sections are specifically designed to be communicated verbally to clients at destination arrival.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Annual review</div>
+          <div class="step-desc">Each file should be reviewed and updated at minimum every 12 months, or immediately following any significant destination event. Update the "Last updated" date on each sheet when changes are made.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Orange Journeys</div>
+      <div>Sustainability Hub</div>
+    </div>
+    <div style="text-align:right;">
+      <div>Prepared by the Orange Journeys sustainability team</div>
+      <div class="footer-note">Files last updated: May 2026 · Review cycle: annual</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
