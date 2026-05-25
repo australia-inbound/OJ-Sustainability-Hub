@@ -87,9 +87,12 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 
 
 .dest-card-footer { padding: 0 20px 20px; display: flex; align-items: center; justify-content: space-between; }
 .dest-updated { font-size: 11px; color: var(--mid); }
-.dest-download { display: inline-flex; align-items: center; gap: 7px; background: var(--dark); color: white; text-decoration: none; font-size: 12px; font-weight: 500; padding: 9px 18px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.02em; }
+.dest-buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.dest-download { display: inline-flex; align-items: center; gap: 7px; background: var(--dark); color: white; text-decoration: none; font-size: 12px; font-weight: 500; padding: 9px 14px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.02em; }
 .dest-download:hover { background: var(--orange); }
-.dest-download svg { width: 13px; height: 13px; opacity: 0.8; }
+.dest-download.secondary { background: var(--light); color: var(--dark); border: 1px solid var(--border); }
+.dest-download.secondary:hover { background: var(--orange); color: white; border-color: var(--orange); }
+.dest-download svg { width: 13px; height: 13px; opacity: 0.8; flex-shrink: 0; }
 
 /* FULL PACK */
 .pack-section { background: var(--dark); border-radius: 16px; padding: 36px 40px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-bottom: 64px; }
@@ -233,10 +236,16 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
         </div>
         <div class="dest-card-footer">
           <span class="dest-updated">Updated May 2026</span>
-          <a href="Orange_Journeys_Destination_GBR_2026.pdf" class="dest-download" download>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-            Download PDF
-          </a>
+          <div class="dest-buttons">
+            <a href="Orange_Journeys_Destination_GBR_2026.pdf" class="dest-download" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Destination file
+            </a>
+            <a href="GBR_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Code of conduct
+            </a>
+          </div>
         </div>
       </div>
 
@@ -260,10 +269,16 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
         </div>
         <div class="dest-card-footer">
           <span class="dest-updated">Updated May 2026</span>
-          <a href="Orange_Journeys_Destination_Uluru_2026.pdf" class="dest-download" download>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-            Download PDF
-          </a>
+          <div class="dest-buttons">
+            <a href="Orange_Journeys_Destination_Uluru_2026.pdf" class="dest-download" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Destination file
+            </a>
+            <a href="Uluru_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Code of conduct
+            </a>
+          </div>
         </div>
       </div>
 
@@ -287,10 +302,16 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
         </div>
         <div class="dest-card-footer">
           <span class="dest-updated">Updated May 2026</span>
-          <a href="Orange_Journeys_Destination_BlueMountains_2026.pdf" class="dest-download" download>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-            Download PDF
-          </a>
+          <div class="dest-buttons">
+            <a href="Orange_Journeys_Destination_BlueMountains_2026.pdf" class="dest-download" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Destination file
+            </a>
+            <a href="BlueMountains_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Code of conduct
+            </a>
+          </div>
         </div>
       </div>
 
@@ -314,10 +335,16 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
         </div>
         <div class="dest-card-footer">
           <span class="dest-updated">Updated May 2026</span>
-          <a href="Orange_Journeys_Destination_Sydney_2026.pdf" class="dest-download" download>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-            Download PDF
-          </a>
+          <div class="dest-buttons">
+            <a href="Orange_Journeys_Destination_Sydney_2026.pdf" class="dest-download" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Destination file
+            </a>
+            <a href="Sydney_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
+              Code of conduct
+            </a>
+          </div>
         </div>
       </div>
 
