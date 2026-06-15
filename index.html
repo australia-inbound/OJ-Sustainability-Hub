@@ -90,6 +90,8 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 
 .dest-buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .dest-download { display: inline-flex; align-items: center; gap: 7px; background: var(--dark); color: white; text-decoration: none; font-size: 12px; font-weight: 500; padding: 9px 14px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.02em; }
 .dest-download:hover { background: var(--orange); }
+.dest-download.view { background: var(--light); color: var(--dark); border: 1px solid var(--border); }
+.dest-download.view:hover { background: var(--orange); color: white; border-color: var(--orange); }
 .dest-download.secondary { background: var(--light); color: var(--dark); border: 1px solid var(--border); }
 .dest-download.secondary:hover { background: var(--orange); color: white; border-color: var(--orange); }
 .dest-download svg { width: 13px; height: 13px; opacity: 0.8; flex-shrink: 0; }
@@ -194,7 +196,7 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
     <p class="hero-sub">The best travel experiences come from knowing a destination deeply — its people, its pressures and its stories. Australia is one of the most biodiverse, culturally rich and environmentally complex places on Earth. These files are our team's guide to understanding it, and sharing it, with the care it deserves.</p>
     <div class="hero-stats">
       <div class="stat">
-        <span class="stat-num">5</span>
+        <span class="stat-num">4</span>
         <span class="stat-label">Destinations</span>
       </div>
       <div class="stat-divider"></div>
@@ -211,7 +213,7 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
   <section id="destinations">
     <div class="section-heading">
       <h2>Destination files</h2>
-      <span class="count">5 destinations · Updated May 2026</span>
+      <span class="count">4 destinations · Updated June 2026</span>
     </div>
 
     <div class="destinations-grid">
@@ -235,7 +237,7 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
           </div>
         </div>
         <div class="dest-card-footer">
-          <span class="dest-updated">Updated May 2026</span>
+          <span class="dest-updated">Updated June 2026</span>
           <div class="dest-buttons">
             <a href="Orange_Journeys_Destination_GBR_2026.pdf" class="dest-download" download>
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
@@ -268,46 +270,13 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
           </div>
         </div>
         <div class="dest-card-footer">
-          <span class="dest-updated">Updated May 2026</span>
+          <span class="dest-updated">Updated June 2026</span>
           <div class="dest-buttons">
             <a href="Orange_Journeys_Destination_Uluru_2026.pdf" class="dest-download" download>
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
               Destination file
             </a>
             <a href="Uluru_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Code of conduct
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- BLUE MOUNTAINS -->
-      <div class="dest-card">
-        <div class="dest-card-image">
-          <img src="bluemountains.jpg" alt="Blue Mountains Three Sisters rock formation New South Wales" loading="lazy">
-          <div class="dest-image-overlay"></div>
-          <span class="dest-image-badge">New South Wales</span>
-          <div class="dest-image-title">
-            <h3>Blue Mountains</h3>
-            <p>📍 Greater Sydney Region, NSW</p>
-          </div>
-        </div>
-        <div class="dest-card-body">
-          <div class="dest-tags">
-            <span class="dest-tag info">UNESCO World Heritage</span>
-            <span class="dest-tag positive">ECO Destination certified</span>
-            <span class="dest-tag alert">Bushfire recovery ongoing</span>
-          </div>
-        </div>
-        <div class="dest-card-footer">
-          <span class="dest-updated">Updated May 2026</span>
-          <div class="dest-buttons">
-            <a href="Orange_Journeys_Destination_BlueMountains_2026.pdf" class="dest-download" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Destination file
-            </a>
-            <a href="BlueMountains_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
               Code of conduct
             </a>
@@ -334,7 +303,7 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
           </div>
         </div>
         <div class="dest-card-footer">
-          <span class="dest-updated">Updated May 2026</span>
+          <span class="dest-updated">Updated June 2026</span>
           <div class="dest-buttons">
             <a href="Orange_Journeys_Destination_Sydney_2026.pdf" class="dest-download" download>
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
@@ -367,15 +336,23 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
           </div>
         </div>
         <div class="dest-card-footer">
-          <span class="dest-updated">Updated May 2026</span>
+          <span class="dest-updated">Updated June 2026</span>
           <div class="dest-buttons">
-            <a href="Orange_Journeys_Destination_KangarooIsland_2026.pdf" class="dest-download" download>
+            <a href="kangarooisland_sheet.html" target="_blank" class="dest-download view">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 5a3 3 0 100 6 3 3 0 000-6zm0 5a2 2 0 110-4 2 2 0 010 4z"/><path d="M1.5 8S4 3 8 3s6.5 5 6.5 5S12 13 8 13 1.5 8 1.5 8z"/></svg>
+              View file
+            </a>
+            <a href="Orange_Journeys_Destination_KangarooIsland_2026.pdf" class="dest-download secondary" download>
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Destination file
+              Download
+            </a>
+            <a href="kangarooisland_conduct.html" target="_blank" class="dest-download view">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 5a3 3 0 100 6 3 3 0 000-6zm0 5a2 2 0 110-4 2 2 0 010 4z"/><path d="M1.5 8S4 3 8 3s6.5 5 6.5 5S12 13 8 13 1.5 8 1.5 8z"/></svg>
+              View conduct
             </a>
             <a href="KangarooIsland_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Code of conduct
+              Download
             </a>
           </div>
         </div>
