@@ -1,213 +1,325 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kangaroo Island — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; font-size: 13px; line-height: 1.5; }
-.sheet-wrap { max-width: 720px; margin: 0 auto; padding: 24px; }
-.sheet-header { background: #EAF3EE; border: 0.5px solid #9FD4B5; border-radius: 10px; padding: 20px; margin-bottom: 14px; }
-.dest-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #0F6E56; margin-bottom: 4px; }
-.dest-title { font-size: 20px; font-weight: 600; color: #0A4A38; margin-bottom: 8px; }
-.meta-row { display: flex; flex-wrap: wrap; gap: 6px; }
-.meta-pill { font-size: 11px; background: #fff; border: 0.5px solid #ccc; border-radius: 999px; padding: 2px 9px; color: #555; }
-.status-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
-.status-card { background: #fff; border: 0.5px solid #ddd; border-radius: 8px; padding: 10px 12px; }
-.status-label { font-size: 10px; color: #777; margin-bottom: 3px; }
-.status-value { font-size: 12px; font-weight: 600; color: #1a1a1a; line-height: 1.3; }
-.status-value.red { color: #A32D2D; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: #F7F3EE; color: #1A1510; font-size: 14px; line-height: 1.6; }
+
+/* NAV */
+nav { background: #1A1510; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { width: 26px; height: 26px; background: #E8631A; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 14px; color: white; }
+.nav-name { font-size: 13px; font-weight: 500; color: white; }
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-back { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: white; }
+.nav-logo-img { height: 22px; width: auto; opacity: 0.85; }
+
+/* HERO */
+.hero { background: #1A1510; padding: 52px 40px 48px; }
+.hero-inner { max-width: 860px; margin: 0 auto; }
+.hero-eyebrow { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #E8631A; margin-bottom: 12px; }
+.hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 42px); color: white; line-height: 1.15; margin-bottom: 14px; font-weight: 400; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-pill { font-size: 11px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 3px 11px; color: rgba(255,255,255,0.65); }
+.accent-bar { height: 3px; background: #F09C14; }
+
+/* STATUS BAR */
+.status-wrap { background: white; border-bottom: 1px solid #E8E2DA; }
+.status-inner { max-width: 860px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); }
+.status-card { padding: 14px 0 14px 20px; border-right: 1px solid #E8E2DA; }
+.status-card:first-child { padding-left: 0; }
+.status-card:last-child { border-right: none; }
+.status-label { font-size: 10px; color: #9A8A7A; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+.status-value { font-size: 13px; font-weight: 600; color: #1A1510; }
 .status-value.green { color: #0F6E56; }
 .status-value.amber { color: #BA7517; }
-.section { background: #fff; border: 0.5px solid #ddd; border-radius: 10px; margin-bottom: 10px; overflow: hidden; page-break-inside: avoid; }
-.section-header { padding: 10px 16px; border-bottom: 0.5px solid #eee; display: flex; align-items: center; gap: 10px; background: #fafafa; }
-.section-icon { width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; font-weight: 700; }
-.icon-green { background: #EAF3EE; color: #0A4A38; }
-.icon-teal { background: #E1F5EE; color: #0F6E56; }
-.icon-amber { background: #FAEEDA; color: #854F0B; }
-.icon-red { background: #FCEBEB; color: #A32D2D; }
-.icon-blue { background: #E6F1FB; color: #042C53; }
-.icon-slate { background: #F1EFE8; color: #444441; }
-.icon-purple { background: #F0EBF8; color: #5B2D8E; }
-.icon-access { background: #E8F4FD; color: #0D6E8C; }
-.section-title { font-size: 13px; font-weight: 600; color: #1a1a1a; }
-.section-body { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
-.info-row { display: grid; grid-template-columns: 150px 1fr; gap: 8px; font-size: 12px; }
-.info-label { color: #777; font-size: 11px; padding-top: 1px; }
-.info-value { color: #1a1a1a; line-height: 1.5; }
-.divider { border: none; border-top: 0.5px solid #eee; }
-.alert-box { border-radius: 7px; padding: 10px 12px; font-size: 12px; line-height: 1.5; }
-.alert-red { background: #FCEBEB; color: #A32D2D; border: 0.5px solid #F7C1C1; }
-.alert-amber { background: #FAEEDA; color: #854F0B; border: 0.5px solid #FAC775; }
-.alert-green { background: #EAF3EE; color: #0A4A38; border: 0.5px solid #9FD4B5; }
-.alert-blue { background: #E6F1FB; color: #042C53; border: 0.5px solid #B5D4F4; }
-.alert-teal { background: #E1F5EE; color: #0F6E56; border: 0.5px solid #9FE1CB; }
-.species-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.species-card { border: 0.5px solid #ddd; border-radius: 7px; padding: 7px 9px; font-size: 11px; }
-.species-name { font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
-.species-status { font-size: 10px; }
-.species-status.endangered { color: #A32D2D; }
-.species-status.vulnerable { color: #BA7517; }
-.species-status.protected { color: #0F6E56; }
-.species-status.endemic { color: #5B2D8E; }
-.operator-list { display: flex; flex-direction: column; gap: 6px; }
-.operator-item { display: flex; align-items: flex-start; gap: 8px; padding: 7px 9px; border: 0.5px solid #ddd; border-radius: 7px; font-size: 11px; }
-.op-badge { font-size: 9px; font-weight: 600; padding: 2px 6px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
-.op-indigenous { background: #E1F5EE; color: #0F6E56; }
-.op-eco { background: #EAF3EE; color: #0A4A38; }
-.op-local { background: #FAEEDA; color: #854F0B; }
-.op-text { color: #1a1a1a; line-height: 1.4; }
-.op-sub { font-size: 10px; color: #777; margin-top: 2px; }
-.page-logo-wrap { position: fixed; top: 8px; right: 16px; z-index: 999; }
-.page-logo-wrap img { height: 28px; width: auto; display: block; }
-.footer-note { font-size: 10px; color: #888; line-height: 1.6; margin-top: 8px; }
+.status-value.red { color: #A32D2D; }
+
+/* MAIN LAYOUT */
+.main { max-width: 860px; margin: 0 auto; padding: 36px 40px 60px; }
+
+/* SECTION INDEX */
+.section-index { margin-bottom: 36px; }
+.index-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9A8A7A; margin-bottom: 14px; }
+.index-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.index-card { background: white; border: 1px solid #E8E2DA; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: #1A1510; font-size: 13px; font-weight: 500; line-height: 1.35; transition: all 0.2s; display: flex; align-items: center; gap: 10px; }
+.index-card:hover { border-color: #E8631A; color: #E8631A; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(26,21,16,0.08); }
+.index-num { font-size: 11px; font-weight: 600; color: #E8631A; background: #FDF0E8; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* CONTENT SECTIONS */
+.content-section { background: white; border: 1px solid #E8E2DA; border-radius: 14px; margin-bottom: 16px; overflow: hidden; scroll-margin-top: 72px; }
+.section-header { padding: 14px 22px; border-bottom: 1px solid #F0EAE2; background: #FAFAF8; display: flex; align-items: center; gap: 10px; }
+.section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.icon-green { background: #EAF3EE; }
+.icon-teal { background: #E1F5EE; }
+.icon-amber { background: #FAEEDA; }
+.icon-red { background: #FCEBEB; }
+.icon-blue { background: #E6F1FB; }
+.icon-purple { background: #F0EBF8; }
+.icon-access { background: #E8F4FD; }
+.section-title { font-size: 14px; font-weight: 600; color: #1A1510; }
+.section-body { padding: 18px 22px; display: flex; flex-direction: column; gap: 12px; }
+
+/* INFO ROWS */
+.info-row { display: grid; grid-template-columns: 148px 1fr; gap: 10px; font-size: 13px; }
+.info-label { color: #9A8A7A; font-size: 11px; padding-top: 1px; }
+.info-value { color: #1A1510; line-height: 1.6; }
+.divider { border: none; border-top: 1px solid #F0EAE2; }
+
+/* ALERT BOXES */
+.alert-box { border-radius: 8px; padding: 11px 14px; font-size: 12.5px; line-height: 1.6; }
+.alert-red { background: #FCEBEB; color: #A32D2D; border: 1px solid #F7C1C1; }
+.alert-amber { background: #FAEEDA; color: #854F0B; border: 1px solid #FAC775; }
+.alert-green { background: #EAF3EE; color: #0A4A38; border: 1px solid #9FD4B5; }
+.alert-blue { background: #E6F1FB; color: #042C53; border: 1px solid #B5D4F4; }
+.alert-teal { background: #E1F5EE; color: #0F6E56; border: 1px solid #9FE1CB; }
+
+/* SPECIES GRID */
+.species-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.species-card { border: 1px solid #E8E2DA; border-radius: 8px; padding: 8px 10px; font-size: 11.5px; }
+.species-name { font-weight: 600; color: #1A1510; margin-bottom: 2px; }
+.species-status { font-size: 10.5px; }
+.endangered { color: #A32D2D; }
+.vulnerable { color: #BA7517; }
+.protected { color: #0F6E56; }
+.endemic { color: #5B2D8E; }
+
+/* FOOTER */
+footer { background: #1A1510; padding: 24px 40px; color: rgba(255,255,255,0.35); font-size: 11px; line-height: 1.7; }
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  nav, .hero, .main, footer { padding-left: 20px; padding-right: 20px; }
+  .status-inner { padding: 0 20px; grid-template-columns: 1fr 1fr; }
+  .index-grid { grid-template-columns: 1fr 1fr; }
+  .info-row { grid-template-columns: 1fr; }
+  .species-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
-<div class="page-logo-wrap"><img src="/mnt/project/australia_inbound_ogg_1200x630_1.jpg" alt="Australia Inbound by Orange Journeys"></div>
-<div class="sheet-wrap">
 
-  <div class="sheet-header">
-    <div class="dest-label">Orange Journeys — Destination File</div>
-    <div class="dest-title">Kangaroo Island, South Australia</div>
-    <div class="meta-row">
-      <span class="meta-pill">Nurrungaui — Ngarrindjeri Country, SA</span>
-      <span class="meta-pill">Island destination — ferry access</span>
-      <span class="meta-pill">Orange Journeys #2 destination by pax volume</span>
-      <span class="meta-pill">Last updated: June 2026</span>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">OJ</div>
+    <span class="nav-name">Orange Journeys</span>
+  </a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Back to Sustainability Hub</a>
+    <img src="/mnt/project/australia_inbound_ogg_1200x630_1.jpg" alt="Australia Inbound" class="nav-logo-img">
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Orange Journeys — Destination File</div>
+    <h1 class="hero-title">Kangaroo Island, South Australia</h1>
+    <div class="hero-meta">
+      <span class="hero-pill">Nurrungaui — Ngarrindjeri Country, SA</span>
+      <span class="hero-pill">Island destination — ferry access</span>
+      <span class="hero-pill">OJ #2 destination by pax volume</span>
+      <span class="hero-pill">Last updated: June 2026</span>
+    </div>
+  </div>
+</div>
+<div class="accent-bar"></div>
+
+<div class="status-wrap">
+  <div class="status-inner">
+    <div class="status-card">
+      <div class="status-label">Destination status</div>
+      <div class="status-value green">Open — strong recovery</div>
+    </div>
+    <div class="status-card">
+      <div class="status-label">Bushfire recovery</div>
+      <div class="status-value amber">Ongoing — 5 years on</div>
+    </div>
+    <div class="status-card">
+      <div class="status-label">Biodiversity significance</div>
+      <div class="status-value green">Exceptional — high endemism</div>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- SECTION INDEX -->
+  <div class="section-index">
+    <div class="index-label">Sections in this file</div>
+    <div class="index-grid">
+      <a href="#overview" class="index-card"><span class="index-num">1</span>Destination overview</a>
+      <a href="#traditional-owners" class="index-card"><span class="index-num">2</span>Ngarrindjeri Traditional Owners &amp; Nurrungaui</a>
+      <a href="#sustainability" class="index-card"><span class="index-num">3</span>Sustainability challenges &amp; current status</a>
+      <a href="#biodiversity" class="index-card"><span class="index-num">4</span>Biodiversity &amp; natural environment</a>
+      <a href="#transport" class="index-card"><span class="index-num">5</span>Getting there sustainably</a>
+      <a href="#accessibility" class="index-card"><span class="index-num">6</span>Accessibility</a>
     </div>
   </div>
 
-  <div class="status-bar">
-    <div class="status-card"><div class="status-label">Destination status</div><div class="status-value green">Open — strong recovery</div></div>
-    <div class="status-card"><div class="status-label">Bushfire recovery</div><div class="status-value amber">Ongoing — 5 years on</div></div>
-    <div class="status-card"><div class="status-label">Biodiversity significance</div><div class="status-value green">Exceptional — high endemism</div></div>
-    <div class="status-card"><div class="status-label">SA minimum wage</div><div class="status-value">AUD $24.10 / hr</div></div>
-  </div>
-
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-green">i</div><div class="section-title">Destination overview</div></div>
+  <!-- 1. DESTINATION OVERVIEW -->
+  <div class="content-section" id="overview">
+    <div class="section-header">
+      <div class="section-icon icon-green">ℹ️</div>
+      <div class="section-title">Destination overview</div>
+    </div>
     <div class="section-body">
       <div class="info-row"><div class="info-label">Location &amp; size</div><div class="info-value">112 km long, 57 km wide — Australia's third largest island, located 13 km off the tip of the Fleurieu Peninsula in South Australia. Approximately 4,405 km² in area, with a resident population of around 4,700. One-third of the island is protected in national parks and conservation reserves.</div></div>
       <div class="divider"></div>
       <div class="info-row"><div class="info-label">Character</div><div class="info-value">Kangaroo Island is one of Australia's premier nature-based tourism destinations — renowned for extraordinary wildlife diversity, pristine beaches, artisan food and wine producers, and a powerful post-bushfire resilience story. The island separated from mainland Australia around 10,000 years ago, producing high levels of endemic and sub-species wildlife found nowhere else on Earth.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Access</div><div class="info-value">SeaLink ferry from Cape Jervis (45 mins) — the primary and preferred access option. Cape Jervis is 90 minutes south of Adelaide CBD. Flights also available from Adelaide Airport to Kingscote Airport (KGC) — Regional Express (Rex) operates multiple services daily. SeaLink's two new ferries <em>Wanggami</em> (kangaroo) and <em>Ruwi</em> (land) — named in Ngarrindjeri language — began service in 2025.</div></div>
+      <div class="info-row"><div class="info-label">Access</div><div class="info-value">SeaLink ferry from Cape Jervis (45 mins) — the primary and preferred access option. Cape Jervis is 90 minutes south of Adelaide CBD. SeaLink's two new ferries <em>Wanggami</em> (kangaroo) and <em>Ruwi</em> (land) — named in Ngarrindjeri language — began service in 2025. Flights also available: Regional Express (Rex) from Adelaide to Kingscote Airport (KGC), multiple daily services.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Best season</div><div class="info-value">Year-round destination. Spring (September–November) — wildflowers, whale calves, sea lion pups. Summer (December–February) — peak season, warm seas, long days. Autumn (March–May) — quieter, excellent wildlife spotting. Winter (June–August) — Southern Right Whales, fewer tourists, ideal for birdwatching.</div></div>
+      <div class="info-row"><div class="info-label">Best season</div><div class="info-value">Year-round destination. Spring (Sep–Nov) — wildflowers, whale calves, sea lion pups. Summer (Dec–Feb) — peak season, warm seas, long days. Autumn (Mar–May) — quieter, excellent wildlife spotting. Winter (Jun–Aug) — Southern Right Whales, fewer tourists, ideal for birdwatching.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Governing bodies</div><div class="info-value">National Parks and Wildlife Service SA (NPWSSA) · Kangaroo Island Landscape Board · Kangaroo Island Council · SA Department for Environment and Water · Parks SA (Flinders Chase National Park, Seal Bay Conservation Park, Kelly Hill Conservation Park)</div></div>
+      <div class="info-row"><div class="info-label">Governing bodies</div><div class="info-value">National Parks and Wildlife Service SA (NPWSSA) · Kangaroo Island Landscape Board · Kangaroo Island Council · Parks SA (Flinders Chase NP, Seal Bay Conservation Park, Kelly Hill Conservation Park)</div></div>
       <div class="divider"></div>
       <div class="info-row"><div class="info-label">Key legal frameworks</div><div class="info-value">National Parks and Wildlife Act 1972 (SA) · Environment Protection and Biodiversity Conservation Act 1999 · Landscape South Australia Act 2019 · Kangaroo Island Wilderness Trail regulations</div></div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-teal">👥</div><div class="section-title">Ngarrindjeri Traditional Owners &amp; Nurrungaui</div></div>
+  <!-- 2. TRADITIONAL OWNERS -->
+  <div class="content-section" id="traditional-owners">
+    <div class="section-header">
+      <div class="section-icon icon-teal">🤝</div>
+      <div class="section-title">Ngarrindjeri Traditional Owners &amp; Nurrungaui</div>
+    </div>
     <div class="section-body">
       <div class="info-row"><div class="info-label">Traditional Owners</div><div class="info-value">Kangaroo Island is known to the Ngarrindjeri people as <strong>Nurrungaui</strong> — "the place of Nurrunderi," their revered creator. The Ngarrindjeri have deep cultural, spiritual and ancestral connections to the island and its surrounding waters. Their knowledge of the land, sea and sky informs modern conservation practice on the island.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Key cultural sites</div><div class="info-value"><strong>Remarkable Rocks</strong> — hold profound cultural significance for the Ngarrindjeri, connected to creation stories of Nurrunderi. <strong>Admirals Arch</strong> — significant in Ngarrindjeri spiritual narrative. <strong>Seal Bay</strong> — the sealing industry viewed through Ngarrindjeri eyes, with Pungari (the seal) an ancient being in Ngarrindjeri story. <strong>Vivonne Bay</strong> — site of the Nurrunderi story of entering the Kalowinyeri (spirit world).</div></div>
+      <div class="info-row"><div class="info-label">Key cultural sites</div><div class="info-value"><strong>Remarkable Rocks</strong> — connected to creation stories of Nurrunderi. <strong>Admirals Arch</strong> — significant in Ngarrindjeri spiritual narrative. <strong>Seal Bay</strong> — Pungari (the seal) is an ancient being in Ngarrindjeri story. <strong>Vivonne Bay</strong> — site of the Nurrunderi story of entering the Kalowinyeri (spirit world).</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Cultural recognition</div><div class="info-value">SeaLink's two new ferries, <em>Wanggami</em> and <em>Ruwi</em>, were named through a community competition in close consultation with the Ngarrindjeri Aboriginal Council — a meaningful act of cultural recognition. The naming process drew over 1,500 community entries and required formal approval from the NAC.</div></div>
+      <div class="info-row"><div class="info-label">Cultural recognition</div><div class="info-value">SeaLink's new ferries <em>Wanggami</em> and <em>Ruwi</em> were named through a community competition in close consultation with the Ngarrindjeri Aboriginal Council — drawing over 1,500 entries and requiring formal NAC approval.</div></div>
       <div class="divider"></div>
-      <div class="alert-box alert-teal"><strong>Indigenous-led experience — priority recommendation:</strong> The Kangaroo Island Indigenous Day Tour (SeaLink + Kool Tours, led by Ngarrindjeri Elder Mark Koolmatrie — 2024 SA Tourism Hall of Fame inductee) weaves Ngarrindjeri cultural history with the bushfire recovery story. One of the most significant and authentic new Indigenous tourism products in South Australia. Orange Journeys should actively include this in KI itineraries.</div>
+      <div class="alert-box alert-teal"><strong>Priority recommendation:</strong> The Kangaroo Island Indigenous Day Tour (SeaLink + Kool Tours), led by Ngarrindjeri Elder Mark Koolmatrie — 2024 SA Tourism Hall of Fame inductee — weaves Ngarrindjeri cultural history with the bushfire recovery story. Orange Journeys should actively include this in all KI itineraries.</div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-red">!</div><div class="section-title">Sustainability challenges &amp; current status</div></div>
+  <!-- 3. SUSTAINABILITY -->
+  <div class="content-section" id="sustainability">
+    <div class="section-header">
+      <div class="section-icon icon-red">⚠️</div>
+      <div class="section-title">Sustainability challenges &amp; current status</div>
+    </div>
     <div class="section-body">
-      <div class="alert-box alert-red"><strong>Black Summer bushfires — 2019–20:</strong> On 20 December 2019, lightning strikes ignited fires across Kangaroo Island. By early February 2020, approximately 48% of the island had burned — more than 210,000 hectares — destroying more vegetation than any previous fires in recorded history. Over 40,000 animals were killed directly. Two human lives were lost. Multiple tourism businesses including the iconic Southern Ocean Lodge were destroyed. The island was not declared safe until 6 February 2020.</div>
-      <div class="info-row"><div class="info-label">Recovery — 5 years on</div><div class="info-value">Kangaroo Island's recovery has been remarkable. <strong>Southern Ocean Lodge</strong> reopened in 2024. The <strong>$19.5M Flinders Chase Visitor Centre</strong> opened in 2024 — an ecologically sustainable building with immersive displays. The <strong>Kangaroo Island Wilderness Trail</strong> and Kelly Hill Conservation Park have both reopened. Tourism reached a bumper year in 2023 and continued strongly through 2024. The Australian Government invested <strong>$8.7 million</strong> in native wildlife and habitat recovery.</div></div>
+      <div class="alert-box alert-red"><strong>Black Summer bushfires — 2019–20:</strong> Approximately 48% of the island burned — more than 210,000 hectares. Over 40,000 animals were killed. Two human lives were lost. Multiple tourism businesses including the iconic Southern Ocean Lodge were destroyed.</div>
+      <div class="info-row"><div class="info-label">Recovery — 5 years on</div><div class="info-value">Southern Ocean Lodge reopened in 2024. The $19.5M Flinders Chase Visitor Centre opened in 2024. The Kangaroo Island Wilderness Trail and Kelly Hill Conservation Park have both reopened. Tourism reached a bumper year in 2023 and continued strongly through 2024.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Current threats</div><div class="info-value"><strong>1. Feral cats</strong> — the primary ongoing threat to endemic wildlife. The Western River Refuge (Australian Wildlife Conservancy) was declared feral predator free in 2021, with 39 cats removed from just outside the fence line in 2024 alone.<br><strong>2. Invasive weeds</strong> — spreading rapidly through post-fire landscapes, displacing native regeneration.<br><strong>3. Climate change</strong> — increasing fire frequency and severity; drought conditions extending.<br><strong>4. Visitor pressure</strong> — concentration at key sites (Remarkable Rocks, Seal Bay) requires careful management.</div></div>
+      <div class="info-row"><div class="info-label">Current threats</div><div class="info-value"><strong>1. Feral cats</strong> — primary ongoing threat to endemic wildlife. 39 cats removed from just outside the Western River Refuge fence line in 2024 alone.<br><strong>2. Invasive weeds</strong> — spreading rapidly through post-fire landscapes.<br><strong>3. Climate change</strong> — increasing fire frequency, drought conditions extending.<br><strong>4. Visitor pressure</strong> — concentration at key sites requires careful management.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Positive programs</div><div class="info-value">Western River Refuge (AWC) — feral predator-free fenced sanctuary · KI Landscape Board — 2,709 ha of native vegetation protected, 420 ha revegetated, 50,000 plants grown annually · Glossy Black-Cockatoo Recovery Program (since 1995) · BirdLife Australia Bushfire Recovery Project · Flinders University Passport to Recovery citizen science program · DCCEEW $8.7M wildlife recovery investment</div></div>
-      <div class="alert-box alert-amber"><strong>Orange Journeys monitoring note:</strong> Check Parks SA (parks.sa.gov.au) for any trail or park closures before departure, particularly for Flinders Chase National Park. The Kangaroo Island Wilderness Trail requires advance booking year-round.</div>
+      <div class="info-row"><div class="info-label">Positive programs</div><div class="info-value">Western River Refuge (AWC) — feral predator-free fenced sanctuary · KI Landscape Board — 2,709 ha of native vegetation protected, 420 ha revegetated, 50,000 plants grown annually · Glossy Black-Cockatoo Recovery Program (since 1995) · DCCEEW $8.7M wildlife recovery investment</div></div>
+      <div class="alert-box alert-amber"><strong>Orange Journeys monitoring note:</strong> Check Parks SA (parks.sa.gov.au) for any trail or park closures before departure. The Kangaroo Island Wilderness Trail requires advance booking year-round.</div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-green">🌿</div><div class="section-title">Biodiversity &amp; natural environment</div></div>
+  <!-- 4. BIODIVERSITY -->
+  <div class="content-section" id="biodiversity">
+    <div class="section-header">
+      <div class="section-icon icon-green">🌿</div>
+      <div class="section-title">Biodiversity &amp; natural environment</div>
+    </div>
     <div class="section-body">
-      <div class="info-row"><div class="info-label">Why it matters</div><div class="info-value">Kangaroo Island separated from mainland Australia approximately 10,000 years ago, producing extraordinary levels of endemism — species found nowhere else on Earth. Notably, foxes and rabbits (which have devastated mainland ecosystems) have never established on the island, making it one of Australia's most intact ecological refuges. Marine diversity around the island exceeds that along the entire length of the Great Barrier Reef in terms of species variation.</div></div>
+      <div class="info-row"><div class="info-label">Why it matters</div><div class="info-value">Kangaroo Island separated from mainland Australia approximately 10,000 years ago, producing extraordinary levels of endemism. Foxes and rabbits — which have devastated mainland ecosystems — have never established on the island, making it one of Australia's most intact ecological refuges.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Key wildlife</div><div class="info-value">Australian Sea Lions (Seal Bay — only accessible wild sea lion colony in the world) · New Zealand Fur Seals (Admirals Arch) · Koalas · Kangaroos &amp; Wallabies · Echidnas · Little Penguins · Southern Right Whales (June–October) · Leafy Sea Dragons · 250+ bird species · Platypus (released in 1920s)</div></div>
+      <div class="info-row"><div class="info-label">Key wildlife</div><div class="info-value">Australian Sea Lions (Seal Bay) · New Zealand Fur Seals (Admirals Arch) · Koalas · Kangaroos &amp; Wallabies · Echidnas · Little Penguins · Southern Right Whales (Jun–Oct) · Leafy Sea Dragons · 250+ bird species</div></div>
       <div class="divider"></div>
       <div class="species-grid">
         <div class="species-card"><div class="species-name">Glossy Black-Cockatoo (KI subspecies)</div><div class="species-status endangered">Endangered — 422 counted Sept 2024. Last refuge on Earth for this subspecies.</div></div>
         <div class="species-card"><div class="species-name">KI Dunnart</div><div class="species-status endemic">Critically endangered — endemic. Found east of Flinders Chase for first time in 40 years (2024).</div></div>
         <div class="species-card"><div class="species-name">Australian Sea Lion</div><div class="species-status endangered">Endangered — Seal Bay colony is the world's only fully accessible wild sea lion beach.</div></div>
-        <div class="species-card"><div class="species-name">KI Southern Emu-wren</div><div class="species-status endangered">Endangered — endemic subspecies. Severely impacted by 2019–20 fires.</div></div>
-        <div class="species-card"><div class="species-name">Leafy Sea Dragon</div><div class="species-status protected">Protected — marine sanctuary zones. Best viewed at Emu Bay and Penneshaw.</div></div>
-        <div class="species-card"><div class="species-name">Southern Right Whale</div><div class="species-status protected">Protected — annual visitor June–October. Do not approach within 300m.</div></div>
+        <div class="species-card"><div class="species-name">KI Southern Emu-wren</div><div class="species-status endangered">Endangered — endemic subspecies, severely impacted by 2019–20 fires.</div></div>
+        <div class="species-card"><div class="species-name">Leafy Sea Dragon</div><div class="species-status protected">Protected — best viewed at Emu Bay and Penneshaw.</div></div>
+        <div class="species-card"><div class="species-name">Southern Right Whale</div><div class="species-status protected">Protected — annual visitor Jun–Oct. Do not approach within 300m.</div></div>
       </div>
-      <div class="info-row"><div class="info-label">Marine environment</div><div class="info-value">Kangaroo Island's waters are protected by a network of marine sanctuary zones covering a range of marine habitats. The island supports exceptional marine biodiversity including Blue Groper, Leafy Sea Dragons, sea lions, fur seals, dolphins and seasonal whale visits. Marine sanctuary zones are strictly no-take.</div></div>
-      <div class="alert-box alert-amber"><strong>Wildlife interaction rules:</strong> At Seal Bay, visitors must remain with a ranger and keep a minimum distance from sea lions at all times — do not approach, touch or block their path to the ocean. Sea lions are wild, large and can move quickly. Glossy Black-Cockatoo breeding season is April–October — do not disturb nesting areas at Baudin and Lathami Conservation Parks.</div>
+      <div class="alert-box alert-amber"><strong>Wildlife interaction rules:</strong> At Seal Bay, visitors must remain with a ranger and keep a minimum distance from sea lions — do not approach, touch or block their path to the ocean. Glossy Black-Cockatoo breeding season is April–October — do not disturb nesting areas at Baudin and Lathami Conservation Parks.</div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-purple">🚌</div><div class="section-title">Getting there sustainably</div></div>
+  <!-- 5. TRANSPORT -->
+  <div class="content-section" id="transport">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🚌</div>
+      <div class="section-title">Getting there sustainably</div>
+    </div>
     <div class="section-body">
-      <div class="info-row"><div class="info-label">Ferry — recommended</div><div class="info-value">SeaLink ferry from Cape Jervis to Penneshaw (45 mins) — the most sustainable and scenic access option. Cape Jervis is approximately 90 minutes south of Adelaide via the Fleurieu Peninsula. The drive from Adelaide to Cape Jervis passes vineyards and coastal scenery and is part of the experience. The new vessels <em>Wanggami</em> and <em>Ruwi</em> (2025) are larger and more fuel-efficient than previous ferries.</div></div>
+      <div class="info-row"><div class="info-label">Ferry — recommended</div><div class="info-value">SeaLink ferry from Cape Jervis to Penneshaw (45 mins) — the most sustainable and scenic access option. Cape Jervis is approximately 90 minutes south of Adelaide. The new vessels <em>Wanggami</em> and <em>Ruwi</em> (2025) are larger and more fuel-efficient than previous ferries.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">By air</div><div class="info-value">Regional Express (Rex) operates multiple daily services from Adelaide Airport to Kingscote Airport (KGC) — flight time approximately 30 minutes. Useful for tight itineraries or clients with limited mobility. However the ferry journey via the Fleurieu Peninsula is a more sustainable and experientially richer option where time permits.</div></div>
+      <div class="info-row"><div class="info-label">By air</div><div class="info-value">Regional Express (Rex) operates multiple daily services from Adelaide to Kingscote Airport (KGC) — approximately 30 minutes. Useful for tight itineraries or clients with limited mobility. However the ferry is a more sustainable and experientially richer option where time permits.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">On the island</div><div class="info-value">A hire car or guided tour is essential on Kangaroo Island — there is no public transport network. All key attractions are spread across the island. Orange Journeys should ensure all clients have transport pre-arranged before arrival. Guided tours (Exceptional KI, Kangaroo Island Odysseys, SeaLink tours) are the most sustainable option as they consolidate passenger movements and use local, knowledgeable operators.</div></div>
+      <div class="info-row"><div class="info-label">On the island</div><div class="info-value">A hire car or guided tour is essential — there is no public transport network. Guided tours (Exceptional KI, Kangaroo Island Odysseys, SeaLink tours) are the most sustainable option as they consolidate passenger movements and use local, knowledgeable operators.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Road safety note</div><div class="info-value">Kangaroo Island has one of the highest wildlife collision rates in Australia. Strictly avoid driving at dawn, dusk and night — this is when kangaroos, wallabies and echidnas are most active on roads. Many rental agreements prohibit night driving. Brief all clients on this before departure.</div></div>
+      <div class="alert-box alert-red"><strong>Road safety — critical:</strong> Kangaroo Island has one of the highest wildlife collision rates in Australia. Strictly avoid driving at dawn, dusk and night — this is when kangaroos, wallabies and echidnas are most active on roads. Many rental agreements prohibit night driving. Brief all clients on this before departure.</div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-access">♿</div><div class="section-title">Accessibility</div></div>
+  <!-- 6. ACCESSIBILITY -->
+  <div class="content-section" id="accessibility">
+    <div class="section-header">
+      <div class="section-icon icon-access">♿</div>
+      <div class="section-title">Accessibility</div>
+    </div>
     <div class="section-body">
       <div class="info-row"><div class="info-label">Overall rating</div><div class="info-value">Moderate — improving. Key wildlife experiences are accessible with advance planning; remote wilderness areas are not. The new Flinders Chase Visitor Centre (2024) was built to contemporary accessibility standards.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Seal Bay</div><div class="info-value">Boardwalk tours are wheelchair accessible — a guided boardwalk descends to the beach. The beach walk (closer to sea lions) involves soft sand and is not accessible for wheelchairs. Advise clients to book the boardwalk tour and notify Parks SA of accessibility requirements in advance.</div></div>
+      <div class="info-row"><div class="info-label">Seal Bay</div><div class="info-value">Boardwalk tours are wheelchair accessible — a guided boardwalk descends to the beach. The beach walk involves soft sand and is not accessible for wheelchairs. Advise clients to book the boardwalk tour and notify Parks SA of accessibility requirements in advance.</div></div>
       <div class="divider"></div>
       <div class="info-row"><div class="info-label">Remarkable Rocks</div><div class="info-value">Short accessible path from the car park to the main viewing area. The rocks themselves involve uneven granite surfaces — not suitable for wheelchairs. The surrounding clifftop lookout is accessible and provides spectacular views.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Flinders Chase VC</div><div class="info-value">New visitor centre (2024) is fully accessible with level entry, accessible toilets and immersive displays. Recommended as the starting point for all visitors — particularly those with limited mobility as it provides the full ecological and cultural context of the park.</div></div>
+      <div class="info-row"><div class="info-label">Flinders Chase VC</div><div class="info-value">New visitor centre (2024) is fully accessible with level entry, accessible toilets and immersive displays. Recommended as the starting point for all visitors with limited mobility.</div></div>
       <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Ferry access</div><div class="info-value">SeaLink ferries are accessible — contact SeaLink directly when booking to arrange wheelchair boarding assistance and accessible seating. The new vessels (2025) have improved accessibility facilities compared to previous ferries.</div></div>
-      <div class="alert-box alert-blue"><strong>Plan ahead:</strong> Kangaroo Island's remote character means accessible facilities outside main visitor sites are limited. Orange Journeys should confirm specific accessibility requirements with each operator and Parks SA before booking any client with mobility needs.</div>
+      <div class="info-row"><div class="info-label">Ferry access</div><div class="info-value">SeaLink ferries are accessible — contact SeaLink directly when booking to arrange wheelchair boarding assistance and accessible seating. The new vessels (2025) have improved accessibility facilities.</div></div>
+      <div class="alert-box alert-blue"><strong>Plan ahead:</strong> Kangaroo Island's remote character means accessible facilities outside main visitor sites are limited. Confirm specific accessibility requirements with each operator and Parks SA before booking any client with mobility needs.</div>
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-teal">🏪</div><div class="section-title">Local economic network &amp; preferred operators</div></div>
-    <div class="section-body">
-      <div class="operator-list">
-        <div class="operator-item"><span class="op-badge op-indigenous">Indigenous-led</span><div><div class="op-text">Kool Tours (SeaLink KI Indigenous Day Tour) — led by Ngarrindjeri Elder Mark Koolmatrie (2024 SA Tourism Hall of Fame). Full-day cultural experience weaving Ngarrindjeri history with the bushfire recovery story. Visits Seal Bay, Remarkable Rocks, Admirals Arch and Flinders Chase.</div><div class="op-sub">Adelaide/Penneshaw departure · Full day · Seasonal availability — check sealink.com.au</div></div></div>
-        <div class="operator-item"><span class="op-badge op-eco">ECO operator</span><div><div class="op-text">Sealink Kangaroo Island — Orange Journeys' primary KI activity supplier (403 pax, 12.7% of total pax FY25–26). Ferry operator and guided tours. New vessels Wanggami and Ruwi operating from 2025.</div><div class="op-sub">Cape Jervis ↔ Penneshaw · Multiple daily crossings · Guided tour packages available</div></div></div>
-        <div class="operator-item"><span class="op-badge op-local">Local operator</span><div><div class="op-text">Exceptional Kangaroo Island — small group touring, wildlife experiences, conservation-focused. Strong post-fire recovery narrative. Works closely with Kangaroo Island Landscape Board and local landholders.</div><div class="op-sub">Island-wide · Small groups · Conservation-led</div></div></div>
-        <div class="operator-item"><span class="op-badge op-local">Local operator</span><div><div class="op-text">Kangaroo Island Odysseys — locally owned small group tours, showcasing locally owned accommodation, restaurants and producers. Strong local economic circulation model.</div><div class="op-sub">Island-wide · Local supply chain focus</div></div></div>
-        <div class="operator-item"><span class="op-badge op-local">Wildlife</span><div><div class="op-text">Kangaroo Island Wildlife Park — rescue and rehabilitation centre. Hosts daily koala talks featuring bushfire joey survivors. One of the few places clients can genuinely understand the bushfire's impact on individual animals.</div><div class="op-sub">Kingscote area · Daily koala talks · Conservation education</div></div></div>
-      </div>
-      <div class="divider"></div>
-      <div class="info-row" style="margin-top:4px;"><div class="info-label">Client encouragement</div><div class="info-value">Direct clients to locally owned producers: Island Beehive (honey), Island Pure Sheep Dairy, Islander Estate Vineyards (first post-fire vintage released 2022 — a powerful resilience story), KI Fresh Seafoods. Purchasing from local producers directly supports the island community's post-fire economic recovery.</div></div>
-      <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Sustainability monitoring</div><div class="info-value">Kangaroo Island operates a Tourism Optimisation Management Model (TOMM) — a community-based initiative monitoring long-term tourism sustainability across economic, environmental, socio-cultural and experiential indicators. One of the most sophisticated destination-level sustainability monitoring systems in Australia.</div></div>
-      <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Donation opportunities</div><div class="info-value">Australian Wildlife Conservancy (Western River Refuge) · Kangaroo Island Landscape Board (native plant nursery, species recovery) · BirdLife Australia Bushfire Recovery Project · KI Koala and Wildlife Rescue Centre</div></div>
-    </div>
-  </div>
+</main>
 
-  <div class="section">
-    <div class="section-header"><div class="section-icon icon-slate">↑</div><div class="section-title">Orange Journeys engagement &amp; policy influencing</div></div>
-    <div class="section-body">
-      <div class="info-row"><div class="info-label">Relevant bodies</div><div class="info-value">Kangaroo Island Landscape Board · Parks SA · Tourism Kangaroo Island · SA Tourism Commission · Kangaroo Island Council · Ngarrindjeri Aboriginal Council (cultural heritage)</div></div>
-      <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Sustainability status</div><div class="info-value">Kangaroo Island's TOMM system and the Landscape Board's active biodiversity programs make this one of Australia's most transparently managed tourism destinations. The island's post-fire recovery is widely cited as a global example of nature-based tourism supporting conservation outcomes — visiting responsibly is genuinely contributing to the island's future.</div></div>
-      <div class="divider"></div>
-      <div class="info-row"><div class="info-label">Conservation contribution</div><div class="info-value">Recommended: direct a per-booking contribution from KI packages to the Australian Wildlife Conservancy (Western River Refuge feral cat program) or the KI Landscape Board's native plant nursery. Both are active, measurable and directly linked to the wildlife clients experience on the island.</div></div>
-      <div class="alert-box alert-green"><strong>Positive story for clients:</strong> The Glossy Black-Cockatoo was down to just 158 individuals in 1995. Through sustained conservation effort, the population reached over 450 by 2020 — and has remained stable through the worst bushfires in the island's history. The KI Dunnart, thought to be extinct after the fires, has now been found east of Flinders Chase for the first time in 40 years. These are extraordinary conservation success stories to share with clients.</div>
-    </div>
+<footer>
+  <div class="footer-inner">
+    <div>Sources: Kangaroo Island Landscape Board · Parks SA · Australian Wildlife Conservancy · BirdLife Australia · SeaLink South Australia · DCCEEW · Tourism SA · Flinders University. Review and update at minimum every 12 months.</div>
+    <div style="color:rgba(255,255,255,0.5); white-space:nowrap;">Prepared by Orange Journeys for internal use only · June 2026</div>
   </div>
+</footer>
 
-  <p class="footer-note">Sources: Kangaroo Island Landscape Board (landscape.sa.gov.au/ki) · Parks SA · Australian Wildlife Conservancy · BirdLife Australia Bushfire Recovery Report (2025) · SeaLink South Australia · DCCEEW Bushfire Recovery program · Tourism SA · Flinders University Passport to Recovery · SA Premier's Office (2024). Review and update at minimum every 12 months. Prepared by Orange Journeys sustainability team.</p>
-</div>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+
+<style>
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #1A1510;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  pointer-events: none;
+  z-index: 999;
+  box-shadow: 0 4px 16px rgba(26,21,16,0.2);
+}
+#back-to-top:hover { background: #E8631A; }
+#back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+</style>
+
+<script>
+const btn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  btn.classList.toggle('visible', window.scrollY > 300);
+});
+</script>
+
 </body>
 </html>
