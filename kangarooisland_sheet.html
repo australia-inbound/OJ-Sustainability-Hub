@@ -22,12 +22,27 @@ nav { background: #1A1510; padding: 0 40px; display: flex; align-items: center; 
 .nav-logo-img { height: 22px; width: auto; opacity: 0.85; }
 
 /* HERO */
-.hero { background: #1A1510; padding: 52px 40px 48px; }
-.hero-inner { max-width: 860px; margin: 0 auto; }
+.hero {
+  background: url('kangarooisland.jpg') center center / cover no-repeat;
+  padding: 52px 40px 48px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
 .hero-eyebrow { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #E8631A; margin-bottom: 12px; }
 .hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 42px); color: white; line-height: 1.15; margin-bottom: 14px; font-weight: 400; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; }
-.hero-pill { font-size: 11px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; padding: 3px 11px; color: rgba(255,255,255,0.65); }
+.hero-pill { font-size: 11px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 3px 11px; color: rgba(255,255,255,0.85); backdrop-filter: blur(4px); }
 .accent-bar { height: 3px; background: #F09C14; }
 
 /* STATUS BAR */
