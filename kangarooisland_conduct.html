@@ -3,153 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kangaroo Island — Visitor Code of Conduct</title>
+<title>Kangaroo Island — Visitor Code of Conduct · Orange Journeys</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'DM Sans', sans-serif; background: #F7F3EE; color: #1A1510; font-size: 15px; line-height: 1.6; }
-nav { background: #1A1510; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo { width: 28px; height: 28px; background: #E8631A; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 16px; color: white; }
-.nav-name { font-size: 14px; font-weight: 500; color: white; }
-.nav-back { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-.nav-back:hover { color: white; }
-.hero {
-  background: url('kangarooisland.jpg') center center / cover no-repeat;
-  padding: 60px 40px;
-  position: relative;
+:root{
+  --ink:#1A1510;
+  --paper:#FBF9F6;
+  --muted:#8A7D70;
+  --hair:#E7E0D8;
+  --accent:#E8631A;
+  --alert:#B23A2E;
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-.hero-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: white; margin-bottom: 14px; }
-.hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 44px); color: white; line-height: 1.15; margin-bottom: 8px; font-weight: 400; }
-.hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300; max-width: 560px; }
-.accent-bar { height: 4px; background: #F09C14; }
-.main { max-width: 760px; margin: 0 auto; padding: 48px 40px; display: flex; flex-direction: column; gap: 16px; }
-.alert-box { border-radius: 10px; padding: 14px 18px; font-size: 13px; line-height: 1.6; }
-.alert-amber { background: #FAEEDA; color: #854F0B; border: 1px solid #FAC775; }
-.alert-red { background: #FCEBEB; color: #A32D2D; border: 1px solid #F7C1C1; }
-.alert-teal { background: #E1F5EE; color: #0F6E56; border: 1px solid #9FE1CB; }
-.alert-title { font-weight: 600; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
-.dos-donts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.dos-box { background: #EAF3DE; border-radius: 10px; padding: 16px; border: 1px solid #C0DD97; }
-.donts-box { background: #FCEBEB; border-radius: 10px; padding: 16px; border: 1px solid #F7C1C1; }
-.box-title { font-size: 11px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
-.dos-box .box-title { color: #27500A; }
-.donts-box .box-title { color: #A32D2D; }
-.conduct-list { list-style: none; font-size: 13px; line-height: 1.8; }
-.dos-box .conduct-list li { color: #27500A; }
-.donts-box .conduct-list li { color: #A32D2D; }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.note { font-size: 11px; color: #A09080; line-height: 1.6; font-style: italic; text-align: center; padding: 8px 0; }
-.back-link { display: inline-flex; align-items: center; gap: 8px; background: #1A1510; color: white; text-decoration: none; font-size: 13px; font-weight: 500; padding: 12px 22px; border-radius: 8px; transition: background 0.2s; align-self: flex-start; }
-.back-link:hover { background: #E8631A; }
-.download-link { display: inline-flex; align-items: center; gap: 8px; background: #F09C14; color: white; text-decoration: none; font-size: 13px; font-weight: 500; padding: 12px 22px; border-radius: 8px; transition: background 0.2s; align-self: flex-start; }
-.download-link:hover { background: #E8631A; }
-.actions { display: flex; gap: 10px; flex-wrap: wrap; }
-footer { background: #1A1510; padding: 28px 40px; color: rgba(255,255,255,0.4); font-size: 11px; text-align: center; margin-top: 8px; }
-@media (max-width: 600px) {
-  nav { padding: 0 20px; }
-  .hero { padding: 40px 20px; }
-  .main { padding: 32px 20px; }
-  .dos-donts, .two-col { grid-template-columns: 1fr; }
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+/* top bar */
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+
+/* masthead — no photo; this is a working tool, not a brochure */
+.head{max-width:760px;margin:0 auto;padding:46px 28px 30px;border-bottom:1px solid var(--hair);}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(30px,4.6vw,44px);line-height:1.04;letter-spacing:-0.01em;}
+.deck{margin-top:14px;font-size:16px;color:var(--muted);max-width:600px;line-height:1.55;}
+
+/* how to use — staff framing */
+.usage{max-width:760px;margin:0 auto;padding:18px 28px;border-bottom:1px solid var(--hair);display:flex;gap:14px;align-items:flex-start;}
+.usage .tagk{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-top:3px;min-width:96px;}
+.usage .tagv{font-size:14px;line-height:1.55;}
+
+.shell{max-width:760px;margin:0 auto;padding:0 28px;}
+
+/* essentials — the signature block */
+.essentials{padding:42px 0 36px;border-bottom:1px solid var(--hair);}
+.block-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
+.ess{display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--hair);}
+.ess:first-of-type{border-top:none;padding-top:0;}
+.ess-n{font-family:'DM Serif Display',serif;font-size:30px;line-height:1;color:var(--accent);min-width:42px;}
+.ess-body{flex:1;}
+.ess-rule{font-size:19px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;margin-bottom:5px;}
+.ess-why{font-size:14.5px;color:var(--muted);line-height:1.55;}
+
+/* safety — single reserved alert */
+.safety{margin:30px 0;padding:18px 20px;border-left:3px solid var(--alert);background:#FDF4F4;}
+.safety-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--alert);margin-bottom:6px;}
+.safety-v{font-size:15px;line-height:1.55;color:var(--ink);}
+.safety-v strong{font-weight:600;}
+
+/* full conduct — subordinate reference layer */
+.conduct{padding:38px 0 10px;}
+.conduct-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:6px;}
+.col-k{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--hair);}
+.col-k.do{color:var(--accent);}
+.col-k.dont{color:var(--alert);}
+.clist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.clist li{font-size:14px;line-height:1.45;padding-left:18px;position:relative;color:var(--ink);}
+.clist li::before{position:absolute;left:0;top:0;font-weight:600;}
+.do .clist li::before{content:"+";color:var(--accent);}
+.dont .clist li::before{content:"–";color:var(--alert);}
+
+/* biosecurity note */
+.note{margin:32px 0 8px;padding:16px 0 16px 18px;border-left:2px solid var(--accent);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note-v{font-size:14px;line-height:1.6;}
+
+/* footer */
+footer{border-top:1px solid var(--hair);margin-top:40px;}
+.foot-inner{max-width:760px;margin:0 auto;padding:24px 28px 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:520px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+
+@media(max-width:640px){
+  .conduct-cols{grid-template-columns:1fr;gap:28px;}
+  .usage{flex-direction:column;gap:4px;}
+  .ess-n{font-size:24px;min-width:32px;}
 }
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-brand">
-    <div class="nav-logo">OJ</div>
-    <span class="nav-name">Orange Journeys</span>
-  </a>
-  <a href="index.html" class="nav-back">← Back to Sustainability Hub</a>
-</nav>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Visitor Code of Conduct · Kangaroo Island</div>
-    <h1 class="hero-title">Nurrungaui — Kangaroo Island</h1>
-    <p class="hero-sub">Ngarrindjeri Country, South Australia. Please read and follow these guidelines before and during your visit to help protect this extraordinary island and support its ongoing recovery.</p>
-  </div>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
 </div>
-<div class="accent-bar"></div>
 
-<main class="main">
+<div class="head">
+  <div class="kicker">Visitor Code of Conduct · Staff Briefing</div>
+  <h1 class="title">Kangaroo Island</h1>
+  <p class="deck">What every client should know before they travel — and what your team should brief them on.</p>
+</div>
 
-  <div class="alert-box alert-amber">
-    <div class="alert-title">🦁 Wildlife — critical rules</div>
-    Kangaroo Island's wildlife is wild and often at close range. Keep a respectful distance from all animals. At Seal Bay, always remain with a ranger and never approach or block sea lions — they can move quickly. Do not touch, feed or disturb any wildlife anywhere on the island.
-  </div>
+<div class="usage">
+  <div class="tagk">How to use</div>
+  <div class="tagv">Brief clients on the four essentials before departure. The full conduct list below is your complete reference — share the relevant points based on each client's itinerary.</div>
+</div>
 
-  <div class="dos-donts">
-    <div class="dos-box">
-      <div class="box-title">✓ Do</div>
-      <ul class="conduct-list">
-        <li>✓ Acknowledge Ngarrindjeri Country on arrival</li>
-        <li>✓ Remain with a ranger at Seal Bay at all times</li>
-        <li>✓ Keep 300m from whales, 5m from sea lions</li>
-        <li>✓ Stay on marked tracks in national parks</li>
-        <li>✓ Purchase from local KI producers and operators</li>
-        <li>✓ Use reef-safe sunscreen at beaches</li>
-        <li>✓ Check park open/close times before each day</li>
-        <li>✓ Book the KI Indigenous Day Tour if available</li>
-        <li>✓ Carry water and sun protection at all times</li>
-        <li>✓ Report injured wildlife to KI Wildlife Rescue</li>
-      </ul>
+<div class="shell">
+
+  <div class="essentials">
+    <div class="block-k">Brief your client on these four</div>
+
+    <div class="ess">
+      <div class="ess-n">01</div>
+      <div class="ess-body">
+        <div class="ess-rule">Stay with the ranger at Seal Bay — never approach a sea lion</div>
+        <div class="ess-why">Seal Bay is the world's only fully accessible wild sea lion beach. The animals are wild, large and fast. Clients must keep their distance and never block a sea lion's path to the water.</div>
+      </div>
     </div>
-    <div class="donts-box">
-      <div class="box-title">✗ Do not</div>
-      <ul class="conduct-list">
-        <li>✗ Feed any wildlife — including kangaroos</li>
-        <li>✗ Approach, touch or block sea lions or seals</li>
-        <li>✗ Drive at dawn, dusk or night — high wildlife collision risk</li>
-        <li>✗ Remove any plants, rocks or natural material</li>
-        <li>✗ Litter anywhere — including beaches and parks</li>
-        <li>✗ Enter marine sanctuary zones (no-take, no-entry)</li>
-        <li>✗ Approach nesting Glossy Black-Cockatoos (Apr–Oct)</li>
-        <li>✗ Bring unchecked food or plant material to the island</li>
-        <li>✗ Approach Southern Right Whales within 300m</li>
-        <li>✗ Buy souvenirs made from protected species</li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="two-col">
-    <div class="alert-box alert-amber">
-      <div class="alert-title">🚗 Road safety</div>
-      KI has one of Australia's highest wildlife collision rates. Never drive at dawn, dusk or night. Reduce speed near bushland at all times. Many hire car agreements prohibit night driving.
+    <div class="ess">
+      <div class="ess-n">02</div>
+      <div class="ess-body">
+        <div class="ess-rule">Don't drive at dawn, dusk or night</div>
+        <div class="ess-why">Kangaroo Island has one of Australia's highest wildlife collision rates. Kangaroos, wallabies and echidnas are active in low light. Many hire agreements prohibit night driving outright.</div>
+      </div>
     </div>
-    <div class="alert-box alert-teal">
-      <div class="alert-title">🌿 Ngarrindjeri cultural respect</div>
-      Remarkable Rocks, Admirals Arch and Vivonne Bay hold deep spiritual significance. Engage with these sites respectfully. Seek out the KI Indigenous Day Tour to understand the island through Ngarrindjeri eyes.
+
+    <div class="ess">
+      <div class="ess-n">03</div>
+      <div class="ess-body">
+        <div class="ess-rule">Respect biosecurity — the island is fox and rabbit free</div>
+        <div class="ess-why">These species never established here, which is why the island's wildlife is so intact. Clients must not bring unchecked fruit, plants or soil, and should clean boots and gear before arrival.</div>
+      </div>
+    </div>
+
+    <div class="ess">
+      <div class="ess-n">04</div>
+      <div class="ess-body">
+        <div class="ess-rule">Keep your distance from all wildlife — don't feed anything</div>
+        <div class="ess-why">From kangaroos to Glossy Black-Cockatoos, feeding or disturbing wildlife harms the animals. Nesting cockatoo areas at Baudin and Lathami are off-limits during breeding season, April to October.</div>
+      </div>
     </div>
   </div>
 
-  <div class="alert-box alert-red">
-    <div class="alert-title">⚠ Biosecurity — important</div>
-    Kangaroo Island is free of foxes and rabbits — two of Australia's most destructive introduced species. Do not bring unchecked fruit, vegetables, plants or soil to the island. Clean boots and outdoor gear before arrival. Biosecurity protects the island's extraordinary natural heritage.
+  <div class="safety">
+    <div class="safety-k">Safety-critical — communicate every time</div>
+    <div class="safety-v"><strong>Road safety.</strong> The dawn/dusk/night driving rule isn't guidance — it's the single biggest risk on the island. Brief every self-driving client before departure, and confirm their hire agreement's night-driving terms.</div>
   </div>
 
-  <p class="note">For park information and trail bookings visit parks.sa.gov.au · To report injured wildlife contact KI Wildlife Rescue: (08) 8553 9272</p>
-
-  <div class="actions">
-    <a href="index.html" class="back-link">← Back to Sustainability Hub</a>
-    <a href="KangarooIsland_VisitorCodeOfConduct.pdf" class="download-link" download>↓ Download PDF version</a>
+  <div class="conduct">
+    <div class="block-k">Full conduct reference</div>
+    <div class="conduct-cols">
+      <div class="col do">
+        <div class="col-k do">Encourage</div>
+        <ul class="clist">
+          <li>Acknowledge Ngarrindjeri Country on arrival</li>
+          <li>Stay with the ranger at Seal Bay</li>
+          <li>Keep 300m from whales, well clear of sea lions</li>
+          <li>Stay on marked tracks in national parks</li>
+          <li>Buy from local KI producers and operators</li>
+          <li>Use reef-safe sunscreen at beaches</li>
+          <li>Check park open and close times each day</li>
+          <li>Book the KI Indigenous Day Tour where it fits</li>
+          <li>Carry water and sun protection always</li>
+          <li>Report injured wildlife to KI Wildlife Rescue</li>
+        </ul>
+      </div>
+      <div class="col dont">
+        <div class="col-k dont">Advise against</div>
+        <ul class="clist">
+          <li>Feeding any wildlife, including kangaroos</li>
+          <li>Approaching, touching or blocking sea lions or seals</li>
+          <li>Driving at dawn, dusk or night</li>
+          <li>Removing plants, rocks or natural material</li>
+          <li>Littering anywhere, beaches and parks included</li>
+          <li>Entering marine sanctuary zones</li>
+          <li>Disturbing nesting cockatoos, April to October</li>
+          <li>Bringing unchecked food or plant material</li>
+          <li>Approaching Southern Right Whales within 300m</li>
+          <li>Buying souvenirs made from protected species</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-</main>
+  <div class="note">
+    <div class="note-k">Ngarrindjeri cultural respect</div>
+    <div class="note-v">Remarkable Rocks, Admirals Arch and Vivonne Bay hold deep spiritual significance for the Ngarrindjeri people. Encourage clients to engage with these sites respectfully, and to seek out the KI Indigenous Day Tour to understand the island through Ngarrindjeri eyes.</div>
+  </div>
 
-<footer>Prepared by Orange Journeys for internal use only · australia-inbound.com · June 2026</footer>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">For park information and trail bookings: parks.sa.gov.au. To report injured wildlife: KI Wildlife Rescue, (08) 8553 9272. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+
 </body>
 </html>
