@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melbourne — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:680px){.index-list{grid-template-columns:1fr;}.sp-row{grid-template-columns:1fr;gap:3px;}.plate{height:280px;}.meta{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="plate">
+  <img src="melbourne.jpg" alt="Melbourne">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Melbourne</h1>
+  </div>
+</div>
+<p class="deck">Naarm — a walkable, transit-rich city on Kulin Country, gateway to penguins and the Great Ocean Road.</p>
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Kulin Nation, VIC</span></div>
+<div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Melbourne (MEL)</span></div>
+<div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#7 of all destinations</span></div>
+<div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot"></span>Open</span></div></div>
+<div class="shell">
+  <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list"><a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+<a class="index-row" href="#s2"><span class="n">02</span><span class="t">Kulin Nation &amp; Aboriginal Melbourne</span></a>
+<a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; responsible visiting</span></a>
+<a class="index-row" href="#s4"><span class="n">04</span><span class="t">Environment &amp; surrounding nature</span></a>
+<a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there &amp; around sustainably</span></a>
+<a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a></div>
+  </div>
+<section id="s1"><div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div><div class="field"><div class="field-k">Location &amp; character</div><div class="field-v">Victoria's capital and Australia's second-largest city, on the lands of the Kulin Nation. Melbourne (Naarm) is known for coffee, arts, sport and laneway culture, and serves as the gateway to the Great Ocean Road, Phillip Island and the Yarra Valley. Orange Journeys' #7 destination by pax.</div></div><div class="field"><div class="field-k">Access</div><div class="field-v">Melbourne Airport (Tullamarine, MEL) is 22km from the city, serving domestic and international flights; Avalon (AVV) is a secondary airport. The city centre is highly walkable with clean, reliable public transport including a free City Circle tram.</div></div><div class="field"><div class="field-k">Best season</div><div class="field-v">Year-round destination. March–May (autumn) and September–November (spring) offer mild weather and major events. Summer (Dec–Feb) is warm and festival-heavy. Melbourne is famous for 'four seasons in one day' — clients should pack layers.</div></div><div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">City of Melbourne</span><span class="tag">Visit Victoria</span><span class="tag">Parks Victoria</span><span class="tag">Public Transport Victoria</span><span class="tag">Wurundjeri &amp; Bunurong Land Councils</span></div></div></div><div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">National Parks Act 1975 (Vic)</span><span class="tag">Aboriginal Heritage Act 2006 (Vic)</span><span class="tag">Marine &amp; Coastal Act 2018</span><span class="tag">Wildlife Act 1975 (Vic)</span></div></div></div></section>
+<section id="s2"><div class="s-head"><span class="s-num">02</span><h2 class="s-title">Kulin Nation &amp; Aboriginal Melbourne</h2></div><div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">Melbourne (Naarm) sits on the lands of the Kulin Nation — principally the Wurundjeri Woi-wurrung and Bunurong/Boon Wurrung peoples, who have maintained connection to this place for more than 2,000 generations.</div></div><div class="field"><div class="field-k">Cultural experiences</div><div class="field-v">The Royal Botanic Gardens Aboriginal Heritage Walk is led by Aboriginal guides through a significant Kulin cultural site. The Bunjilaka Aboriginal Cultural Centre at Melbourne Museum and the Koorie Heritage Trust offer deeper cultural context.</div></div><div class="note"><div class="note-k">Priority recommendation</div><div class="note-v">Acknowledge the Wurundjeri and Bunurong peoples of the Kulin Nation. Include an Aboriginal-guided experience such as the Royal Botanic Gardens Aboriginal Heritage Walk or a visit to Bunjilaka — Melbourne's Aboriginal culture is often overlooked by visitors focused on coffee and laneways.</div></div></section>
+<section id="s3"><div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; responsible visiting</h2></div><div class="field"><div class="field-k">A walkable, transit-rich city</div><div class="field-v">Nearly 90% of journeys within central Melbourne are made on foot, bike or public transport. The City of Melbourne's Transport Strategy 2030 prioritises pedestrians and cyclists. A car-free visit is easy and is the recommended approach for clients.</div></div><div class="field"><div class="field-k">Day-trip pressure</div><div class="field-v">Melbourne's major drawcards — the Great Ocean Road and Phillip Island — draw heavy day-trip traffic. Encourage clients toward smaller-group operators, overnight stays that spread visitor load, and certified eco-tour operators over large coaches where possible.</div></div><div class="field"><div class="field-k">Supporting local</div><div class="field-v"><div class="tags"><span class="tag">Independent laneway businesses</span><span class="tag">Aboriginal-owned enterprises</span><span class="tag">Queen Victoria Market traders</span><span class="tag">Certified eco-tour operators</span><span class="tag">Yarra Valley sustainable wineries</span></div></div></div><div class="note"><div class="note-k">Before you sell</div><div class="note-v">Lead with Melbourne's genuine walkability and transit strength. For the Great Ocean Road and Phillip Island, steer clients toward smaller-group and certified operators, and consider overnight options to reduce the long single-day coach trips that dominate these routes.</div></div></section>
+<section id="s4"><div class="s-head"><span class="s-num">04</span><h2 class="s-title">Environment &amp; surrounding nature</h2></div><div class="field"><div class="field-k">City &amp; bay</div><div class="field-v">Melbourne sits on Port Phillip Bay, with parklands, the Yarra River (Birrarung) and Royal Botanic Gardens within the city. The bay supports dolphins, seals and seasonal whale visits, and weedy seadragons in its southern waters.</div></div><div class="field"><div class="field-k">Phillip Island</div><div class="field-v"><div class="tags"><span class="tag">Little Penguin colony (~40,000)</span><span class="tag">Australian fur seals</span><span class="tag">Koalas</span><span class="tag">Cape Barren geese</span><span class="tag">Hooded plovers</span></div></div></div><div class="field"><div class="field-k">Great Ocean Road</div><div class="field-v">The Twelve Apostles, Otway rainforest and a dramatic coastline. The region holds koalas, glow worms and significant seabird populations. Note the coast is geologically active — the Apostles continue to erode and collapse over time.</div></div><div class="note warn"><div class="note-k">Phillip Island Penguin Parade</div><div class="note-v">The Little Penguin colony is strictly managed — no flash photography or phones during the Penguin Parade, as light disorients the birds. Brief clients firmly: this rule protects one of Victoria's most important wildlife populations.</div></div></section>
+<section id="s5"><div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there &amp; around sustainably</h2></div><div class="field"><div class="field-k">By air &amp; rail</div><div class="field-v">Melbourne Airport is 22km from the CBD (rail link and SkyBus available). Within the city, trams, trains and buses use the Myki card, and the free City Circle and CBD tram zone make car-free movement easy.</div></div><div class="field"><div class="field-k">Walking &amp; cycling</div><div class="field-v">Central Melbourne is flat and highly walkable, with an expanding bike-share and cycleway network. The laneway and arcade culture is best experienced on foot.</div></div><div class="field"><div class="field-k">Day trips</div><div class="field-v">The Great Ocean Road and Phillip Island are 1.5–2 hours from the city. Prefer smaller-group tours or rail-plus-shuttle options over large coaches; overnight stays reduce the rushed single-day round trips and spread economic benefit to regional towns.</div></div><div class="note"><div class="note-k">Sustainable framing</div><div class="note-v">Melbourne itself is one of Australia's easiest cities to enjoy car-free. The sustainability challenge is the day-trip routes — guide clients toward smaller operators and overnight regional stays rather than long single-day coach loops.</div></div></section>
+<section id="s6"><div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div><div class="field"><div class="field-k">Overall</div><div class="field-v">Excellent in the city — Melbourne is one of Australia's most accessible cities, with extensive low-floor trams, accessible trains and flat, walkable streets.</div></div><div class="field"><div class="field-k">Public transport</div><div class="field-v">Many trams are low-floor and accessible, and major train stations have lifts and ramps. The free City Circle tram is accessible. Check specific tram routes, as older trams remain on some lines.</div></div><div class="field"><div class="field-k">Attractions</div><div class="field-v">The Royal Botanic Gardens, NGV, Melbourne Museum, Federation Square and the riverside precincts are wheelchair accessible. Most major cultural venues have hearing loops and accessible facilities.</div></div><div class="field"><div class="field-k">Day trips</div><div class="field-v">Phillip Island's Penguin Parade viewing areas are wheelchair accessible with dedicated viewing. Great Ocean Road lookouts vary — the Twelve Apostles boardwalk is accessible; some coastal steps are not.</div></div><div class="note"><div class="note-k">Plan ahead</div><div class="note-v">Melbourne city is highly accessible. For day trips, confirm specific operator and venue accessibility — the Twelve Apostles main boardwalk and Phillip Island Penguin Parade both offer accessible viewing.</div></div></section>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — City of Melbourne Transport Strategy 2030 · Visit Victoria · Parks Victoria · Phillip Island Nature Parks · Bunjilaka Aboriginal Cultural Centre. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitsundays — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:680px){.index-list{grid-template-columns:1fr;}.sp-row{grid-template-columns:1fr;gap:3px;}.plate{height:280px;}.meta{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="plate">
+  <img src="whitsundays.jpg" alt="Whitsundays">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Whitsundays</h1>
+  </div>
+</div>
+<p class="deck">74 islands at the reef's edge — home to Whitehaven Beach and the saltwater Country of the Ngaro people.</p>
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Ngaro Sea Country, QLD</span></div>
+<div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Proserpine (PPP)</span></div>
+<div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#5 of all destinations</span></div>
+<div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot warn"></span>Open · reef under pressure</span></div></div>
+<div class="shell">
+  <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list"><a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+<a class="index-row" href="#s2"><span class="n">02</span><span class="t">Traditional Owners &amp; sea Country</span></a>
+<a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; current status</span></a>
+<a class="index-row" href="#s4"><span class="n">04</span><span class="t">Biodiversity &amp; environment</span></a>
+<a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there sustainably</span></a>
+<a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a></div>
+  </div>
+<section id="s1"><div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div><div class="field"><div class="field-k">Location &amp; size</div><div class="field-v">74 islands in the heart of the Great Barrier Reef Marine Park, off the central Queensland coast. Airlie Beach is the mainland gateway; the islands range from uninhabited national park to resort islands like Hamilton. Home to Whitehaven Beach — 7km of 98% pure silica sand.</div></div><div class="field"><div class="field-k">Character</div><div class="field-v">One of Australia's most beautiful island groups — sailing, snorkelling and beaches at the reef's edge. Most islands are protected national park. The region combines accessible reef experiences with the iconic Whitehaven Beach, making it a high-volume destination for Orange Journeys (#5 by pax).</div></div><div class="field"><div class="field-k">Access</div><div class="field-v">Fly to Whitsunday Coast Airport (Proserpine, PPP) or Hamilton Island Airport (HTI). Airlie Beach is the mainland hub for most cruises and transfers. Cruise Whitsundays and other operators run daily reef and island departures.</div></div><div class="field"><div class="field-k">Best season</div><div class="field-v">April–October (dry season) — best weather, calm seas, ideal sailing. November–May — warmer, stinger season (wear suits), occasional cyclones. The Great Barrier Reef Festival runs in Airlie Beach in early August.</div></div><div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">Great Barrier Reef Marine Park Authority</span><span class="tag">Queensland Parks &amp; Wildlife</span><span class="tag">Whitsunday Regional Council</span><span class="tag">Tourism Whitsundays</span></div></div></div><div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">Great Barrier Reef Marine Park Act 1975</span><span class="tag">EPBC Act 1999</span><span class="tag">Marine Parks zoning plans</span><span class="tag">Whitsundays Plan of Management</span></div></div></div></section>
+<section id="s2"><div class="s-head"><span class="s-num">02</span><h2 class="s-title">Traditional Owners &amp; sea Country</h2></div><div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">The Ngaro, Gia and Juru people are the Traditional Owners of the Whitsunday lands and seas. The Ngaro — a saltwater people — navigated these islands by canoe for thousands of years; their sites, including rock art and quarries, remain across the islands.</div></div><div class="field"><div class="field-k">Cultural significance</div><div class="field-v">The Ngaro Sea Trail links cultural sites across Hook, Whitsunday and South Molle islands. Operators increasingly acknowledge and interpret Ngaro connection to sea Country as part of responsible visitation.</div></div><div class="note"><div class="note-k">Priority recommendation</div><div class="note-v">Choose operators that acknowledge and interpret Ngaro sea Country. Encourage clients to walk part of the Ngaro Sea Trail or visit Nara Inlet's ancient rock art on Hook Island — among the oldest evidence of human occupation on the islands.</div></div></section>
+<section id="s3"><div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; current status</h2></div><div class="note warn"><div class="note-k">Reef pressure</div><div class="note-v">The Whitsundays sit within the Great Barrier Reef Marine Park and face the same climate pressures — the reef's fifth and sixth mass bleaching events (2024–25) affected reefs across the region. Responsible operator choice directly supports reef resilience.</div></div><div class="field"><div class="field-k">Cyclone recovery</div><div class="field-v">The region was severely hit by Cyclone Debbie in 2017; reefs and tourism infrastructure have largely recovered, demonstrating the area's resilience. Ongoing monitoring continues across the island reefs.</div></div><div class="field"><div class="field-k">Positive programs</div><div class="field-v"><div class="tags"><span class="tag">Eco Barge Clean Seas — marine debris removal</span><span class="tag">Reef 2050 Plan</span><span class="tag">Crown-of-thorns control</span><span class="tag">Ecotourism Australia certified operators</span><span class="tag">Eye on the Reef citizen science</span></div></div></div><div class="note"><div class="note-k">Before you sell</div><div class="note-v">Prioritise Ecotourism Australia Advanced Eco Certified operators — Cruise Whitsundays holds this for several products. A portion of reef fees funds Marine Park management. Be honest with clients about reef health while emphasising the conservation economy.</div></div></section>
+<section id="s4"><div class="s-head"><span class="s-num">04</span><h2 class="s-title">Biodiversity &amp; environment</h2></div><div class="field"><div class="field-k">Why it matters</div><div class="field-v">The Whitsundays' fringing reefs, seagrass meadows and island ecosystems support a rich web of marine and bird life — and Whitehaven's silica sand is a fragile, internationally rare feature.</div></div><div class="field"><div class="field-k">Key wildlife</div><div class="field-v"><div class="tags"><span class="tag">Green &amp; loggerhead turtles</span><span class="tag">Humpback whales (Jul–Sep)</span><span class="tag">Dugongs</span><span class="tag">Manta rays</span><span class="tag">Reef fish &amp; corals</span><span class="tag">Whitsunday hairy-nosed wombat (mainland)</span><span class="tag">Sea eagles</span></div></div></div><div class="field"><div class="field-k">Species to know</div><div class="sp-row"><div class="sp-name">Green Sea Turtle</div><div class="sp-stat"><span class="lvl endangered">Endangered</span> — nests on island beaches. Keep distance; never disturb nesting turtles or tracks.</div></div><div class="sp-row"><div class="sp-name">Humpback Whale</div><div class="sp-stat">Protected — migration Jul–Sep. The Whitsundays are a key calving area. Keep 100m (300m with calves).</div></div><div class="sp-row"><div class="sp-name">Dugong</div><div class="sp-stat"><span class="lvl endangered">Vulnerable</span> — seagrass grazer. Reduce vessel speed in seagrass areas.</div></div></div><div class="note warn"><div class="note-k">Whitehaven Beach care</div><div class="note-v">Whitehaven's 98% pure silica sand is internationally rare and fragile. Take nothing, leave nothing. Smoking and glass are banned. Use the designated facilities — there are no bins, so all rubbish must leave with visitors.</div></div></section>
+<section id="s5"><div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there sustainably</h2></div><div class="field"><div class="field-k">By air</div><div class="field-v">Whitsunday Coast Airport (Proserpine) and Hamilton Island Airport serve the region. Encourage direct routes and carbon offsetting for flights. Proserpine is the lower-cost mainland gateway; Hamilton Island flies direct for island-resort clients.</div></div><div class="field"><div class="field-k">On the water</div><div class="field-v">Cruise Whitsundays and other operators consolidate visitors onto larger, more efficient vessels — preferable to multiple small boats. Sailing tours (Camira, others) are inherently low-emission and a signature Whitsundays experience.</div></div><div class="field"><div class="field-k">Mainland hub</div><div class="field-v">Airlie Beach is compact and walkable; the lagoon, marina and town are easily covered on foot. No private car is needed for most itineraries once at Airlie Beach.</div></div><div class="note"><div class="note-k">Choosing operators</div><div class="note-v">Prioritise Ecotourism Australia Advanced Eco Certified operators and those partnering with Eco Barge Clean Seas. Sailing experiences offer the lowest-emission way to see the islands.</div></div></section>
+<section id="s6"><div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div><div class="field"><div class="field-k">Overall</div><div class="field-v">Moderate — improving, with some accessible vessels and resort facilities, though many island and beach experiences involve transfers over sand or steps.</div></div><div class="field"><div class="field-k">Ferries &amp; cruises</div><div class="field-v">Cruise Whitsundays vessels offer accessible boarding at the Port of Airlie terminal — confirm requirements in advance. Some pontoon and reef experiences are wheelchair accessible; beach landings at Whitehaven are not.</div></div><div class="field"><div class="field-k">Hamilton Island</div><div class="field-v">The most accessible island base — buggies, accessible accommodation and level resort areas. A practical choice for clients with mobility needs who still want an island experience.</div></div><div class="field"><div class="field-k">Whitehaven Beach</div><div class="field-v">Access is by boat with a wet or soft-sand landing — not wheelchair accessible. Lookout experiences (Hill Inlet) involve a boardwalk and steps. Advise clients of this honestly when booking.</div></div><div class="note"><div class="note-k">Plan ahead</div><div class="note-v">Confirm vessel and transfer accessibility with each operator before booking. Hamilton Island is the strongest base for clients with mobility needs.</div></div></section>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — Great Barrier Reef Marine Park Authority · Tourism Whitsundays · Queensland Parks &amp; Wildlife Service · Cruise Whitsundays · Eco Barge Clean Seas · AIMS 2024–25. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+</body>
+</html>
