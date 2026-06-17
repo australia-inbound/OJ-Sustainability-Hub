@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnetic Island &amp; Townsville — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:680px){.index-list{grid-template-columns:1fr;}.sp-row{grid-template-columns:1fr;gap:3px;}.plate{height:280px;}.meta{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="plate">
+  <img src="magnetic.jpg" alt="Magnetic Island &amp; Townsville">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Magnetic Island &amp; Townsville</h1>
+  </div>
+</div>
+<p class="deck">Yunbenun — a protected island wrapped in reef, home to Northern Australia's largest wild koala colony.</p>
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Wulgurukaba Country, QLD</span></div>
+<div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Townsville (TSV)</span></div>
+<div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#6 of all destinations</span></div>
+<div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot"></span>Open · 78% protected park</span></div></div>
+<div class="shell">
+  <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list"><a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+<a class="index-row" href="#s2"><span class="n">02</span><span class="t">Wulgurukaba Traditional Owners &amp; Yunbenun</span></a>
+<a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; current status</span></a>
+<a class="index-row" href="#s4"><span class="n">04</span><span class="t">Biodiversity &amp; environment</span></a>
+<a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there sustainably</span></a>
+<a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a></div>
+  </div>
+<section id="s1"><div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div><div class="field"><div class="field-k">Location &amp; size</div><div class="field-v">Magnetic Island (Yunbenun) lies 8km off Townsville in north Queensland — a short ferry ride within the Great Barrier Reef World Heritage Area. The island covers 5,184 ha, of which 78% is protected national and conservation park. Townsville is the mainland hub and a major marine-science centre.</div></div><div class="field"><div class="field-k">Character</div><div class="field-v">A relaxed, nature-rich island known for Northern Australia's largest wild koala colony, 23 bays and beaches, and 26km of walking trails. Much quieter and more affordable than the southern reef hubs, with a strong local conservation community.</div></div><div class="field"><div class="field-k">Access</div><div class="field-v">Fly to Townsville Airport (TSV), then a short SeaLink ferry (about 20–25 min) from Townsville to Nelly Bay on Magnetic Island. Ferries run frequently throughout the day and are wheelchair accessible.</div></div><div class="field"><div class="field-k">Best season</div><div class="field-v">April–November (dry season) — warm, low humidity, ideal for walking and wildlife. December–March — hot, humid, wet season, stinger season in the water. Koalas are visible year-round along the Forts Walk.</div></div><div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">Queensland Parks &amp; Wildlife Service</span><span class="tag">Wulgurukaba Traditional Owners</span><span class="tag">Townsville City Council</span><span class="tag">Great Barrier Reef Marine Park Authority</span></div></div></div><div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">Nature Conservation Act 1992 (Qld)</span><span class="tag">Great Barrier Reef Marine Park Act 1975</span><span class="tag">Magnetic Island NP Management Statement 2023</span><span class="tag">Queensland Heritage Act 1992</span></div></div></div></section>
+<section id="s2"><div class="s-head"><span class="s-num">02</span><h2 class="s-title">Wulgurukaba Traditional Owners &amp; Yunbenun</h2></div><div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">The Wulgurukaba people — the 'canoe people' — are the Traditional Custodians of Magnetic Island, known to them as Yunbenun. They have an enduring connection to the island and nearby mainland stretching back thousands of years, evidenced by shell middens, stone tools and art sites.</div></div><div class="field"><div class="field-k">Cultural significance</div><div class="field-v">Yunbenun means 'spirit of the cassowary' in the Wulgurukaba language. The Wulgurukaba work with Queensland Parks &amp; Wildlife to co-manage the island. In 2024 the Queensland Government proposed renaming the national park Yunbenun National Park in recognition of Wulgurukaba custodianship.</div></div><div class="note"><div class="note-k">Priority recommendation</div><div class="note-v">Acknowledge Wulgurukaba connection to Yunbenun in client communications. Use the traditional name alongside Magnetic Island, and choose experiences that interpret the island's deep Aboriginal history, not only its WWII and natural heritage.</div></div></section>
+<section id="s3"><div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; current status</h2></div><div class="field"><div class="field-k">Protected island</div><div class="field-v">78% of Magnetic Island is protected national and conservation park, and its waters fall within the Great Barrier Reef Marine Park. This makes responsible visitation relatively straightforward, but the koala colony and fringing reefs require care.</div></div><div class="field"><div class="field-k">Community conservation</div><div class="field-v">Magnetic Island has an unusually active local conservation community for its size (around 2,400 residents), supported by Townsville's status as a marine-science hub. Groups work on koala monitoring, reef health and marine debris.</div></div><div class="field"><div class="field-k">Positive programs</div><div class="field-v"><div class="tags"><span class="tag">Magnetic Island koala monitoring</span><span class="tag">Great Barrier Reef Foundation community projects</span><span class="tag">Reef HQ Aquarium (Townsville)</span><span class="tag">Marine debris removal</span><span class="tag">Citizen science</span></div></div></div><div class="note"><div class="note-k">Before you sell</div><div class="note-v">Emphasise Magnetic Island's exceptional protected-area status and its wild koala colony — a genuine drawcard. Brief clients on koala-viewing etiquette (observe quietly, never disturb) and the island's car-light character.</div></div></section>
+<section id="s4"><div class="s-head"><span class="s-num">04</span><h2 class="s-title">Biodiversity &amp; environment</h2></div><div class="field"><div class="field-k">Why it matters</div><div class="field-v">Magnetic Island is one of the most ecologically diverse islands of the Great Barrier Reef — combining woodland, granite headlands, fringing reef, seagrass and mangrove habitats in a small, accessible area.</div></div><div class="field"><div class="field-k">Key wildlife</div><div class="field-v"><div class="tags"><span class="tag">Wild koalas (largest colony in N. Australia)</span><span class="tag">Allied rock-wallabies</span><span class="tag">Green turtles</span><span class="tag">Dugongs</span><span class="tag">Bush stone-curlews</span><span class="tag">Possums</span><span class="tag">Fringing-reef fish &amp; coral</span></div></div></div><div class="field"><div class="field-k">Species to know</div><div class="sp-row"><div class="sp-name">Koala</div><div class="sp-stat">Protected — Northern Australia's largest wild colony. Best seen on the Forts Walk. Observe quietly; never disturb.</div></div><div class="sp-row"><div class="sp-name">Allied Rock-wallaby</div><div class="sp-stat">Protected — lives among the granite boulders. Do not feed; feeding harms their health and behaviour.</div></div><div class="sp-row"><div class="sp-name">Green Sea Turtle</div><div class="sp-stat"><span class="lvl endangered">Endangered</span> — rests on fringing reefs. Keep distance when snorkelling.</div></div><div class="sp-row"><div class="sp-name">Dugong</div><div class="sp-stat"><span class="lvl endangered">Vulnerable</span> — grazes the seagrass meadows. A key species for the island's waters.</div></div></div><div class="note"><div class="note-k">Wildlife etiquette</div><div class="note-v">Do not feed any wildlife, including rock-wallabies (despite popular feeding spots). Observe koalas quietly from the track and never disturb them. The fringing reefs are sensitive — use reef-safe sunscreen and don't touch coral.</div></div></section>
+<section id="s5"><div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there sustainably</h2></div><div class="field"><div class="field-k">By air &amp; ferry</div><div class="field-v">Fly to Townsville (TSV), then the SeaLink ferry to Magnetic Island (20–25 min). The ferry is the only access and is itself a low-impact, scenic crossing within the Marine Park.</div></div><div class="field"><div class="field-k">On the island</div><div class="field-v">Magnetic Island is best explored without a private car — local buses connect the bays, and walking trails link key sites. Some visitors hire e-bikes or the iconic open-top 'Barbie cars', though buses are the lowest-impact option.</div></div><div class="field"><div class="field-k">Lower-carbon appeal</div><div class="field-v">The compact island, frequent ferries and bus network make a genuinely car-free visit easy — a strong sustainability point for clients, and more affordable than the southern reef hubs.</div></div><div class="note"><div class="note-k">Sustainable framing</div><div class="note-v">Magnetic Island is one of the easiest reef destinations to visit car-free. Promote the ferry-plus-bus combination and walking trails as both the lowest-impact and most authentic way to experience Yunbenun.</div></div></section>
+<section id="s6"><div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div><div class="field"><div class="field-k">Overall</div><div class="field-v">Moderate — the ferry and main bays are accessible, but the island's signature wildlife walks involve uneven terrain.</div></div><div class="field"><div class="field-k">Ferry</div><div class="field-v">SeaLink ferries are designed to accommodate wheelchair users — confirm requirements when booking. Nelly Bay terminal is accessible.</div></div><div class="field"><div class="field-k">Around the island</div><div class="field-v">The local bus service connects the main bays and is the most accessible way to get around. Horseshoe Bay and Nelly Bay have accessible foreshore areas; some beaches have better access than others.</div></div><div class="field"><div class="field-k">Forts Walk &amp; koalas</div><div class="field-v">The Forts Walk — the best koala-viewing trail — is an unsealed uphill track and is not wheelchair accessible. Bounce Magnetic Island's koala and wildlife park offers a more accessible alternative for close wildlife encounters.</div></div><div class="note"><div class="note-k">Plan ahead</div><div class="note-v">For clients with mobility needs, the koala and wildlife park is a more accessible alternative to the Forts Walk. Confirm ferry and accommodation accessibility in advance.</div></div></section>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — Queensland Parks &amp; Wildlife Service · Townsville North Queensland · Great Barrier Reef Foundation · GBRMPA · Magnetic Island NP Management Statement 2023. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+</body>
+</html>
