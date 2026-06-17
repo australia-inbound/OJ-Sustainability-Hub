@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uluṟu–Kata Tjuṯa — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:680px){.index-list{grid-template-columns:1fr;}.sp-row{grid-template-columns:1fr;gap:3px;}.plate{height:280px;}.meta{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="plate">
+  <img src="uluru.jpg" alt="Uluṟu–Kata Tjuṯa">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Uluṟu–Kata Tjuṯa</h1>
+  </div>
+</div>
+<p class="deck">One of Earth's most sacred landscapes — a place of living culture, not just a natural wonder.</p>
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Aṉangu Country, NT</span></div>
+<div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Ayers Rock (AYQ)</span></div>
+<div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#3 of all destinations</span></div>
+<div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot warn"></span>Open · climbing banned</span></div></div>
+<div class="shell">
+  <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list"><a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+<a class="index-row" href="#s2"><span class="n">02</span><span class="t">Aṉangu Traditional Owners &amp; Tjukurpa</span></a>
+<a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; current status</span></a>
+<a class="index-row" href="#s4"><span class="n">04</span><span class="t">Environment &amp; landscape</span></a>
+<a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there sustainably</span></a>
+<a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a></div>
+  </div>
+<section id="s1"><div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div><div class="field"><div class="field-k">Location &amp; size</div><div class="field-v">Uluṟu is a sandstone monolith 348m high and 9.4 km around, in the southern Northern Territory. With the domes of Kata Tjuṯa 40 km west, it forms Uluṟu–Kata Tjuṯa National Park — a UNESCO dual World Heritage Site for both natural and cultural value.</div></div><div class="field"><div class="field-k">Character</div><div class="field-v">One of the most sacred landscapes on Earth for its Aṉangu Traditional Owners. A place of profound cultural and spiritual significance, not simply a natural landmark — this framing must shape every client interaction.</div></div><div class="field"><div class="field-k">Access</div><div class="field-v">Fly to Ayers Rock Airport (AYQ) at Yulara — direct services from Sydney, Melbourne, Brisbane, Cairns and Alice Springs. There is no practical alternative to flying for most visitors — an honest limitation of the destination.</div></div><div class="field"><div class="field-k">Best season</div><div class="field-v">May–September (cooler months) — best for walking, daytime temperatures manageable. December–February — extreme heat, walks close above 36°C. Sunrise and sunset are the iconic viewing times year-round.</div></div><div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">Parks Australia</span><span class="tag">Uluṟu–Kata Tjuṯa Board of Management</span><span class="tag">Aṉangu Traditional Owners</span><span class="tag">Central Land Council</span></div></div></div><div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">EPBC Act 1999</span><span class="tag">Aboriginal Land Rights Act 1976</span><span class="tag">Park lease &amp; joint management plan</span><span class="tag">Climbing prohibition (2019)</span></div></div></div></section>
+<section id="s2"><div class="s-head"><span class="s-num">02</span><h2 class="s-title">Aṉangu Traditional Owners &amp; Tjukurpa</h2></div><div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">The Aṉangu are the Traditional Owners of Uluṟu–Kata Tjuṯa, with a continuous culture stretching back tens of thousands of years. The park is jointly managed by Aṉangu and Parks Australia, with traditional law guiding decisions.</div></div><div class="field"><div class="field-k">Tjukurpa</div><div class="field-v">Tjukurpa is the foundation of Aṉangu culture — law, knowledge, religion, and the relationships between people, land and all living things. It governs every aspect of how the land is cared for and how visitors should behave.</div></div><div class="note warn"><div class="note-k">Climbing is permanently prohibited</div><div class="note-v">Climbing Uluṟu has been banned since 26 October 2019. The climb crossed a sacred men's ceremonial track tied to Tjukurpa. This is a legal prohibition, not a preference — communicate it to every client without exception.</div></div><div class="note"><div class="note-k">Priority recommendation</div><div class="note-v">Begin every itinerary at the Cultural Centre, and include an Aṉangu-guided experience such as the Maruku Arts dot-painting workshop or a SEIT Outback Australia cultural tour led by Traditional Owners.</div></div></section>
+<section id="s3"><div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; current status</h2></div><div class="field"><div class="field-k">Cultural sustainability</div><div class="field-v">The greatest sustainability priority at Uluṟu is cultural, not environmental. Respecting Tjukurpa, photography restrictions and sacred-site closures is the core responsibility of every visitor and operator.</div></div><div class="field"><div class="field-k">Photography rules</div><div class="field-v">Some areas of Uluṟu are permanently off-limits to photography — marked by signs — because they depict sacred sites. Always check signage, and always ask permission before photographing Aṉangu people. Commercial photography requires a Parks Australia permit.</div></div><div class="field"><div class="field-k">Environmental care</div><div class="field-v"><div class="tags"><span class="tag">Stay on marked tracks</span><span class="tag">Carry out all rubbish</span><span class="tag">Don't remove rock or soil</span><span class="tag">Respect water sources</span><span class="tag">Feral animal &amp; buffel grass management</span></div></div></div><div class="note"><div class="note-k">Before you sell</div><div class="note-v">Brief clients on cultural protocols before arrival — not on the day. Set expectations that climbing is banned, that some sites cannot be photographed, and that this is a place of living culture deserving deep respect.</div></div></section>
+<section id="s4"><div class="s-head"><span class="s-num">04</span><h2 class="s-title">Environment &amp; landscape</h2></div><div class="field"><div class="field-k">Geology</div><div class="field-v">Uluṟu is the visible tip of a vast rock slab extending kilometres underground. Its colour shifts dramatically with the light — most spectacularly at sunrise and sunset — due to iron oxidation on its surface.</div></div><div class="field"><div class="field-k">Desert ecology</div><div class="field-v"><div class="tags"><span class="tag">Red kangaroos</span><span class="tag">Dingoes</span><span class="tag">Thorny devils</span><span class="tag">Perentie monitors</span><span class="tag">Zebra finches</span><span class="tag">Desert wildflowers (after rain)</span><span class="tag">Mulga &amp; spinifex</span></div></div></div><div class="field"><div class="field-k">Kata Tjuṯa</div><div class="field-v">The 36 domes of Kata Tjuṯa rise higher than Uluṟu. The Valley of the Winds and Walpa Gorge walks pass through them — terrain here is rugged and walks close in extreme heat.</div></div><div class="note warn"><div class="note-k">Heat &amp; safety — critical</div><div class="note-v">Uluṟu's extreme heat (up to 50°C) is a genuine medical risk. Walks close automatically above 36°C. The nearest hospital is Alice Springs — 450 km away. Ensure clients carry water (1L per hour), sun protection, and travel insurance with medical evacuation cover.</div></div></section>
+<section id="s5"><div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there sustainably</h2></div><div class="field"><div class="field-k">Primary access</div><div class="field-v">Fly to Ayers Rock Airport (AYQ) at Yulara — there is no practical low-carbon alternative for most visitors. Prefer direct flights over connections via Alice Springs where possible.</div></div><div class="field"><div class="field-k">The Ghan</div><div class="field-v">Some travellers combine Uluṟu with Alice Springs and join The Ghan (Adelaide–Darwin) for part of a longer itinerary — a meaningful lower-carbon option for the overland leg.</div></div><div class="field"><div class="field-k">On the ground</div><div class="field-v">A free shuttle connects Yulara resort, airport and key sites. Hiring a car is common for reaching multiple sunrise/sunset viewing areas. No public transport runs between Yulara and the park sites.</div></div><div class="note"><div class="note-k">Honest framing</div><div class="note-v">Uluṟu is the most transport-challenged destination in the portfolio due to its remoteness. Acknowledge this with clients and recommend carbon offsetting for the flight legs as standard practice for this itinerary.</div></div></section>
+<section id="s6"><div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div><div class="field"><div class="field-k">Overall</div><div class="field-v">Good for a remote desert destination — most key experiences are accessible with planning.</div></div><div class="field"><div class="field-k">Accessible walks</div><div class="field-v">The Kuniya Walk (1km return to Mutitjulu Waterhole) and Mala Walk (2km return) are on flat, maintained paths suitable for wheelchairs, with deep cultural significance. The full Uluṟu Base Walk (10.6km) is accessible on maintained sandy paths — a powered wheelchair or carer is recommended for the full circuit.</div></div><div class="field"><div class="field-k">Cultural Centre</div><div class="field-v">Fully accessible with ramps, paved paths and accessible facilities. Recommended as the first stop for every visitor.</div></div><div class="field"><div class="field-k">Viewing areas</div><div class="field-v">All sunrise and sunset viewing areas are wheelchair accessible with paved surfaces and seating. The Valley of the Winds and Walpa Gorge walks at Kata Tjuṯa are not accessible — terrain is rugged.</div></div><div class="note warn"><div class="note-k">Heat &amp; medical risk</div><div class="note-v">Extreme heat presents real risk for visitors with cardiovascular or heat-sensitive conditions. The nearest hospital is 450 km away. Clients with relevant conditions should consult a physician before travel and carry evacuation cover.</div></div></section>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — Parks Australia · Uluṟu–Kata Tjuṯa National Park Board of Management · Central Land Council · Tourism NT. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+</body>
+</html>

@@ -7,353 +7,263 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --orange: #E8631A;
-  --orange-light: #FDF0E8;
-  --orange-mid: #F5874A;
-  --dark: #1A1510;
-  --dark-2: #2C2419;
-  --mid: #6B5E52;
-  --light: #F7F3EE;
-  --white: #FEFCFA;
-  --green: #2D6A4F;
-  --green-light: #EAF3EE;
-  --blue: #1A4A7A;
-  --blue-light: #E8F0F8;
-  --red-light: #F5E8E8;
-  --red: #8B2020;
-  --border: rgba(26,21,16,0.1);
+:root{
+  --ink:#1A1510;
+  --paper:#FBF9F6;
+  --muted:#8A7D70;
+  --hair:#E7E0D8;
+  --accent:#E8631A;
+  --alert:#B23A2E;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--light); color: var(--dark); font-size: 15px; line-height: 1.6; }
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
 
-/* NAV */
-nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo { width: 28px; height: 28px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 16px; color: white; }
-.nav-name { font-size: 14px; font-weight: 500; color: white; letter-spacing: 0.01em; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; font-weight: 400; transition: color 0.2s; letter-spacing: 0.02em; }
-.nav-links a:hover { color: white; }
+/* top bar */
+.bar{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.brand{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.bar-nav{display:flex;gap:26px;}
+.bar-nav a{font-size:13px;color:var(--muted);transition:color .15s;}
+.bar-nav a:hover{color:var(--ink);}
 
-/* HERO */
-.hero { background: var(--dark); padding: 80px 40px 90px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,99,26,0.15) 0%, transparent 70%); pointer-events: none; }
-.hero::after { content: ''; position: absolute; bottom: -80px; left: 20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(232,99,26,0.08) 0%, transparent 70%); pointer-events: none; }
-.hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
-.hero-eyebrow { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--orange-mid); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-.hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--orange-mid); }
-.hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 56px); color: white; line-height: 1.1; margin-bottom: 24px; font-weight: 400; }
-.hero-title em { color: var(--orange-mid); font-style: italic; }
-.hero-sub { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
-.hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
-.stat { display: flex; flex-direction: column; gap: 4px; }
-.stat-num { font-family: 'DM Serif Display', serif; font-size: 28px; color: white; line-height: 1; }
-.stat-label { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 400; letter-spacing: 0.03em; }
-.stat-divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
+/* hero — ink ground, no glow, editorial */
+.hero{background:var(--ink);color:#fff;padding:88px 32px 84px;}
+.hero-inner{max-width:940px;margin:0 auto;}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;}
+.hero-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-0.015em;}
+.hero-title em{font-style:italic;color:#fff;}
+.hero-sub{margin-top:24px;font-size:17px;font-weight:300;line-height:1.6;color:rgba(255,255,255,0.72);max-width:600px;}
+.hero-thesis{margin-top:38px;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14);display:flex;align-items:baseline;gap:14px;max-width:600px;}
+.hero-thesis .big{font-family:'DM Serif Display',serif;font-size:40px;line-height:1;color:var(--accent);}
+.hero-thesis .txt{font-size:14.5px;color:rgba(255,255,255,0.72);line-height:1.5;}
 
-/* MAIN */
-.main { max-width: 900px; margin: 0 auto; padding: 60px 40px; }
-.section-heading { display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px; }
-.section-heading h2 { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: var(--dark); }
-.section-heading .count { font-size: 12px; color: var(--mid); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
+/* section scaffold */
+.wrap{max-width:940px;margin:0 auto;padding:0 32px;}
+.sec{padding:64px 0;border-top:1px solid var(--hair);}
+.sec:first-of-type{border-top:none;}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:36px;flex-wrap:wrap;}
+.sec-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:30px;letter-spacing:-0.01em;}
+.sec-meta{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.sec-intro{font-size:16px;color:var(--muted);line-height:1.65;max-width:680px;margin:-16px 0 36px;font-weight:300;}
 
-/* DESTINATION CARDS */
-.destinations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 64px; }
+/* destination cards — the workhorse, all identical */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.card{border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s,transform .2s;}
+.card:hover{border-color:#D8CFC4;box-shadow:0 8px 30px rgba(26,21,16,0.07);transform:translateY(-2px);}
+.card-plate{position:relative;height:172px;overflow:hidden;}
+.card-plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.card-plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.78) 0%,rgba(20,16,12,0.12) 55%,rgba(20,16,12,0.05) 100%);}
+.card-region{position:absolute;top:13px;right:13px;z-index:2;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:#fff;background:rgba(20,16,12,0.45);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:3px 10px;}
+.card-titles{position:absolute;left:18px;bottom:14px;z-index:2;}
+.card-name{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;line-height:1.05;letter-spacing:-0.01em;}
+.card-place{font-size:12px;color:rgba(255,255,255,0.82);margin-top:3px;}
+.card-body{padding:15px 18px 6px;flex:1;}
+.card-status{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);}
+.card-status .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.card-status .dot.warn{background:var(--alert);}
+.card-actions{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair);margin-top:14px;}
+.act-group{display:flex;flex-direction:column;padding:13px 18px;}
+.act-group:first-child{border-right:1px solid var(--hair);}
+.act-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.act-links{display:flex;gap:14px;}
+.act-links a{font-size:13px;font-weight:500;color:var(--ink);display:inline-flex;align-items:center;gap:5px;transition:color .15s;}
+.act-links a:hover{color:var(--accent);}
+.act-links a svg{width:13px;height:13px;}
 
-.dest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
-.dest-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(26,21,16,0.12); }
+/* environmental — flat, no color cards */
+.env-item{padding:30px 0;border-top:1px solid var(--hair);}
+.env-item:first-of-type{border-top:none;}
+.env-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;}
+.env-tag{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--alert);}
+.env-name{font-family:'DM Serif Display',serif;font-size:23px;letter-spacing:-0.01em;}
+.env-desc{font-size:14.5px;color:var(--muted);line-height:1.6;max-width:680px;margin-bottom:20px;}
+.env-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:18px;}
+.env-stat-num{font-family:'DM Serif Display',serif;font-size:30px;color:var(--ink);line-height:1;margin-bottom:5px;}
+.env-stat-label{font-size:12px;color:var(--muted);line-height:1.4;}
+.env-affected{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:18px;}
+.env-affected .k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-right:4px;}
+.env-affected .tag{font-size:12px;border:1px solid var(--hair);border-radius:6px;padding:3px 9px;background:#fff;}
+.env-link{font-size:13.5px;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:6px;}
+.env-link:hover{text-decoration:underline;}
 
-.dest-card-image { position: relative; height: 200px; overflow: hidden; }
-.dest-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
-.dest-card:hover .dest-card-image img { transform: scale(1.05); }
+/* how to use — sequence */
+.steps{display:flex;flex-direction:column;}
+.step{display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--hair);}
+.step:first-child{border-top:none;padding-top:0;}
+.step-num{font-family:'DM Serif Display',serif;font-size:22px;color:var(--accent);line-height:1;min-width:30px;}
+.step-title{font-size:15.5px;font-weight:600;margin-bottom:5px;}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.6;max-width:680px;}
 
-.dest-image-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%); }
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,0.5);margin-top:8px;}
+.footer-inner{max-width:940px;margin:0 auto;padding:34px 32px 44px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-brand{font-family:'DM Serif Display',serif;font-size:18px;color:#fff;margin-bottom:4px;}
+.footer-note{font-size:11.5px;color:rgba(255,255,255,0.4);margin-top:4px;}
+.footer-right{text-align:right;font-size:12.5px;}
 
-.dest-image-badge { position: absolute; top: 14px; right: 14px; font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.92); color: var(--dark); letter-spacing: 0.02em; backdrop-filter: blur(4px); }
-
-.dest-image-title { position: absolute; bottom: 16px; left: 18px; right: 18px; }
-.dest-image-title h3 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: white; line-height: 1.15; text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
-.dest-image-title p { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
-
-.dest-card-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
-
-.dest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.dest-tag { font-size: 11px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border); color: var(--mid); background: var(--light); }
-.dest-tag.alert { background: var(--red-light); color: var(--red); border-color: rgba(139,32,32,0.15); }
-.dest-tag.positive { background: var(--green-light); color: var(--green); border-color: rgba(45,106,79,0.15); }
-.dest-tag.info { background: var(--blue-light); color: var(--blue); border-color: rgba(26,74,122,0.15); }
-
-.dest-card-footer { padding: 0 20px 20px; display: flex; align-items: center; justify-content: space-between; }
-.dest-updated { font-size: 11px; color: var(--mid); }
-.dest-buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-.dest-download { display: inline-flex; align-items: center; gap: 7px; background: var(--dark); color: white; text-decoration: none; font-size: 12px; font-weight: 500; padding: 9px 14px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.02em; }
-.dest-download:hover { background: var(--orange); }
-.dest-download.view { background: var(--light); color: var(--dark); border: 1px solid var(--border); }
-.dest-download.view:hover { background: var(--orange); color: white; border-color: var(--orange); }
-.dest-download.secondary { background: var(--light); color: var(--dark); border: 1px solid var(--border); }
-.dest-download.secondary:hover { background: var(--orange); color: white; border-color: var(--orange); }
-.dest-download svg { width: 13px; height: 13px; opacity: 0.8; flex-shrink: 0; }
-
-/* FULL PACK */
-.pack-section { background: var(--dark); border-radius: 16px; padding: 36px 40px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; margin-bottom: 64px; }
-.pack-text { flex: 1; min-width: 240px; }
-.pack-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange-mid); margin-bottom: 8px; }
-.pack-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: white; font-weight: 400; margin-bottom: 8px; }
-.pack-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
-.pack-download { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: white; text-decoration: none; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 10px; transition: background 0.2s; white-space: nowrap; }
-.pack-download:hover { background: var(--orange-mid); }
-
-/* HOW TO USE */
-.how-section { margin-bottom: 64px; }
-.steps { display: flex; flex-direction: column; gap: 0; position: relative; }
-.steps::before { content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px; background: var(--border); }
-.step { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; position: relative; }
-.step-num { width: 38px; height: 38px; background: var(--white); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--orange); flex-shrink: 0; position: relative; z-index: 1; }
-.step-content { flex: 1; padding-top: 6px; }
-.step-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
-.step-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
-
-.section-sub { font-size: 13px; color: var(--mid); font-weight: 400; margin-top: 4px; letter-spacing: 0.01em; }
-/* ENVIRONMENTAL CHALLENGES */
-.env-section { margin-bottom: 64px; }
-.env-intro { font-size: 14px; color: var(--mid); line-height: 1.7; max-width: 720px; margin-bottom: 28px; font-weight: 300; }
-.env-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
-.env-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-.env-card-header { padding: 24px; display: flex; align-items: center; gap: 16px; }
-.env-card-header.fire { background: linear-gradient(135deg, #2C1810 0%, #4A2010 100%); }
-.env-card-header.reef { background: linear-gradient(135deg, #0A2A3A 0%, #0C3D5A 100%); }
-.env-icon { font-size: 32px; line-height: 1; flex-shrink: 0; }
-.env-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
-.env-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: white; font-weight: 400; line-height: 1.2; }
-.env-card-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
-.env-desc { font-size: 13px; color: var(--mid); line-height: 1.7; font-weight: 300; }
-.env-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.env-stat { background: var(--light); border-radius: 10px; padding: 12px 14px; }
-.env-stat-num { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--dark); line-height: 1; margin-bottom: 3px; }
-.env-stat-label { font-size: 11px; color: var(--mid); line-height: 1.3; }
-.env-destinations { display: flex; flex-direction: column; gap: 8px; }
-.env-dest-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid); }
-.env-dest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.env-dest-tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; background: var(--light); border: 1px solid var(--border); color: var(--mid); }
-.env-impact-block { border-left: 2px solid var(--orange); padding-left: 14px; }
-.env-impact-title { font-size: 12px; font-weight: 600; color: var(--dark); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
-.env-impact-text { font-size: 13px; color: var(--mid); line-height: 1.7; font-weight: 300; }
-.env-recovery { background: var(--light); border-radius: 10px; padding: 16px; }
-.env-recovery-title { font-size: 12px; font-weight: 600; color: var(--dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-.env-recovery-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.env-recovery-list li { font-size: 12px; color: var(--mid); line-height: 1.5; padding-left: 16px; position: relative; }
-.env-recovery-list li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; top: 1px; }
-.env-learn-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; background: var(--dark); color: white; text-decoration: none; font-size: 13px; font-weight: 500; padding: 11px 20px; border-radius: 8px; transition: background 0.2s; letter-spacing: 0.01em; align-self: flex-start; }
-.env-learn-btn:hover { background: var(--orange); }
-.env-learn-btn svg { flex-shrink: 0; opacity: 0.7; }
-@media (max-width: 700px) { .env-grid { grid-template-columns: 1fr; } .env-stats { grid-template-columns: repeat(2, 1fr); } }
-
-/* FOOTER */
-footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.8; }
-.footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
-.footer-brand { font-family: 'DM Serif Display', serif; font-size: 18px; color: white; font-weight: 400; margin-bottom: 4px; }
-.footer-note { font-size: 11px; color: rgba(255,255,255,0.25); }
-
-/* ANIMATIONS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-.dest-card { animation: fadeUp 0.5s ease both; }
-.dest-card:nth-child(1) { animation-delay: 0.05s; }
-.dest-card:nth-child(2) { animation-delay: 0.1s; }
-.dest-card:nth-child(3) { animation-delay: 0.15s; }
-.dest-card:nth-child(4) { animation-delay: 0.2s; }
-
-@media (max-width: 700px) {
-  nav { padding: 0 20px; }
-  .hero { padding: 50px 20px 60px; }
-  .main { padding: 40px 20px; }
-  .destinations-grid { grid-template-columns: 1fr; }
-  .pack-section { padding: 24px 20px; }
-  footer { padding: 32px 20px; }
-  .nav-links { display: none; }
+@media(max-width:760px){
+  .cards{grid-template-columns:1fr;}
+  .env-stats{grid-template-columns:repeat(2,1fr);gap:18px;}
+  .bar-nav{display:none;}
+  .hero{padding:64px 24px 60px;}
+  .wrap,.footer-inner{padding-left:24px;padding-right:24px;}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-brand">
-    <div class="nav-logo">OJ</div>
-    <span class="nav-name">Orange Journeys</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#destinations">Destinations</a></li>
-    <li><a href="#environmental-challenges">Environmental context</a></li>
-    <li><a href="#how-to-use">How to use</a></li>
-  </ul>
-</nav>
+<div class="bar">
+  <div class="brand"><span class="mark">OJ</span>Orange Journeys</div>
+  <nav class="bar-nav">
+    <a href="#destinations">Destinations</a>
+    <a href="#environment">Climate context</a>
+    <a href="#how-to-use">How to use</a>
+  </nav>
+</div>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Sustainability Hub</div>
     <h1 class="hero-title">Our destinations,<br><em>responsibly documented.</em></h1>
-    <p class="hero-sub">The best travel experiences come from knowing a destination deeply — its people, its pressures and its stories. Australia is one of the most biodiverse, culturally rich and environmentally complex places on Earth. These files are our team's guide to understanding it, and sharing it, with the care it deserves.</p>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">4</span>
-        <span class="stat-label">Destinations</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num">June 2026</span>
-        <span class="stat-label">Last updated</span>
-      </div>
+    <p class="hero-sub">The best travel experiences come from knowing a destination deeply — its people, its pressures and its stories. These files are our team's guide to understanding Australia, and sharing it, with the care it deserves.</p>
+    <div class="hero-thesis">
+      <span class="big">80%</span>
+      <span class="txt">of where our clients travelled in FY 2025–26 is covered by the destination files in this library — selected directly from booking data, not perception.</span>
     </div>
   </div>
 </section>
 
-<main class="main">
+<main class="wrap">
 
-  <section id="destinations">
-    <div class="section-heading">
-      <h2>Destination files</h2>
-      <span class="count">4 destinations · Updated June 2026</span>
+  <section class="sec" id="destinations">
+    <div class="sec-head">
+      <h2 class="sec-title">Destination files</h2>
+      <span class="sec-meta">4 published · more in progress</span>
     </div>
+    <div class="cards">
 
-    <div class="destinations-grid">
-
-      <!-- GBR -->
-      <div class="dest-card">
-        <div class="dest-card-image">
-          <img src="gbr.jpg" alt="Great Barrier Reef underwater coral" loading="lazy">
-          <div class="dest-image-overlay"></div>
-          <span class="dest-image-badge">Queensland</span>
-          <div class="dest-image-title">
-            <h3>Great Barrier Reef</h3>
-            <p>📍 Cairns &amp; surrounds, QLD</p>
+      <!-- KANGAROO ISLAND -->
+      <div class="card">
+        <div class="card-plate">
+          <img src="kangarooisland.jpg" alt="Kangaroo Island beach with kangaroos">
+          <span class="card-region">South Australia</span>
+          <div class="card-titles">
+            <div class="card-name">Kangaroo Island</div>
+            <div class="card-place">Nurrungaui · Ngarrindjeri Country</div>
           </div>
         </div>
-        <div class="dest-card-body">
-          <div class="dest-tags">
-            <span class="dest-tag info">UNESCO World Heritage</span>
-            <span class="dest-tag alert">Reef health: critical</span>
-            <span class="dest-tag positive">HSTO operators available</span>
+        <div class="card-body">
+          <div class="card-status"><span class="dot"></span>Open · strong recovery · #2 by pax volume</div>
+        </div>
+        <div class="card-actions">
+          <div class="act-group">
+            <span class="act-label">Destination file</span>
+            <div class="act-links">
+              <a href="kangarooisland_sheet.html" target="_blank">View</a>
+              <a href="Orange_Journeys_Destination_KangarooIsland_2026.pdf" download>↓ PDF</a>
+            </div>
+          </div>
+          <div class="act-group">
+            <span class="act-label">Code of conduct</span>
+            <div class="act-links">
+              <a href="kangarooisland_conduct.html" target="_blank">View</a>
+              <a href="KangarooIsland_VisitorCodeOfConduct.pdf" download>↓ PDF</a>
+            </div>
           </div>
         </div>
-        <div class="dest-card-footer">
-          <span class="dest-updated">Updated June 2026</span>
-          <div class="dest-buttons">
-            <a href="Orange_Journeys_Destination_GBR_2026.pdf" class="dest-download" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Destination file
-            </a>
-            <a href="GBR_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Code of conduct
-            </a>
+      </div>
+
+      <!-- GREAT BARRIER REEF -->
+      <div class="card">
+        <div class="card-plate">
+          <img src="gbr.jpg" alt="Great Barrier Reef">
+          <span class="card-region">Queensland</span>
+          <div class="card-titles">
+            <div class="card-name">Great Barrier Reef</div>
+            <div class="card-place">Cairns &amp; surrounds</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-status"><span class="dot warn"></span>Open · reef health critical · #4 by pax volume</div>
+        </div>
+        <div class="card-actions">
+          <div class="act-group">
+            <span class="act-label">Destination file</span>
+            <div class="act-links">
+              <a href="gbr_sheet.html" target="_blank">View</a>
+              <a href="Orange_Journeys_Destination_GBR_2026.pdf" download>↓ PDF</a>
+            </div>
+          </div>
+          <div class="act-group">
+            <span class="act-label">Code of conduct</span>
+            <div class="act-links">
+              <a href="gbr_conduct.html" target="_blank">View</a>
+              <a href="GBR_VisitorCodeOfConduct.pdf" download>↓ PDF</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- ULURU -->
-      <div class="dest-card">
-        <div class="dest-card-image">
-          <img src="uluru.jpg" alt="Uluru at sunset in the red centre of Australia" loading="lazy">
-          <div class="dest-image-overlay"></div>
-          <span class="dest-image-badge">Northern Territory</span>
-          <div class="dest-image-title">
-            <h3>Uluṟu–Kata Tjuṯa</h3>
-            <p>📍 Red Centre, NT</p>
+      <div class="card">
+        <div class="card-plate">
+          <img src="uluru.jpg" alt="Uluru at sunset">
+          <span class="card-region">Northern Territory</span>
+          <div class="card-titles">
+            <div class="card-name">Uluṟu–Kata Tjuṯa</div>
+            <div class="card-place">Aṉangu Country</div>
           </div>
         </div>
-        <div class="dest-card-body">
-          <div class="dest-tags">
-            <span class="dest-tag info">UNESCO Dual Heritage</span>
-            <span class="dest-tag alert">Climbing: permanently banned</span>
-            <span class="dest-tag positive">Anangu-led operators</span>
-          </div>
+        <div class="card-body">
+          <div class="card-status"><span class="dot"></span>Open · climbing permanently banned · #3 by pax volume</div>
         </div>
-        <div class="dest-card-footer">
-          <span class="dest-updated">Updated June 2026</span>
-          <div class="dest-buttons">
-            <a href="Orange_Journeys_Destination_Uluru_2026.pdf" class="dest-download" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Destination file
-            </a>
-            <a href="Uluru_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Code of conduct
-            </a>
+        <div class="card-actions">
+          <div class="act-group">
+            <span class="act-label">Destination file</span>
+            <div class="act-links">
+              <a href="uluru_sheet.html" target="_blank">View</a>
+              <a href="Orange_Journeys_Destination_Uluru_2026.pdf" download>↓ PDF</a>
+            </div>
+          </div>
+          <div class="act-group">
+            <span class="act-label">Code of conduct</span>
+            <div class="act-links">
+              <a href="uluru_conduct.html" target="_blank">View</a>
+              <a href="Uluru_VisitorCodeOfConduct.pdf" download>↓ PDF</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- SYDNEY -->
-      <div class="dest-card">
-        <div class="dest-card-image">
-          <img src="sydney.jpg" alt="Sydney Opera House and Harbour Bridge from above" loading="lazy">
-          <div class="dest-image-overlay"></div>
-          <span class="dest-image-badge">New South Wales</span>
-          <div class="dest-image-title">
-            <h3>Sydney</h3>
-            <p>📍 Gadigal Country, NSW</p>
+      <div class="card">
+        <div class="card-plate">
+          <img src="sydney.jpg" alt="Sydney Harbour">
+          <span class="card-region">New South Wales</span>
+          <div class="card-titles">
+            <div class="card-name">Sydney</div>
+            <div class="card-place">Gadigal Country</div>
           </div>
         </div>
-        <div class="dest-card-body">
-          <div class="dest-tags">
-            <span class="dest-tag positive">Excellent public transport</span>
-            <span class="dest-tag info">Harbour &amp; cycling focus</span>
-            <span class="dest-tag positive">Aboriginal-led experiences</span>
-          </div>
+        <div class="card-body">
+          <div class="card-status"><span class="dot"></span>Open · #1 by pax volume</div>
         </div>
-        <div class="dest-card-footer">
-          <span class="dest-updated">Updated June 2026</span>
-          <div class="dest-buttons">
-            <a href="Orange_Journeys_Destination_Sydney_2026.pdf" class="dest-download" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Destination file
-            </a>
-            <a href="Sydney_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Code of conduct
-            </a>
+        <div class="card-actions">
+          <div class="act-group">
+            <span class="act-label">Destination file</span>
+            <div class="act-links">
+              <a href="sydney_sheet.html" target="_blank">View</a>
+              <a href="Orange_Journeys_Destination_Sydney_2026.pdf" download>↓ PDF</a>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- KANGAROO ISLAND -->
-      <div class="dest-card">
-        <div class="dest-card-image">
-          <img src="kangarooisland.jpg" alt="Kangaroo Island coastline and wildlife South Australia" loading="lazy">
-          <div class="dest-image-overlay"></div>
-          <span class="dest-image-badge">South Australia</span>
-          <div class="dest-image-title">
-            <h3>Kangaroo Island</h3>
-            <p>📍 Nurrungaui · Ngarrindjeri Country, SA</p>
-          </div>
-        </div>
-        <div class="dest-card-body">
-          <div class="dest-tags">
-            <span class="dest-tag positive">Exceptional biodiversity</span>
-            <span class="dest-tag alert">Bushfire recovery ongoing</span>
-            <span class="dest-tag info">Ferry access — SeaLink</span>
-          </div>
-        </div>
-        <div class="dest-card-footer">
-          <span class="dest-updated">Updated June 2026</span>
-          <div class="dest-buttons">
-            <a href="kangarooisland_sheet.html" target="_blank" class="dest-download view">
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 5a3 3 0 100 6 3 3 0 000-6zm0 5a2 2 0 110-4 2 2 0 010 4z"/><path d="M1.5 8S4 3 8 3s6.5 5 6.5 5S12 13 8 13 1.5 8 1.5 8z"/></svg>
-              View destination file
-            </a>
-            <a href="Orange_Journeys_Destination_KangarooIsland_2026.pdf" class="dest-download secondary" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Download
-            </a>
-            <a href="kangarooisland_conduct.html" target="_blank" class="dest-download view">
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 5a3 3 0 100 6 3 3 0 000-6zm0 5a2 2 0 110-4 2 2 0 010 4z"/><path d="M1.5 8S4 3 8 3s6.5 5 6.5 5S12 13 8 13 1.5 8 1.5 8z"/></svg>
-              View code of conduct
-            </a>
-            <a href="KangarooIsland_VisitorCodeOfConduct.pdf" class="dest-download secondary" download>
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><rect x="2" y="13" width="12" height="1.5" rx="0.75"/></svg>
-              Download
-            </a>
+          <div class="act-group">
+            <span class="act-label">Code of conduct</span>
+            <div class="act-links">
+              <a href="sydney_conduct.html" target="_blank">View</a>
+              <a href="Sydney_VisitorCodeOfConduct.pdf" download>↓ PDF</a>
+            </div>
           </div>
         </div>
       </div>
@@ -361,151 +271,51 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
     </div>
   </section>
 
-  <!-- ENVIRONMENTAL CHALLENGES -->
-  <section id="environmental-challenges" class="env-section">
-    <div class="section-heading">
-      <div>
-        <h2>Environmental pressures &amp; climate context</h2>
-        <p class="section-sub">Understanding Australia's critical challenges</p>
-      </div>
+  <section class="sec" id="environment">
+    <div class="sec-head">
+      <h2 class="sec-title">Climate context</h2>
+      <span class="sec-meta">Why responsible selling matters</span>
     </div>
-    <p class="env-intro">Australia's most iconic tourism destinations are under increasing pressure from climate change. Understanding these challenges is essential for responsible tour operators — it shapes how we sell destinations, how we brief clients, and how we engage with local conservation efforts.</p>
+    <p class="sec-intro">Australia's most iconic destinations are under increasing pressure from climate change. Understanding these challenges is part of selling them responsibly — it shapes how we brief clients and how we engage with local conservation efforts.</p>
 
-    <div class="env-grid">
-
-      <div class="env-card">
-        <div class="env-card-header fire">
-          <div class="env-icon">🔥</div>
-          <div class="env-header-text">
-            <div class="env-eyebrow">2019 — 2020</div>
-            <h3 class="env-title">Black Summer bushfires</h3>
-          </div>
-        </div>
-        <div class="env-card-body">
-          <p class="env-desc">The 2019–20 Black Summer was the most catastrophic bushfire season ever recorded in Australia. Fuelled by record-breaking drought, extreme heat and high winds — all intensified by climate change — fires burned from July 2019 to March 2020, consuming around 24 million hectares across New South Wales, Victoria, Queensland and South Australia.</p>
-          <div class="env-stats">
-            <div class="env-stat">
-              <div class="env-stat-num">24M</div>
-              <div class="env-stat-label">hectares burned</div>
-            </div>
-            <div class="env-stat">
-              <div class="env-stat-num">3B</div>
-              <div class="env-stat-label">animals displaced or killed</div>
-            </div>
-            <div class="env-stat">
-              <div class="env-stat-num">$2.8B</div>
-              <div class="env-stat-label">lost from tourism supply chains</div>
-            </div>
-            <div class="env-stat">
-              <div class="env-stat-num">7,300</div>
-              <div class="env-stat-label">tourism jobs lost nationwide</div>
-            </div>
-          </div>
-          <div class="env-destinations">
-            <div class="env-dest-label">Destinations affected</div>
-            <div class="env-dest-tags">
-              <span class="env-dest-tag">Blue Mountains — 79% of World Heritage Area burned</span>
-              <span class="env-dest-tag">NSW South Coast</span>
-              <span class="env-dest-tag">Kangaroo Island</span>
-              <span class="env-dest-tag">Victorian Alps</span>
-            </div>
-          </div>
-          <a href="bushfires.html" target="_blank" class="env-learn-btn">
-            Learn about the impact on tourism
-            <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13"><path d="M8.5 3h4.5v4.5h-1.5V5.56L6.03 11.03 5 10l5.44-5.44H8.5V3z"/><path d="M3 4.5h4V6H4.5v5.5H10v-2.5h1.5V13H3V4.5z"/></svg>
-          </a>
-        </div>
+    <div class="env-item">
+      <div class="env-head"><span class="env-tag">2019–20</span><span class="env-name">Black Summer bushfires</span></div>
+      <p class="env-desc">The 2019–20 Black Summer was the most catastrophic bushfire season on record in Australia. Fuelled by record drought, extreme heat and high winds, fires burned from July 2019 to March 2020, consuming around 24 million hectares across New South Wales, Victoria, Queensland and South Australia.</p>
+      <div class="env-stats">
+        <div><div class="env-stat-num">24M</div><div class="env-stat-label">hectares burned</div></div>
+        <div><div class="env-stat-num">3B</div><div class="env-stat-label">animals displaced or killed</div></div>
+        <div><div class="env-stat-num">$2.8B</div><div class="env-stat-label">lost from tourism supply chains</div></div>
+        <div><div class="env-stat-num">7,300</div><div class="env-stat-label">tourism jobs lost nationwide</div></div>
       </div>
+      <div class="env-affected"><span class="k">Destinations affected</span><span class="tag">Blue Mountains — 79% of WHA burned</span><span class="tag">NSW South Coast</span><span class="tag">Kangaroo Island</span><span class="tag">Victorian Alps</span></div>
+      <a class="env-link" href="bushfires.html" target="_blank">Read the impact on tourism →</a>
+    </div>
 
-      <div class="env-card">
-        <div class="env-card-header reef">
-          <div class="env-icon">🪸</div>
-          <div class="env-header-text">
-            <div class="env-eyebrow">2024 — 2025</div>
-            <h3 class="env-title">Great Barrier Reef mass bleaching</h3>
-          </div>
-        </div>
-        <div class="env-card-body">
-          <p class="env-desc">The Great Barrier Reef experienced its fifth mass bleaching event in 2024, followed immediately by a sixth in 2025 — only the second time in history the reef has faced back-to-back bleaching years. The 2024–25 AIMS report recorded the largest annual coral cover decline in 39 years of monitoring, driven almost entirely by climate change-induced ocean heat stress.</p>
-          <div class="env-stats">
-            <div class="env-stat">
-              <div class="env-stat-num">74%</div>
-              <div class="env-stat-label">of surveyed reefs affected in 2024</div>
-            </div>
-            <div class="env-stat">
-              <div class="env-stat-num">48%</div>
-              <div class="env-stat-label">of reefs declined in coral cover</div>
-            </div>
-            <div class="env-stat">
-              <div class="env-stat-num">30%</div>
-              <div class="env-stat-label">coral cover drop in some regions</div>
-            </div>
-            <div class="env-stat">
-              <div class="env-stat-num">400yr</div>
-              <div class="env-stat-label">warmest ocean temps on record</div>
-            </div>
-          </div>
-          <div class="env-destinations">
-            <div class="env-dest-label">Destinations affected</div>
-            <div class="env-dest-tags">
-              <span class="env-dest-tag">Great Barrier Reef — all regions</span>
-              <span class="env-dest-tag">Cairns &amp; surrounds</span>
-              <span class="env-dest-tag">Whitsundays</span>
-              <span class="env-dest-tag">Coral Sea</span>
-            </div>
-          </div>
-          <a href="reef-bleaching.html" target="_blank" class="env-learn-btn">
-            Learn about the impact on tourism
-            <svg viewBox="0 0 16 16" fill="currentColor" width="13" height="13"><path d="M8.5 3h4.5v4.5h-1.5V5.56L6.03 11.03 5 10l5.44-5.44H8.5V3z"/><path d="M3 4.5h4V6H4.5v5.5H10v-2.5h1.5V13H3V4.5z"/></svg>
-          </a>
-        </div>
+    <div class="env-item">
+      <div class="env-head"><span class="env-tag">2024–25</span><span class="env-name">Great Barrier Reef mass bleaching</span></div>
+      <p class="env-desc">The Great Barrier Reef experienced its fifth mass bleaching event in 2024, followed immediately by a sixth in 2025 — the second time in history the reef has faced back-to-back bleaching years. The 2024–25 AIMS report recorded the largest annual coral cover decline in 39 years of monitoring, driven by climate-change-induced ocean heat stress.</p>
+      <div class="env-stats">
+        <div><div class="env-stat-num">74%</div><div class="env-stat-label">of surveyed reefs affected in 2024</div></div>
+        <div><div class="env-stat-num">48%</div><div class="env-stat-label">of reefs declined in coral cover</div></div>
+        <div><div class="env-stat-num">30%</div><div class="env-stat-label">coral cover drop in some regions</div></div>
+        <div><div class="env-stat-num">400yr</div><div class="env-stat-label">warmest ocean temps on record</div></div>
       </div>
-
+      <div class="env-affected"><span class="k">Destinations affected</span><span class="tag">Great Barrier Reef — all regions</span><span class="tag">Cairns &amp; surrounds</span><span class="tag">Whitsundays</span><span class="tag">Coral Sea</span></div>
+      <a class="env-link" href="reef-bleaching.html" target="_blank">Read the impact on tourism →</a>
     </div>
   </section>
 
-  <!-- HOW TO USE -->
-  <section id="how-to-use" class="how-section">
-    <div class="section-heading">
-      <h2>How to use these files</h2>
-      <span class="count">For the sales &amp; operations team</span>
+  <section class="sec" id="how-to-use">
+    <div class="sec-head">
+      <h2 class="sec-title">How to use these files</h2>
+      <span class="sec-meta">For the sales &amp; operations team</span>
     </div>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <div class="step-title">Before selling a destination</div>
-          <div class="step-desc">Read the relevant destination file before speaking with clients. Pay particular attention to the visitor code of conduct, cultural considerations and any active environmental alerts such as reef bleaching or bushfire closures.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <div class="step-title">At time of booking confirmation</div>
-          <div class="step-desc">Share the visitor code of conduct section with clients in their booking confirmation documentation. For Uluru, the photography rules and climbing ban must be communicated without exception.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <div class="step-title">When selecting operators</div>
-          <div class="step-desc">Use the preferred operators section as a starting point. Prioritise Indigenous-led and certified operators. Always verify certifications before contracting new suppliers.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <div class="step-title">Guide briefings</div>
-          <div class="step-desc">Tour leaders and local guides should be briefed from these files before each departure. The cultural protocols and dos &amp; don'ts sections are specifically designed to be communicated verbally to clients at destination arrival.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-content">
-          <div class="step-title">Annual review</div>
-          <div class="step-desc">Each file should be reviewed and updated at minimum every 12 months, or immediately following any significant destination event. Update the "Last updated" date on each sheet when changes are made.</div>
-        </div>
-      </div>
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Before selling a destination</div><div class="step-desc">Read the relevant destination file before speaking with clients. Pay particular attention to the visitor code of conduct, cultural considerations and any active environmental alerts such as reef bleaching or bushfire closures.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">At time of booking confirmation</div><div class="step-desc">Share the visitor code of conduct with clients in their booking confirmation. For Uluru, the photography rules and climbing ban must be communicated without exception.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">When selecting operators</div><div class="step-desc">Use the preferred operators guidance as a starting point. Prioritise Indigenous-led and certified operators, and always verify certifications before contracting new suppliers.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">Guide briefings</div><div class="step-desc">Tour leaders and local guides should be briefed from these files before each departure. The essentials and conduct points are designed to be communicated verbally to clients at destination arrival.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-title">Annual review</div><div class="step-desc">Each file is reviewed at minimum every 12 months, or immediately following any significant destination event. The "last updated" date on each sheet reflects the most recent review.</div></div></div>
     </div>
   </section>
 
@@ -515,11 +325,11 @@ footer { background: var(--dark); padding: 40px; color: rgba(255,255,255,0.4); f
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Orange Journeys</div>
-      <div>Sustainability Hub</div>
+      <div style="font-size:12.5px;color:rgba(255,255,255,0.5);">Sustainability Hub</div>
     </div>
-    <div style="text-align:right;">
+    <div class="footer-right">
       <div>Prepared by the Orange Journeys sustainability team</div>
-      <div class="footer-note">Files last updated: May 2026 · Review cycle: annual</div>
+      <div class="footer-note">Internal use only · June 2026 · Reviewed annually</div>
     </div>
   </div>
 </footer>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sydney — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:680px){.index-list{grid-template-columns:1fr;}.sp-row{grid-template-columns:1fr;gap:3px;}.plate{height:280px;}.meta{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="plate">
+  <img src="sydney.jpg" alt="Sydney">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Sydney</h1>
+  </div>
+</div>
+<p class="deck">Australia's harbour city — and the portfolio's strongest case for low-carbon, accessible travel.</p>
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Gadigal Country, NSW</span></div>
+<div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Sydney (SYD)</span></div>
+<div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#1 of all destinations</span></div>
+<div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot"></span>Open</span></div></div>
+<div class="shell">
+  <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list"><a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+<a class="index-row" href="#s2"><span class="n">02</span><span class="t">Gadigal Country &amp; Aboriginal Sydney</span></a>
+<a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; responsible visiting</span></a>
+<a class="index-row" href="#s4"><span class="n">04</span><span class="t">Environment &amp; natural settings</span></a>
+<a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there &amp; around sustainably</span></a>
+<a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a></div>
+  </div>
+<section id="s1"><div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div><div class="field"><div class="field-k">Location &amp; character</div><div class="field-v">Australia's largest city, built around one of the world's great natural harbours. Sydney is Orange Journeys' #1 destination by passenger volume — a gateway city combining harbour icons, beaches, food, and a deep Aboriginal cultural layer often overlooked by visitors.</div></div><div class="field"><div class="field-k">Access</div><div class="field-v">Sydney Airport (SYD) is Australia's busiest gateway. The airport train reaches the CBD in 13 minutes, with step-free boarding at all terminals. Sydney is one of Australia's most navigable cities without a car.</div></div><div class="field"><div class="field-k">Best season</div><div class="field-v">Year-round. September–November (spring) and March–May (autumn) offer mild weather and fewer crowds. December–February (summer) is beach season and peak tourism. June–August (winter) is mild, ideal for whale watching and city experiences.</div></div><div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">City of Sydney</span><span class="tag">NSW National Parks &amp; Wildlife</span><span class="tag">Transport for NSW</span><span class="tag">Destination NSW</span><span class="tag">Metropolitan Local Aboriginal Land Council</span></div></div></div><div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">NSW National Parks &amp; Wildlife Act 1974</span><span class="tag">Aboriginal Land Rights Act 1983 (NSW)</span><span class="tag">Marine Estate Management Act 2014</span></div></div></div></section>
+<section id="s2"><div class="s-head"><span class="s-num">02</span><h2 class="s-title">Gadigal Country &amp; Aboriginal Sydney</h2></div><div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">Sydney is built on the Country of the Gadigal people of the Eora Nation, whose connection to Warrane (Sydney Harbour) spans tens of thousands of years. The wider region encompasses 29 clan groups of the Eora Nation.</div></div><div class="field"><div class="field-k">Cultural experiences</div><div class="field-v">Sydney offers rich Aboriginal-led experiences — the Royal Botanic Garden Aboriginal Heritage Tour, Dreamtime Southern X walking tours in The Rocks, and the Tribal Warrior cultural harbour cruise led by Aboriginal guides.</div></div><div class="note warn"><div class="note-k">Inauthentic Aboriginal art — know before you buy</div><div class="note-v">Sydney's tourist precincts sell mass-produced items falsely marketed as Aboriginal art, harming Aboriginal artists and communities. Direct clients only to verified outlets: Blak Markets, Boomalli Aboriginal Artists Co-operative, Carriageworks, or the Art Gallery of NSW Indigenous collection.</div></div></section>
+<section id="s3"><div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; responsible visiting</h2></div><div class="field"><div class="field-k">Sustainable city</div><div class="field-v">Sydney's combination of accessible rail, ferry and cycling infrastructure means a largely car-free, low-carbon visit is achievable for most clients — the strongest sustainable-transport position in the portfolio.</div></div><div class="field"><div class="field-k">Supporting local</div><div class="field-v"><div class="tags"><span class="tag">Independent &amp; local restaurants</span><span class="tag">Aboriginal-owned businesses</span><span class="tag">Local markets</span><span class="tag">Certified eco-tour operators</span><span class="tag">B Corp accommodation</span></div></div></div><div class="field"><div class="field-k">Marine &amp; beach care</div><div class="field-v">Sydney's ocean beaches and harbour are ecologically sensitive. Encourage reef-safe sunscreen, respect for marine protected zones, and the use of public transport over private vehicles to reduce congestion and emissions.</div></div><div class="note"><div class="note-k">Before you sell</div><div class="note-v">Lead with Sydney's genuine sustainability strengths — its transport network and Aboriginal cultural offering. Steer clients toward local, independent and Indigenous-owned businesses over generic tourist-precinct options.</div></div></section>
+<section id="s4"><div class="s-head"><span class="s-num">04</span><h2 class="s-title">Environment &amp; natural settings</h2></div><div class="field"><div class="field-k">Harbour &amp; coast</div><div class="field-v">Sydney Harbour (Warrane) is a drowned river valley supporting surprising biodiversity — Little Penguins at Manly, seahorses, and seasonal whale visits. The coastal walk network (Bondi to Coogee, Manly to Spit) showcases the sandstone coast.</div></div><div class="field"><div class="field-k">Wildlife</div><div class="field-v"><div class="tags"><span class="tag">Humpback whales (May–Nov)</span><span class="tag">Little Penguins (Manly)</span><span class="tag">Flying foxes</span><span class="tag">Rainbow lorikeets</span><span class="tag">Bottlenose dolphins</span><span class="tag">White-bellied sea eagles</span></div></div></div><div class="field"><div class="field-k">Green spaces</div><div class="field-v">The Royal Botanic Garden, Centennial Parklands and the harbour national parks (Sydney Harbour National Park) offer accessible nature within the city — much of it Gadigal Country with interpretive cultural signage.</div></div><div class="note warn"><div class="note-k">Beach &amp; harbour safety</div><div class="note-v">Always swim between the red and yellow flags at ocean beaches. Rip currents are common and can be life-threatening — advise clients that if caught in a rip, float and signal rather than swim against it.</div></div></section>
+<section id="s5"><div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there &amp; around sustainably</h2></div><div class="field"><div class="field-k">By air &amp; rail</div><div class="field-v">Sydney Airport to the CBD takes 13 minutes by train — all airport carriages are accessible with step-free boarding. Within the city, the Opal card covers trains, buses, ferries and light rail.</div></div><div class="field"><div class="field-k">Ferry — priority recommendation</div><div class="field-v">Sydney Ferries are fully accessible and the most scenic, sustainable way to experience the harbour. Circular Quay to Manly (30 min) is part of the experience, not just transport.</div></div><div class="field"><div class="field-k">Cycling &amp; walking</div><div class="field-v">Sydney's separated cycleway network covers the harbour foreshore and the Harbour Bridge crossing. Helmets are legally mandatory. The CBD and harbour precincts are highly walkable.</div></div><div class="note"><div class="note-k">Sustainable-transport strength</div><div class="note-v">Sydney is the portfolio's strongest performer for low-carbon travel. A fully car-free, accessible visit is achievable for most clients — promote this as a genuine selling point.</div></div></section>
+<section id="s6"><div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div><div class="field"><div class="field-k">Overall</div><div class="field-v">Excellent — one of Australia's most accessible cities, with strong infrastructure and a growing range of specialised operators.</div></div><div class="field"><div class="field-k">Harbour precinct</div><div class="field-v">Circular Quay, The Rocks, Barangaroo Reserve and the Royal Botanic Garden are accessible via paved, step-free paths. Opera House accessible tours can be booked directly. All main Circular Quay ferry wharves have level boarding.</div></div><div class="field"><div class="field-k">Harbour Bridge Climb</div><div class="field-v">BridgeClimb accommodates a range of mobility levels — contact directly. Auslan-interpreted climbs run twice monthly for deaf or hard-of-hearing visitors.</div></div><div class="field"><div class="field-k">Accessible operators</div><div class="field-v">Wheelaway and Australia in Style both offer wheelchair-accessible vehicles and step-free private tours across Sydney's landmarks, including Indigenous-guided experiences with adapted transport.</div></div><div class="note"><div class="note-k">Plan ahead</div><div class="note-v">Sydney is highly accessible, but confirm specific requirements with each operator before booking — some vessel tours, walking tours and cycle activities have particular needs. Early communication ensures the best experience.</div></div></section>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — City of Sydney · Destination NSW · Transport for NSW · NSW National Parks &amp; Wildlife Service · Metropolitan Local Aboriginal Land Council. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Great Barrier Reef — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+@media(max-width:680px){.index-list{grid-template-columns:1fr;}.sp-row{grid-template-columns:1fr;gap:3px;}.plate{height:280px;}.meta{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="plate">
+  <img src="gbr.jpg" alt="Great Barrier Reef">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Great Barrier Reef</h1>
+  </div>
+</div>
+<p class="deck">One of Earth's great natural wonders — and the front line of climate-conscious tourism.</p>
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Cairns &amp; surrounds, QLD</span></div>
+<div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Cairns (CNS)</span></div>
+<div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#4 of all destinations</span></div>
+<div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot warn"></span>Open · reef health critical</span></div></div>
+<div class="shell">
+  <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list"><a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+<a class="index-row" href="#s2"><span class="n">02</span><span class="t">Traditional Owners &amp; sea Country</span></a>
+<a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; current status</span></a>
+<a class="index-row" href="#s4"><span class="n">04</span><span class="t">Biodiversity &amp; environment</span></a>
+<a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there sustainably</span></a>
+<a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a></div>
+  </div>
+<section id="s1"><div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div><div class="field"><div class="field-k">Location &amp; size</div><div class="field-v">The world's largest coral reef system — over 2,300 km along the Queensland coast, covering roughly 344,400 km². Visible from space, it comprises around 3,000 individual reefs and 900 islands. Cairns and Port Douglas are the primary gateways for Orange Journeys clients.</div></div><div class="field"><div class="field-k">Character</div><div class="field-v">A UNESCO World Heritage Site since 1981 and one of the most biodiverse ecosystems on Earth. The reef is also under severe climate pressure — making responsible, low-impact visitation more important than ever. Reef tourism directly funds much of the monitoring and conservation work that protects it.</div></div><div class="field"><div class="field-k">Access</div><div class="field-v">Fly to Cairns Airport (CNS) — direct domestic and international services. Reef departures run from Cairns and Port Douglas marinas. The Spirit of Queensland train (Brisbane–Cairns) is a lower-carbon option for domestic travellers with time.</div></div><div class="field"><div class="field-k">Best season</div><div class="field-v">June–October (dry season) — best visibility, calm seas, mild temperatures, whale migration. November–May (wet season) — warmer water, stinger season (marine jellyfish), occasional cyclones. Coral spawning occurs after the November full moon.</div></div><div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">Great Barrier Reef Marine Park Authority (GBRMPA)</span><span class="tag">Reef Authority</span><span class="tag">Parks Australia</span><span class="tag">Queensland Parks &amp; Wildlife</span><span class="tag">Traditional Owner groups</span></div></div></div><div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">Great Barrier Reef Marine Park Act 1975</span><span class="tag">EPBC Act 1999</span><span class="tag">Marine Parks zoning plans</span><span class="tag">High Standard Tourism Operator program</span></div></div></div></section>
+<section id="s2"><div class="s-head"><span class="s-num">02</span><h2 class="s-title">Traditional Owners &amp; sea Country</h2></div><div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">More than 70 Traditional Owner groups hold connections to the Great Barrier Reef and its coast — their sea Country has been cared for over 60,000 years. Their knowledge increasingly informs reef management through formal partnerships with GBRMPA.</div></div><div class="field"><div class="field-k">Cultural significance</div><div class="field-v">The reef holds deep cultural, spiritual and economic significance for Aboriginal and Torres Strait Islander peoples. Story places, song lines and traditional marine resource use continue today across the reef's length.</div></div><div class="note"><div class="note-k">Priority recommendation</div><div class="note-v">Choose operators with a Traditional Owner partnership or Indigenous-guided experience — Dreamtime Dive &amp; Snorkel (Cairns) offers an Indigenous sea Country experience led by saltwater people, weaving culture with reef ecology.</div></div></section>
+<section id="s3"><div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; current status</h2></div><div class="note warn"><div class="note-k">Mass bleaching · 2024–25</div><div class="note-v">The reef suffered its fifth mass bleaching event in 2024, immediately followed by a sixth in 2025 — the first back-to-back bleaching years in recorded history. The 2024–25 AIMS report recorded the largest annual coral cover decline in 39 years of monitoring.</div></div><div class="field"><div class="field-k">Why it's happening</div><div class="field-v">Climate-change-driven ocean heat stress is the primary cause. Marine heatwaves are now more frequent and severe, leaving less recovery time between events. Crown-of-thorns starfish outbreaks and poor water quality from coastal runoff compound the pressure.</div></div><div class="field"><div class="field-k">What's being done</div><div class="field-v"><div class="tags"><span class="tag">GBRMPA Reef 2050 Plan</span><span class="tag">Crown-of-thorns control program</span><span class="tag">Reef Restoration &amp; Adaptation Program</span><span class="tag">Water quality improvement</span><span class="tag">Reef Census citizen science</span></div></div></div><div class="note"><div class="note-k">Before you sell</div><div class="note-v">Be honest with clients about reef health — overpromising pristine conditions risks disappointment and erodes trust. Frame a reef visit as supporting the monitoring and conservation economy. Choose High Standard Tourism Operators (HSTO) certified by GBRMPA.</div></div></section>
+<section id="s4"><div class="s-head"><span class="s-num">04</span><h2 class="s-title">Biodiversity &amp; environment</h2></div><div class="field"><div class="field-k">Why it matters</div><div class="field-v">The reef supports an extraordinary web of life — its loss would cascade through the entire ecosystem and the communities that depend on it.</div></div><div class="field"><div class="field-k">Key wildlife</div><div class="field-v"><div class="tags"><span class="tag">400+ coral species</span><span class="tag">1,500+ fish species</span><span class="tag">Six of seven sea turtle species</span><span class="tag">Dugongs</span><span class="tag">Humpback whales (Jun–Oct)</span><span class="tag">Minke whales</span><span class="tag">Reef sharks</span><span class="tag">Giant clams</span><span class="tag">Maori wrasse</span></div></div></div><div class="field"><div class="field-k">Species to know</div><div class="sp-row"><div class="sp-name">Green Sea Turtle</div><div class="sp-stat"><span class="lvl endangered">Endangered</span> — major nesting at Raine Island. Keep 3–5m distance; never touch or chase.</div></div><div class="sp-row"><div class="sp-name">Dugong</div><div class="sp-stat"><span class="lvl endangered">Vulnerable</span> — seagrass grazer; vessel strike is a key threat. Reduce speed in seagrass areas.</div></div><div class="sp-row"><div class="sp-name">Humpback Whale</div><div class="sp-stat">Protected — migration Jun–Oct. Keep 100m (300m if calves present).</div></div><div class="sp-row"><div class="sp-name">Maori Wrasse</div><div class="sp-stat">Protected — iconic large reef fish. Do not feed; feeding alters natural behaviour.</div></div></div><div class="note warn"><div class="note-k">Wildlife &amp; reef rules</div><div class="note-v">Use reef-safe, TGA-approved sunscreen — standard sunscreens damage coral. Never touch, stand on or kick coral. Stay 3–5m from free-swimming wildlife. Use moorings rather than anchoring. Take nothing — coral and shell collection is illegal.</div></div></section>
+<section id="s5"><div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there sustainably</h2></div><div class="field"><div class="field-k">By air</div><div class="field-v">Cairns Airport (CNS) is the primary gateway, with direct domestic and international flights. Encourage non-stop routes where possible to reduce per-km emissions, and offer carbon offsetting for the flight legs as standard.</div></div><div class="field"><div class="field-k">By rail</div><div class="field-v">The Spirit of Queensland (Brisbane–Cairns, ~25 hrs) is a meaningful lower-carbon alternative for east-coast travellers with time — a scenic journey in its own right.</div></div><div class="field"><div class="field-k">On the reef</div><div class="field-v">All reef visits are by permitted operator vessels. Cairns and Port Douglas are walkable hubs; operators transfer guests directly to departure points, so no private car is needed once on the coast.</div></div><div class="note"><div class="note-k">Choosing operators</div><div class="note-v">Prioritise GBRMPA High Standard Tourism Operators — they meet the highest environmental and interpretation standards, and a portion of reef visitation fees funds the Marine Park's management directly.</div></div></section>
+<section id="s6"><div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div><div class="field"><div class="field-k">Overall</div><div class="field-v">Moderate — significantly better than many reef destinations, with some specialised operators.</div></div><div class="field"><div class="field-k">Accessible operators</div><div class="field-v">Quicksilver Cruises (Port Douglas) operates a water-powered chair lift on its pontoon, allowing wheelchair users to enter the water for snorkelling, plus accessible toilets and boarding ramps — the first PADI Adaptive Service Facility on the reef. Sunlover Cruises offers wheelchair-accessible boarding and a dedicated deck space.</div></div><div class="field"><div class="field-k">Green Island</div><div class="field-v">The most wheelchair-friendly reef island — accessed by jetty, no beach transfer required. Soft sand beyond the jetty is not wheelchair-friendly. Confirm vessel accessibility when booking.</div></div><div class="field"><div class="field-k">Sensory &amp; hidden disability</div><div class="field-v">Most operators provide written safety briefings on request as an alternative to verbal ones. PADI adaptive dive courses (Quicksilver) allow people with a range of physical disabilities to dive the reef.</div></div><div class="note"><div class="note-k">Always disclose</div><div class="note-v">Mobility requirements, disability details and medical conditions must be disclosed at booking, not on the day. Scuba participation may require an AS 4005.1 medical certificate for certain conditions.</div></div></section>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — Great Barrier Reef Marine Park Authority · AIMS Long-Term Monitoring Report 2024–25 · Reef Authority · Parks Australia · Tourism &amp; Events Queensland. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+</body>
+</html>

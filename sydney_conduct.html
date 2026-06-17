@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sydney — Visitor Code of Conduct · Orange Journeys</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1A1510;--paper:#FBF9F6;--muted:#8A7D70;--hair:#E7E0D8;--accent:#E8631A;--alert:#B23A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+.head{max-width:760px;margin:0 auto;padding:46px 28px 30px;border-bottom:1px solid var(--hair);}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(30px,4.6vw,44px);line-height:1.04;letter-spacing:-0.01em;}
+.deck{margin-top:14px;font-size:16px;color:var(--muted);max-width:600px;line-height:1.55;}
+.usage{max-width:760px;margin:0 auto;padding:18px 28px;border-bottom:1px solid var(--hair);display:flex;gap:14px;align-items:flex-start;}
+.usage .tagk{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-top:3px;min-width:96px;}
+.usage .tagv{font-size:14px;line-height:1.55;}
+.shell{max-width:760px;margin:0 auto;padding:0 28px;}
+.essentials{padding:42px 0 36px;border-bottom:1px solid var(--hair);}
+.block-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
+.ess{display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--hair);}
+.ess:first-of-type{border-top:none;padding-top:0;}
+.ess-n{font-family:'DM Serif Display',serif;font-size:30px;line-height:1;color:var(--accent);min-width:42px;}
+.ess-rule{font-size:19px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;margin-bottom:5px;}
+.ess-why{font-size:14.5px;color:var(--muted);line-height:1.55;}
+.safety{margin:30px 0;padding:18px 20px;border-left:3px solid var(--alert);background:#FDF4F4;}
+.safety-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--alert);margin-bottom:6px;}
+.safety-v{font-size:15px;line-height:1.55;color:var(--ink);}
+.safety-v strong{font-weight:600;}
+.conduct{padding:38px 0 10px;}
+.conduct-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:6px;}
+.col-k{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--hair);}
+.col-k.do{color:var(--accent);}
+.col-k.dont{color:var(--alert);}
+.clist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.clist li{font-size:14px;line-height:1.45;padding-left:18px;position:relative;color:var(--ink);}
+.clist li::before{position:absolute;left:0;top:0;font-weight:600;}
+.do .clist li::before{content:"+";color:var(--accent);}
+.dont .clist li::before{content:"–";color:var(--alert);}
+.note{margin:32px 0 8px;padding:16px 0 16px 18px;border-left:2px solid var(--accent);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note-v{font-size:14px;line-height:1.6;}
+footer{border-top:1px solid var(--hair);margin-top:40px;}
+.foot-inner{max-width:760px;margin:0 auto;padding:24px 28px 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:520px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+@media(max-width:640px){.conduct-cols{grid-template-columns:1fr;gap:28px;}.usage{flex-direction:column;gap:4px;}.ess-n{font-size:24px;min-width:32px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+<div class="head">
+  <div class="kicker">Visitor Code of Conduct · Staff Briefing</div>
+  <h1 class="title">Sydney</h1>
+  <p class="deck">What every client should know before visiting Sydney — and what your team should brief them on.</p>
+</div>
+<div class="usage">
+  <div class="tagk">How to use</div>
+  <div class="tagv">Brief clients on the four essentials before departure. The full conduct reference below supports thorough briefings and responsible operator selection.</div>
+</div>
+<div class="shell">
+  <div class="essentials">
+    <div class="block-k">Brief your client on these four</div>
+<div class="ess"><div class="ess-n">01</div><div class="ess-body"><div class="ess-rule">Buy Aboriginal art only from verified outlets</div><div class="ess-why">Tourist precincts sell mass-produced fakes that harm Aboriginal artists. Direct clients to Blak Markets, Boomalli, Carriageworks or the Art Gallery of NSW Indigenous collection.</div></div></div>
+<div class="ess"><div class="ess-n">02</div><div class="ess-body"><div class="ess-rule">Travel car-free — use the Opal network</div><div class="ess-why">Sydney's trains, ferries, light rail and cycleways make a low-carbon visit easy. The ferry to Manly is part of the experience. Promote this as a genuine sustainability strength.</div></div></div>
+<div class="ess"><div class="ess-n">03</div><div class="ess-body"><div class="ess-rule">Swim between the flags</div><div class="ess-why">Rip currents at ocean beaches can be life-threatening. Clients must swim only between the red and yellow flags, and if caught in a rip, float and signal rather than swim against it.</div></div></div>
+<div class="ess"><div class="ess-n">04</div><div class="ess-body"><div class="ess-rule">Choose local and Aboriginal-owned businesses</div><div class="ess-why">Steer clients away from generic tourist-precinct options toward independent restaurants, local markets and Aboriginal-led experiences that keep value in the community.</div></div></div>
+
+  </div>
+  <div class="safety">
+    <div class="safety-k">Safety-critical — communicate every time</div>
+    <div class="safety-v"><strong>Beach &amp; water safety.</strong> Always brief clients to swim between the red and yellow flags at ocean beaches, never swim outside flagged areas, and understand rip currents — float and signal for help rather than swimming against the current.</div>
+  </div>
+  <div class="conduct">
+    <div class="block-k">Full conduct reference</div>
+    <div class="conduct-cols">
+      <div class="col do"><div class="col-k do">Encourage</div><ul class="clist"><li>Acknowledge Gadigal Country on arrival</li><li>Use the Opal card across all transport</li><li>Take the ferry to Manly</li><li>Wear a helmet when cycling (it's the law)</li><li>Eat and shop at local, independent businesses</li><li>Use reef-safe sunscreen at beaches</li><li>Attend an Aboriginal-led experience</li><li>Shop at Blak Markets for authentic art</li></ul></div>
+      <div class="col dont"><div class="col-k dont">Advise against</div><ul class="clist"><li>Hire a car for city sightseeing</li><li>Cycle without a helmet (fines apply)</li><li>Buy Aboriginal art without verifying authenticity</li><li>Swim outside flagged areas</li><li>Leave litter on beaches or harbour areas</li><li>Feed harbour wildlife</li><li>Book inauthentic Aboriginal experiences</li><li>Book large coach tours for harbour sightseeing</li></ul></div>
+    </div>
+  </div>
+  <div class="note">
+    <div class="note-k">Gadigal Country &amp; Aboriginal Sydney</div>
+    <div class="note-v">Sydney is built on the Country of the Gadigal people of the Eora Nation. Encourage clients to experience authentic Aboriginal-led tours — the Royal Botanic Garden Aboriginal Heritage Tour, Dreamtime Southern X, and the Tribal Warrior harbour cruise.</div>
+  </div>
+</div>
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">For transport and accessibility: transportnsw.info. For beach safety: beachsafe.org.au. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+</body>
+</html>
