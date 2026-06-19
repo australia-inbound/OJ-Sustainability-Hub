@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K'gari — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1510;
+  --paper:#FBF9F6;
+  --muted:#8A7D70;
+  --hair:#E7E0D8;
+  --accent:#E8631A;
+  --alert:#B23A2E;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+
+.sp{display:grid;grid-template-columns:1fr;gap:0;margin-top:4px;}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+.lvl.vulnerable{color:var(--accent);}
+.lvl.protected{color:var(--muted);}
+
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+
+@media(max-width:680px){
+  .index-list{grid-template-columns:1fr;}
+  .sp-row{grid-template-columns:1fr;gap:3px;}
+  .plate{height:280px;}
+  .meta{gap:18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+
+<div class="plate">
+  <img src="kgari.jpg" alt="Aerial view of K'gari's 75 Mile Beach with turquoise water and dense coastal vegetation">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">K'gari</h1>
+  </div>
+</div>
+
+<p class="deck">The world's largest sand island — ancient dune lakes, rainforest growing in sand, and the purest wongari (dingo) population in eastern Australia.</p>
+
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Butchulla Country, QLD</span></div><div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Barge from Hervey Bay area</span></div><div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#9 of all destinations</span></div><div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot"></span>Open · 4WD &amp; barge access only</span></div></div>
+
+<div class="shell">
+
+    <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list">
+      <a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+      <a class="index-row" href="#s2"><span class="n">02</span><span class="t">Butchulla Country</span></a>
+      <a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; current status</span></a>
+      <a class="index-row" href="#s4"><span class="n">04</span><span class="t">Biodiversity &amp; environment</span></a>
+      <a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there sustainably</span></a>
+      <a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a>
+    </div>
+  </div>
+
+  <section id="s1">
+    <div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div>
+    <div class="field"><div class="field-k">Location &amp; size</div><div class="field-v">The world's largest sand island, roughly 122km long, off Queensland's Fraser Coast near Hervey Bay. World Heritage listed in 1992 for its sand-mass ecology — rainforest growing directly on dune sand, and over 100 perched freshwater lakes.</div></div>
+    <div class="field"><div class="field-k">Character</div><div class="field-v">Lake McKenzie (Boorangoora) and the other perched lakes, 75 Mile Beach run as a gazetted vehicle highway, and the purest remaining wongari (dingo) population in eastern Australia. There are no sealed roads — 4WD is essential everywhere on the island.</div></div>
+    <div class="field"><div class="field-k">Access</div><div class="field-v">Vehicle and passenger barges run from River Heads (near Hervey Bay) to Wanggoolba Creek and Kingfisher Bay, and from Rainbow Beach (Inskip Point) to Hook Point in the south.</div></div>
+    <div class="field"><div class="field-k">Best season</div><div class="field-v"><strong>Winter (Jun–Aug)</strong> — cooler, drier, best for walking tracks. <strong>Jul–Nov</strong> — humpback whale migration season offshore. Avoid the wettest summer months for self-drive itineraries where possible.</div></div>
+    <div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">QPWS</span><span class="tag">Butchulla Aboriginal Corporation</span><span class="tag">Butchulla Native Title Aboriginal Corporation</span><span class="tag">K'gari World Heritage Advisory Committee</span><span class="tag">Fraser Coast Regional Council</span></div></div></div>
+    <div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">Nature Conservation Act 1992 (Qld)</span><span class="tag">EPBC Act 1999</span><span class="tag">World Heritage listing 1992</span></div></div></div>
+  </section>
+  <section id="s2">
+    <div class="s-head"><span class="s-num">02</span><h2 class="s-title">Butchulla Country</h2></div>
+    <div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">The Butchulla people have cared for K'gari for over 60,000 years; their connection to the island was recognised through Native Title determinations in 2014 and 2019.</div></div>
+    <div class="field"><div class="field-k">From Fraser Island to K'gari</div><div class="field-v">The island's name was formally restored to K'gari in June 2023, with more than 19 hectares of land transferred to the Butchulla Aboriginal Corporation. In 2025, the World Heritage property's own name was changed at the 47th session of the World Heritage Committee, dropping the "(Fraser Island)" reference entirely — the old name commemorated Eliza Fraser, whose story directly led to the dispossession and massacre of Butchulla people.</div></div>
+    <div class="field"><div class="field-k">Cultural significance</div><div class="field-v">Wanggoolba Creek, at Central Station, is sacred to the Butchulla people — a quiet rainforest walk that's one of the island's most culturally significant sites.</div></div>
+    <div class="note">
+      <div class="note-k">Priority recommendation</div>
+      <div class="note-v">Always use "K'gari" in client materials and conversation — never "Fraser Island." Where available, build in Butchulla-guided or Butchulla-interpreted experiences at Central Station.</div>
+    </div>
+  </section>
+  <section id="s3">
+    <div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; current status</h2></div>
+    <div class="field"><div class="field-k">Top pressures</div><div class="field-v">The K'gari World Heritage Advisory Committee has formally flagged climate change, over-visitation and biosecurity threats as the island's most urgent issues, in its most recent communique to the Queensland and Australian Governments.</div></div>
+    <div class="note warn">
+      <div class="note-k">Rising wongari (dingo) conflict</div>
+      <div class="note-v">Food-related habituation is driving increasing dingo aggression on the island. QPWS has committed to a new K'gari Management Plan, due by the end of 2025, specifically to address this. Brief every client on dingo safety without exception.</div>
+    </div>
+    <div class="field"><div class="field-k">Verified eco-certified supplier</div><div class="field-v">Kingfisher Bay Resort — an Orange Journeys accommodation supplier — holds Ecotourism Australia's Advanced Ecotourism certification. It's a genuine, verified point of difference worth recommending as the island's base.</div></div>
+    <div class="note">
+      <div class="note-k">Before you sell</div>
+      <div class="note-v">Track and beach closures change seasonally — for example, a section near Sandy Cape is currently closed through January 2027. Always check the QPWS conditions report before every departure.</div>
+    </div>
+  </section>
+  <section id="s4">
+    <div class="s-head"><span class="s-num">04</span><h2 class="s-title">Biodiversity &amp; environment</h2></div>
+    <div class="field"><div class="field-k">Why it matters</div><div class="field-v">K'gari's deep, nutrient-poor sand supports ecosystems found almost nowhere else — "perched" dune lakes held above the water table by compacted organic matter, and acid-tolerant frog species adapted to the resulting low-pH water.</div></div>
+    <div class="field"><div class="field-k">Key wildlife</div><div class="field-v"><div class="tags"><span class="tag">Wongari (dingo)</span><span class="tag">Flying foxes</span><span class="tag">Acid frogs</span><span class="tag">Humpback whale (seasonal)</span><span class="tag">350+ bird species</span></div></div></div>
+    <div class="field">
+      <div class="field-k">Species to know</div>
+      <div class="sp">
+        <div class="sp-row"><div class="sp-name">Wongari (dingo)</div><div class="sp-stat"><span class="lvl protected">Protected</span> — regarded as the purest remaining dingo strain in eastern Australia. Whelping season runs 1 June–30 September — extra caution required.</div></div>
+        <div class="sp-row"><div class="sp-name">Humpback Whale</div><div class="sp-stat"><span class="lvl protected">Seasonal migrant</span> — passes offshore on migration, roughly July–November.</div></div>
+      </div>
+    </div>
+    <div class="note warn">
+      <div class="note-k">Be Dingo-Safe</div>
+      <div class="note-v">Never feed or approach a wongari. Keep children within arm's reach at all times. If approached, never run — stand tall and back away slowly. Store all food and rubbish securely, in vehicles or sealed containers, at every stop.</div>
+    </div>
+  </section>
+  <section id="s5">
+    <div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there sustainably</h2></div>
+    <div class="field"><div class="field-k">Barge crossing</div><div class="field-v">Vehicle and passenger barges connect River Heads to Kingfisher Bay/Wanggoolba Creek, and Rainbow Beach to Hook Point. These trips carry a real per-vehicle footprint — consolidating group transport onto fewer vehicles where possible reduces it.</div></div>
+    <div class="field"><div class="field-k">On the island</div><div class="field-v">4WD is essential everywhere; there are no sealed roads or public transport. Guided tours put fewer vehicles on the island's fragile sand tracks than independent self-drive groups.</div></div>
+    <div class="field"><div class="field-k">Tide-timed beach driving</div><div class="field-v">75 Mile Beach is a gazetted road, but it's only safely driveable within set tide windows. Driving outside those windows risks vehicles and damages the beach ecosystem — always check tide tables before departure.</div></div>
+  </section>
+  <section id="s6">
+    <div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div>
+    <div class="field"><div class="field-k">Overall</div><div class="field-v">Limited. Sand terrain, no sealed paths, and most experiences require 4WD plus walking on sand or boardwalk.</div></div>
+    <div class="field"><div class="field-k">Lake McKenzie</div><div class="field-v">The boardwalk to the main lookout point is more accessible; reaching the lake's edge itself involves walking on loose sand.</div></div>
+    <div class="field"><div class="field-k">Kingfisher Bay Resort</div><div class="field-v">The most accessible base on the island, with accessible rooms and boardwalk access — and Advanced Ecotourism certified, a strong recommendation for clients with mobility needs.</div></div>
+    <div class="note">
+      <div class="note-k">Plan ahead</div>
+      <div class="note-v">Confirm specific accessibility requirements with QPWS and the barge operator in advance — facilities outside the main resorts are limited.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — QPWS · Butchulla Aboriginal Corporation · DCCEEW · K'gari World Heritage Advisory Committee · Fraser Coast Regional Council. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+
+</body>
+</html>

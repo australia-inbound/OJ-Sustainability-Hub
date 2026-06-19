@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Port Douglas &amp; Daintree — Orange Journeys Destination File</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1510;
+  --paper:#FBF9F6;
+  --muted:#8A7D70;
+  --hair:#E7E0D8;
+  --accent:#E8631A;
+  --alert:#B23A2E;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(251,249,246,0.85);backdrop-filter:blur(10px);z-index:50;}
+.bar a{text-decoration:none;color:var(--ink);}
+.brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:-0.01em;}
+.brand .mark{width:22px;height:22px;border-radius:5px;background:var(--accent);color:#fff;font-family:'DM Serif Display',serif;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
+.bar .back:hover{color:var(--ink);}
+
+.plate{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.6) 26%,rgba(20,16,12,0.1) 60%,rgba(20,16,12,0.3) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:880px;margin:0 auto;padding:0 28px 32px;}
+.kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.82);margin-bottom:12px;}
+.title{font-family:'DM Serif Display',serif;font-weight:400;color:#fff;font-size:clamp(34px,5.2vw,52px);line-height:1.02;letter-spacing:-0.01em;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
+.deck{max-width:880px;margin:0 auto;padding:28px 28px 4px;font-family:'DM Serif Display',serif;font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-0.01em;}
+
+.meta{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;flex-wrap:wrap;gap:14px 40px;border-bottom:1px solid var(--hair);}
+.meta-item{display:flex;flex-direction:column;gap:3px;margin-right:40px;}
+.meta-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.meta-v{font-size:13.5px;font-weight:500;}
+.meta-v.live{display:flex;align-items:center;gap:6px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;}
+.dot.warn{background:var(--alert);}
+
+.shell{max-width:880px;margin:0 auto;padding:0 28px;}
+
+.index{padding:34px 0 8px;}
+.index-k{font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
+.index-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-top:1px solid var(--hair);text-decoration:none;color:var(--ink);transition:color .15s;}
+.index-row:hover{color:var(--accent);}
+.index-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:18px;}
+.index-row .t{font-size:14.5px;font-weight:500;}
+.index-row:hover .n{color:var(--accent);}
+
+section{padding:46px 0;border-top:1px solid var(--hair);scroll-margin-top:64px;}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;}
+.s-num{font-size:12px;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;padding-top:3px;}
+.s-title{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:-0.01em;line-height:1.1;}
+
+.field{padding:15px 0;border-top:1px solid var(--hair);}
+.field:first-of-type{border-top:none;padding-top:0;}
+.field-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.field-v{font-size:15px;line-height:1.62;}
+.field-v strong{font-weight:600;}
+.field-v em{font-style:italic;}
+
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.tag{font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--hair);border-radius:6px;padding:4px 10px;}
+
+.note{padding:14px 0 14px 18px;border-left:2px solid var(--accent);margin:6px 0;}
+.note.warn{border-left-color:var(--alert);}
+.note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.note.warn .note-k{color:var(--alert);}
+.note-v{font-size:14px;line-height:1.6;color:var(--ink);}
+
+.sp{display:grid;grid-template-columns:1fr;gap:0;margin-top:4px;}
+.sp-row{display:grid;grid-template-columns:minmax(160px,1fr) 1.4fr;gap:18px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline;}
+.sp-name{font-size:14px;font-weight:600;}
+.sp-stat{font-size:13px;color:var(--muted);line-height:1.5;}
+.sp-stat .lvl{font-weight:600;}
+.lvl.endangered{color:var(--alert);}
+.lvl.endemic{color:var(--accent);}
+.lvl.vulnerable{color:var(--accent);}
+.lvl.protected{color:var(--muted);}
+
+footer{border-top:1px solid var(--hair);margin-top:8px;}
+.foot-inner{max-width:880px;margin:0 auto;padding:26px 28px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:560px;}
+.foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
+
+#top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;border:1px solid var(--hair);background:#fff;color:var(--ink);border-radius:50%;cursor:pointer;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,border-color .15s;pointer-events:none;z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(20,16,12,0.06);}
+#top:hover{border-color:var(--accent);color:var(--accent);}
+#top.on{opacity:1;transform:translateY(0);pointer-events:auto;}
+
+@media(max-width:680px){
+  .index-list{grid-template-columns:1fr;}
+  .sp-row{grid-template-columns:1fr;gap:3px;}
+  .plate{height:280px;}
+  .meta{gap:18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a href="index.html" class="brand"><span class="mark">OJ</span>Orange Journeys</a>
+  <a href="index.html" class="back">← Sustainability Hub</a>
+</div>
+
+<div class="plate">
+  <img src="portdouglas.jpg" alt="Aerial view of Port Douglas peninsula with rainforest-covered mountains behind">
+  <div class="plate-inner">
+    <div class="kicker">Destination File</div>
+    <h1 class="title">Port Douglas &amp; Daintree</h1>
+  </div>
+</div>
+
+<p class="deck">Where two World Heritage wonders meet — ancient rainforest and the Great Barrier Reef — and Australia's first ECO Certified Destination.</p>
+
+<div class="meta"><div class="meta-item"><span class="meta-k">Country</span><span class="meta-v">Eastern Kuku Yalanji &amp; Yirraganydji, QLD</span></div><div class="meta-item"><span class="meta-k">Access</span><span class="meta-v">Fly to Cairns (CNS) · 1hr drive</span></div><div class="meta-item"><span class="meta-k">Pax ranking</span><span class="meta-v">#8 of all destinations</span></div><div class="meta-item"><span class="meta-k">Status</span><span class="meta-v live"><span class="dot"></span>Open · ECO Certified Destination</span></div></div>
+
+<div class="shell">
+
+    <div class="index">
+    <div class="index-k">Contents</div>
+    <div class="index-list">
+      <a class="index-row" href="#s1"><span class="n">01</span><span class="t">Destination overview</span></a>
+      <a class="index-row" href="#s2"><span class="n">02</span><span class="t">Eastern Kuku Yalanji &amp; Yirraganydji Country</span></a>
+      <a class="index-row" href="#s3"><span class="n">03</span><span class="t">Sustainability &amp; current status</span></a>
+      <a class="index-row" href="#s4"><span class="n">04</span><span class="t">Biodiversity &amp; environment</span></a>
+      <a class="index-row" href="#s5"><span class="n">05</span><span class="t">Getting there sustainably</span></a>
+      <a class="index-row" href="#s6"><span class="n">06</span><span class="t">Accessibility</span></a>
+    </div>
+  </div>
+
+  <section id="s1">
+    <div class="s-head"><span class="s-num">01</span><h2 class="s-title">Destination overview</h2></div>
+    <div class="field"><div class="field-k">Location &amp; character</div><div class="field-v">Far North Queensland, roughly an hour's drive north of Cairns. The only place on Earth where two World Heritage areas meet — the Wet Tropics rainforest (inscribed 1988) and the Great Barrier Reef. The Daintree is estimated at over 180 million years old, among the oldest continuously surviving tropical rainforests anywhere.</div></div>
+    <div class="field"><div class="field-k">Access</div><div class="field-v">Cairns Airport (CNS) is the gateway, about an hour's drive south of Port Douglas via the Captain Cook Highway. North of the Daintree River, a cable ferry — not a bridge — is the only crossing, a deliberate decision that limits development pressure on the rainforest side.</div></div>
+    <div class="field"><div class="field-k">Best season</div><div class="field-v"><strong>May–Oct (dry season)</strong> — most comfortable, best visibility. <strong>Nov–Apr (wet season)</strong> — lush, dramatic, more humid, and marine stinger season on beaches (stinger suits required for swimming).</div></div>
+    <div class="field"><div class="field-k">Governing bodies</div><div class="field-v"><div class="tags"><span class="tag">Douglas Shire Council</span><span class="tag">Wet Tropics Management Authority</span><span class="tag">QPWS</span><span class="tag">Tourism Port Douglas Daintree</span><span class="tag">Jabalbina Yalanji Aboriginal Corporation</span></div></div></div>
+    <div class="field"><div class="field-k">Legal frameworks</div><div class="field-v"><div class="tags"><span class="tag">Aboriginal Land Act 1991 (Qld)</span><span class="tag">Nature Conservation Act 1992 (Qld)</span><span class="tag">Wet Tropics World Heritage Protection &amp; Management Act 1993</span><span class="tag">EPBC Act 1999</span></div></div></div>
+  </section>
+  <section id="s2">
+    <div class="s-head"><span class="s-num">02</span><h2 class="s-title">Eastern Kuku Yalanji &amp; Yirraganydji Country</h2></div>
+    <div class="field"><div class="field-k">Traditional Owners</div><div class="field-v">The Eastern Kuku Yalanji are custodians of the Daintree and Mossman Gorge to the north; the Yirraganydji of Port Douglas and the coast to the south. Both have cared for this rainforest-reef landscape for over 50,000 years.</div></div>
+    <div class="field"><div class="field-k">The 2021 Daintree handback</div><div class="field-v">On 29 September 2021, 160,213 hectares — including the Daintree, Ngalba Bulal, Black Mountain and Hope Islands National Parks — were formally transferred to the Jabalbina Yalanji Aboriginal Corporation on behalf of the Eastern Kuku Yalanji people. The land is now jointly managed under an Indigenous Management Agreement between Jabalbina, the Wet Tropics Management Authority and QPWS.</div></div>
+    <div class="field"><div class="field-k">Cultural experiences</div><div class="field-v">The <strong>Mossman Gorge Centre</strong> has maintained an 80–90% Indigenous employment rate since opening in 2012, and the Kuku Yalanji Dreamtime Walks — running continuously since 1987 — are the single best way for clients to understand the rainforest through Kuku Yalanji eyes.</div></div>
+    <div class="note">
+      <div class="note-k">Priority recommendation</div>
+      <div class="note-v">Include the Mossman Gorge Dreamtime Walk in every Port Douglas &amp; Daintree itinerary. It pairs a genuine cultural experience with the region's flagship rainforest site, and supports a centre that is itself a strong local-employment story.</div>
+    </div>
+  </section>
+  <section id="s3">
+    <div class="s-head"><span class="s-num">03</span><h2 class="s-title">Sustainability &amp; current status</h2></div>
+    <div class="note">
+      <div class="note-k">Australia's first ECO Certified Destination</div>
+      <div class="note-v">The Douglas Shire became the world's first destination awarded Ecotourism Australia's ECO Destination Certification, on 4 December 2019 — meeting more than 80 of 100 criteria under the internationally recognised Green Destinations Standard. This is a genuine point of difference, not marketing language, and worth leading with in client conversations.</div>
+    </div>
+    <div class="field"><div class="field-k">A deep local commitment</div><div class="field-v">The region's sustainability story goes back further than the certification — Douglas Shire Council adopted Australia's first local sustainable tourism strategy in 1998, and the area now counts 22+ ECO certified operators, several with 20+ years of continuous Ecotourism Australia certification.</div></div>
+    <div class="field"><div class="field-k">Current pressures</div><div class="field-v"><strong>Reef health</strong> — the GBR's 2024–25 back-to-back mass bleaching events affect reef trips departing from Port Douglas. <strong>Visitor pressure</strong> at Mossman Gorge's swimming holes during peak season. <strong>Cassowary safety</strong> — roadkill and habitat disturbance remain an ongoing concern on rainforest roads.</div></div>
+    <div class="note">
+      <div class="note-k">Before you sell</div>
+      <div class="note-v">Check the QPWS conditions report for Daintree National Park before departure — track conditions, closures and stinger-season advice change seasonally. Marine stinger season runs roughly November to May.</div>
+    </div>
+  </section>
+  <section id="s4">
+    <div class="s-head"><span class="s-num">04</span><h2 class="s-title">Biodiversity &amp; environment</h2></div>
+    <div class="field"><div class="field-k">Why it matters</div><div class="field-v">This is the only place on the continent where ancient rainforest meets reef directly. The Wet Tropics carries extraordinary endemism built up over hundreds of millions of years of continuous rainforest cover.</div></div>
+    <div class="field"><div class="field-k">Key wildlife</div><div class="field-v"><div class="tags"><span class="tag">Southern Cassowary</span><span class="tag">Saltwater crocodile</span><span class="tag">Bennett's tree-kangaroo</span><span class="tag">Boyd's forest dragon</span><span class="tag">370+ bird species</span><span class="tag">Green turtle</span><span class="tag">Dugong</span></div></div></div>
+    <div class="field">
+      <div class="field-k">Species to know</div>
+      <div class="sp">
+        <div class="sp-row"><div class="sp-name">Southern Cassowary</div><div class="sp-stat"><span class="lvl endangered">Endangered</span> — a vital seed disperser — over 70 rainforest fruit species rely on it for distribution. Slow down on rainforest roads and never approach or feed one.</div></div>
+        <div class="sp-row"><div class="sp-name">Saltwater Crocodile</div><div class="sp-stat"><span class="lvl protected">Protected</span> — present in the Daintree River and estuaries. Never swim, wade or stand at the water's edge in croc habitat.</div></div>
+        <div class="sp-row"><div class="sp-name">Bennett's Tree-kangaroo</div><div class="sp-stat"><span class="lvl endemic">Endemic</span> — found only in the Wet Tropics rainforest canopy, rarely seen but a genuine local specialty.</div></div>
+      </div>
+    </div>
+    <div class="note warn">
+      <div class="note-k">Cassowary &amp; crocodile safety</div>
+      <div class="note-v">Cassowaries can cause serious injury or death if provoked — never approach or feed one, and slow down through known habitat. The Daintree River holds resident crocodiles — no swimming or wading. At Mossman Gorge, never jump or dive in: currents are unpredictable and people have died there.</div>
+    </div>
+  </section>
+  <section id="s5">
+    <div class="s-head"><span class="s-num">05</span><h2 class="s-title">Getting there sustainably</h2></div>
+    <div class="field"><div class="field-k">By air</div><div class="field-v">Cairns Airport (CNS) is the regional gateway, roughly an hour's drive south of Port Douglas along the scenic Captain Cook Highway.</div></div>
+    <div class="field"><div class="field-k">The Daintree River crossing</div><div class="field-v">A cable ferry, not a bridge, carries vehicles across the Daintree River into the national park side. This is a long-standing, deliberate constraint that limits development pressure north of the river — worth explaining to clients as part of the destination's character, not an inconvenience.</div></div>
+    <div class="field"><div class="field-k">On the ground</div><div class="field-v">Small-group, ECO certified tour operators are the preferred choice over large coach tours, given how fragile the rainforest habitat is along key access roads.</div></div>
+  </section>
+  <section id="s6">
+    <div class="s-head"><span class="s-num">06</span><h2 class="s-title">Accessibility</h2></div>
+    <div class="field"><div class="field-k">Overall</div><div class="field-v">Moderate. Port Douglas township and the Mossman Gorge Centre are well set up; deeper rainforest trails and Cape Tribulation beaches are not.</div></div>
+    <div class="field"><div class="field-k">Mossman Gorge</div><div class="field-v">The boardwalk from the Centre to the first viewing platform is wheelchair accessible. The swimming holes and riverside walking track beyond it are not, and carry real currents risk regardless of mobility.</div></div>
+    <div class="field"><div class="field-k">Reef trips</div><div class="field-v">Most Port Douglas reef vessels (including Quicksilver-style operators) offer accessible boarding and onboard facilities — confirm specifics with each operator before booking.</div></div>
+    <div class="note">
+      <div class="note-k">Plan ahead</div>
+      <div class="note-v">Confirm accessibility requirements with Mossman Gorge Centre and individual reef and rainforest operators ahead of any booking with mobility needs.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-src">Sources — Tourism Port Douglas Daintree · Douglas Shire Council · Ecotourism Australia · QPWS · Wet Tropics Management Authority · Jabalbina Yalanji Aboriginal Corporation. Reviewed at least every 12 months.</div>
+    <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
+  </div>
+</footer>
+
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>320));
+</script>
+
+</body>
+</html>
