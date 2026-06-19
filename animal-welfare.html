@@ -18,6 +18,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);f
 .bar .back{font-size:12.5px;color:var(--muted);transition:color .15s;}
 .bar .back:hover{color:var(--ink);}
 .head{max-width:760px;margin:0 auto;padding:54px 28px 32px;}
+.plate{position:relative;height:300px;overflow:hidden;display:flex;align-items:flex-end;}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,0.9) 0%,rgba(20,16,12,0.55) 30%,rgba(20,16,12,0.08) 62%,rgba(20,16,12,0.28) 100%);}
+.plate-inner{position:relative;z-index:1;width:100%;max-width:760px;margin:0 auto;padding:0 28px 30px;}
+.plate-inner .kicker{color:rgba(255,255,255,0.85);margin-bottom:12px;}
+.plate-inner .title{color:#fff;text-shadow:0 2px 24px rgba(20,16,12,0.6);}
 .kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
 .title{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.05;letter-spacing:-0.01em;}
 .deck{margin-top:16px;font-size:17px;color:var(--muted);max-width:620px;line-height:1.55;}
@@ -45,11 +51,27 @@ section{padding:40px 0;border-top:1px solid var(--hair);}
 .note-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
 .note-v{font-size:14px;line-height:1.6;}
 .legal-tag{display:inline-block;font-size:12px;border:1px solid var(--hair);border-radius:6px;padding:3px 9px;background:#fff;margin:3px 4px 3px 0;}
+/* more-experiences activity rows */
+.act{padding:24px 0;border-top:1px solid var(--hair);}
+.act:first-of-type{border-top:none;padding-top:4px;}
+.act-top{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.act-name{font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;}
+.pill{font-size:10.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;border-radius:5px;border:1px solid;white-space:nowrap;}
+.pill.no{color:var(--alert);border-color:var(--alert);}
+.pill.care{color:var(--accent);border-color:var(--accent);}
+.act-why{font-size:14.5px;line-height:1.6;color:var(--muted);margin-bottom:12px;}
+.act-advise{padding:13px 0 0 16px;border-left:2px solid var(--accent);}
+.act-advise .al-k{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:5px;}
+.act-advise .al-v{font-size:14px;line-height:1.6;color:var(--ink);}
+.act-advise .al-v em{font-style:italic;color:var(--muted);}
+.act-script{margin-top:14px;background:#fff;border:1px solid var(--hair);border-radius:10px;padding:18px 20px;}
+.act-script .as-k{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.act-script .as-body{font-family:'DM Serif Display',serif;font-style:italic;font-size:16px;line-height:1.6;color:var(--ink);}
 footer{border-top:1px solid var(--hair);margin-top:30px;}
 .foot-inner{max-width:760px;margin:0 auto;padding:26px 28px 44px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .foot-src{font-size:11.5px;color:var(--muted);line-height:1.6;max-width:540px;}
 .foot-meta{font-size:11.5px;color:var(--muted);white-space:nowrap;}
-@media(max-width:640px){.script-body{font-size:16.5px;}}
+@media(max-width:640px){.script-body{font-size:16.5px;}.plate{height:230px;}}
 </style>
 </head>
 <body>
@@ -58,10 +80,16 @@ footer{border-top:1px solid var(--hair);margin-top:30px;}
   <a href="index.html" class="back">← Sustainability Hub</a>
 </div>
 
-<div class="head">
-  <div class="kicker">Staff Position &amp; Scripts</div>
-  <h1 class="title">Animal welfare</h1>
-  <p class="deck">Where Orange Journeys stands on wildlife experiences — and exactly what to say when a client asks for one we won't book.</p>
+<div class="plate">
+  <img src="kangarooisland.jpg" alt="Kangaroos on a beach at Kangaroo Island">
+  <div class="plate-inner">
+    <div class="kicker">Staff Position &amp; Scripts</div>
+    <h1 class="title">Animal welfare</h1>
+  </div>
+</div>
+
+<div class="head" style="padding-top:30px;padding-bottom:0;">
+  <p class="deck">Where Orange Journeys stands on wildlife experiences — and exactly what to say when a client asks for one we won't book, or books a sensitive one independently.</p>
 </div>
 
 <div class="shell">
@@ -120,11 +148,100 @@ footer{border-top:1px solid var(--hair);margin-top:30px;}
     </div>
   </section>
 
+  <section>
+    <div class="s-head"><span class="s-num">05</span><h2 class="s-title">More experiences clients ask about</h2></div>
+    <p class="lead">Koala holding is the most common request, but it isn't the only one. Below are other popular wildlife experiences, each marked either <strong>Won't book</strong> — we decline and redirect, as with koala holding — or <strong>Book with care</strong>, where the experience can be responsible if the client is briefed properly. The same principle applies throughout: we hold our standard and give an honest reason, never a vague no.</p>
+
+    <div style="margin-top:20px;">
+
+      <div class="act">
+        <div class="act-top">
+          <span class="act-name">Crocodile cage attractions</span>
+          <span class="pill no">Won't book</span>
+        </div>
+        <div class="act-why">The "cage" submersion beside a captive saltwater crocodile uses a wild animal confined for life as a thrill prop. The crocodile cannot express any natural behaviour, and the encounter exists purely for the adrenaline shot.</div>
+        <div class="act-advise">
+          <div class="al-k">What to advise instead</div>
+          <div class="al-v">Steer clients toward seeing crocodiles in the wild, where the animal is free and the sighting is real — a guided river or wetland cruise delivers close, safe wild crocodile viewing from a boat. Frame it as the better story: a wild croc in its own river, not one in a tank.</div>
+        </div>
+        <div class="act-script">
+          <div class="as-k">Suggested message to decline</div>
+          <div class="as-body">"Thanks for asking about that one. As part of our sustainability policy and our commitment to animal welfare, Orange Journeys doesn't book the cage-style croc attractions — it's a wild animal kept in a tank purely for the photo. What I'd recommend instead is a guided river or wetland cruise where you'll see saltwater crocs in the wild, in their own habitat. It's safer, it's a genuine sighting, and honestly it's the better story to bring home."</div>
+        </div>
+      </div>
+
+      <div class="act">
+        <div class="act-top">
+          <span class="act-name">Captive dolphin swims</span>
+          <span class="pill no">Won't book</span>
+        </div>
+        <div class="act-why">Dolphins in captivity are confined to a tiny fraction of their natural range, and swim-with programs involve handling and performance that welfare science consistently links to chronic stress. Their intelligence and social range make captivity particularly damaging.</div>
+        <div class="act-advise">
+          <div class="al-k">What to advise instead</div>
+          <div class="al-v">Recommend a wild dolphin experience where the animals are free to come and go — boat-based wild dolphin watching, or a reputable wild-swim operator where dolphins approach the vessel on their own terms and are never fed or touched.</div>
+        </div>
+        <div class="act-script">
+          <div class="as-k">Suggested message to decline</div>
+          <div class="as-body">"I'd love to sort a dolphin experience for you, though under our animal welfare commitment we don't book the captive swim-with programs — dolphins range huge distances in the wild, and confinement causes them real stress. The alternative I'd point you to is a wild dolphin trip, where the dolphins choose to come to the boat and aren't fed or handled. You see them behaving naturally, which is the part most people remember."</div>
+        </div>
+      </div>
+
+      <div class="act">
+        <div class="act-top">
+          <span class="act-name">Quokka selfies</span>
+          <span class="pill care">Book with care</span>
+        </div>
+        <div class="act-why">The quokka is a vulnerable species. On Rottnest the animals are habituated to people, so a respectful photo is genuinely fine — but touching can transmit disease and has been linked to mothers abandoning their young, and human food is harmful to them. Feeding or handling carries on-the-spot fines under the Rottnest Island Regulations, with heavier penalties under Western Australia's Animal Welfare Act.</div>
+        <div class="act-advise">
+          <div class="al-k">What to advise if the client books it</div>
+          <div class="al-v">Advise the client to crouch down to the quokka's level and let it approach on its own, keep the phone close rather than chasing for the shot, and never touch or feed it. <em>A respectful selfie from ground level gets the photo without the risk — feeding and handling are finable on Rottnest.</em></div>
+        </div>
+        <div class="act-script">
+          <div class="as-k">Suggested briefing for the client</div>
+          <div class="as-body">"Quokkas are lovely and a photo is absolutely fine — just a few things we ask, in line with our animal welfare commitment, to keep them safe and keep you on the right side of the rules. Crouch down to their level and let them wander over to you rather than chasing the shot, keep your phone close, and don't touch or feed them. Feeding actually carries a fine on Rottnest, and human food makes them unwell — but a calm selfie from ground level gets you the photo every time."</div>
+        </div>
+      </div>
+
+      <div class="act">
+        <div class="act-top">
+          <span class="act-name">Kangaroo &amp; wallaby feeding</span>
+          <span class="pill care">Book with care</span>
+        </div>
+        <div class="act-why">At a reputable free-range sanctuary using its own approved feed, this is a low-impact and genuinely lovely encounter. The harm comes from the wrong context — feeding human or pet food, feeding wild roadside animals (which draws them toward traffic), or crowded venues where animals are overfed.</div>
+        <div class="act-advise">
+          <div class="al-k">What to advise if the client books it</div>
+          <div class="al-v">Recommend free-range sanctuaries where the venue supplies its own approved feed and the animals roam freely and can walk away. Advise clients never to feed wild kangaroos roadside or bring their own food, and to let the animal choose whether to interact.</div>
+        </div>
+        <div class="act-script">
+          <div class="as-k">Suggested briefing for the client</div>
+          <div class="as-body">"Feeding kangaroos can be a really nice encounter as long as it's the right setting. In keeping with our sustainability policy, we'd point you to a free-range sanctuary that provides its own approved feed, where the animals are free to wander off whenever they like. The one thing to avoid is feeding wild roadside kangaroos or bringing your own food — it does them more harm than good. Let them come to you and decide if they're interested."</div>
+        </div>
+      </div>
+
+      <div class="act">
+        <div class="act-top">
+          <span class="act-name">Turtle nesting &amp; hatchling viewing</span>
+          <span class="pill care">Book with care</span>
+        </div>
+        <div class="act-why">Nesting turtles and hatchlings are highly sensitive to light and disturbance — artificial light disorients hatchlings away from the sea, and flash or close approach can cause a nesting female to abandon her nest and return to the water. Done badly it is harmful; done through a guided program it is one of the best wildlife experiences in Australia.</div>
+        <div class="act-advise">
+          <div class="al-k">What to advise if the client books it</div>
+          <div class="al-v">Book only guided, ranger-led programs that control group size, lighting and distance. Advise clients: no flash photography, no torches, stay behind the guide, and keep to the rear of the turtle at all times.</div>
+        </div>
+        <div class="act-script">
+          <div class="as-k">Suggested briefing for the client</div>
+          <div class="as-body">"Seeing turtles nest or hatch is one of the best things you can do in Australia — and because their welfare matters to us, the key is doing it on a guided, ranger-led tour rather than wandering a beach yourself. They manage the group size, lighting and distance so the turtles aren't disturbed. On the night: no flash, no torches, stay behind your guide, and keep to the back of the turtle. Get that right and it's unforgettable."</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </div>
 
 <footer>
   <div class="foot-inner">
-    <div class="foot-src">Sources — EPBC Act 1999 (koala listing, Feb 2022) · NSW, Qld &amp; Vic wildlife legislation · World Animal Protection · International Fund for Animal Welfare · Griffith University · Lone Pine Koala Sanctuary. Reviewed at least every 12 months.</div>
+    <div class="foot-src">Sources — EPBC Act 1999 (koala listing, Feb 2022) · NSW, Qld &amp; Vic wildlife legislation · World Animal Protection · International Fund for Animal Welfare · Griffith University · Lone Pine Koala Sanctuary · Rottnest Island Authority &amp; WA Animal Welfare Act 2002 · The Nature Conservancy Australia. Reviewed at least every 12 months.</div>
     <div class="foot-meta">Orange Journeys · internal use only · June 2026</div>
   </div>
 </footer>
